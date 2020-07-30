@@ -178,7 +178,7 @@ models:
       - type: boolean
         name: has_secondary_nav
         label: Enable secondary navigation menu
-        description: Display secondary the navigation menu
+        description: Display the secondary navigation menu
         default: true
       - type: string
         name: secondary_nav_title
