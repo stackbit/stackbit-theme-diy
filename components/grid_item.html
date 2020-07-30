@@ -1,0 +1,183 @@
+{% set section = include_dict.section %}
+{% set item = include_dict.item %}
+
+{% set columns = section.grid_cols | default('three', true) %}
+{% set gap_y = section.grid_gap_vert | default('medium', true) %}
+{% set is_card = false %}
+{% if section.enable_cards %}
+	{% set is_card = true %}
+{% endif %}
+
+{% set has_text = false %}
+{% if item.title or item.subtitle or item.content or item.actions %}
+	{% set has_text = true %}
+{% endif %}
+{% set title_align_x = item.title_align | default('left', true) %}
+{% set content_align_x = item.content_align | default('left', true) %}
+{% set actions_align_x = item.actions_align | default('left', true) %}
+{% set actions_width = item.actions_width | default('auto', true) %}
+
+{% set has_image = false %}
+{% if item.image %}
+	{% set has_image = true %}
+{% endif %}
+{% set image_align_x = item.image_align | default('left', true) %}
+{% set image_width = item.image_width | default('fifty', true) %}
+{% set image_pos = item.image_position | default('top', true) %}
+{% if has_image == false or has_text == false %}
+	{% set image_pos = 'top' %}
+{% endif %}
+{% set image_has_padding = false %}
+{% if item.image_has_padding %}
+	{% set image_has_padding = true %}
+{% endif %}
+
+{% set is_horiz = false %}
+{% if image_pos == 'left' or image_pos == 'right' %}
+	{% set is_horiz = true %}
+{% endif %}
+
+{% set is_vert = false %}
+{% if image_pos == 'top' or image_pos == 'bottom' %}
+	{% set is_vert = true %}
+{% endif %}
+
+{% set is_card_has_padding = false %}
+{% if is_card and image_has_padding %}
+	{% set is_card_has_padding = true %}
+{% endif %}
+
+{% set is_card_no_padding = false %}
+{% if is_card and image_has_padding == false  %}
+	{% set is_card_no_padding = true %}
+{% endif %}
+
+{% set is_card_no_img_no_padding = false %}
+{% if is_card and has_image == false and image_has_padding == false  %}
+	{% set is_card_no_img_no_padding = true %}
+{% endif %}
+
+<div {{ classNames('cell-12', 'cell-md-6', {
+	'cell-lg-4': columns == 'three' or columns == 'four',
+	'cell-xl-3': columns == 'four',
+	'my-1': gap_y == 'small',
+	'my-2': gap_y != 'small',
+	'my-sm-3': gap_y == 'large'
+}) }}>
+	<div {{ classNames('item', {
+		'card': is_card,
+		'card--horiz': is_card and is_horiz,
+		'card--vert': is_card and is_vert,
+		'p-3': is_card_has_padding or is_card_no_img_no_padding,
+		'p-sm-4': is_card_has_padding or is_card_no_img_no_padding
+	}) }}>
+		<div {{ classNames({
+			'grid': is_horiz,
+			'grid-gap-none': is_horiz,
+			'flex': is_vert,
+			'flex-column': is_vert
+		}) }}>
+			{% if has_image %}
+			<div {{ classNames({
+				'cell-12': is_horiz,
+				'cell-md-3': is_horiz and image_width == 'twenty-five',
+				'cell-md-4': is_horiz and image_width == 'thirty-three',
+				'cell-md-5': is_horiz and image_width == 'fourty',
+				'cell-md-6': is_horiz and image_width == 'fifty',
+				'cell-md-7': is_horiz and image_width == 'sixty'
+			}) }}>
+				<div {{ classNames('item__media', {
+					'card__media': is_card,
+					'card__media--fill': is_card_no_padding,
+					'card__media--top': is_card and image_pos == 'top',
+					'card__media--bottom': is_card and image_pos == 'bottom',
+					'card__media--left': is_card and image_pos == 'left',
+					'card__media--right': is_card and image_pos == 'right',
+					'mb-3': image_pos != 'bottom' and has_text and is_card_no_padding == false,
+					'mb-md-0': is_horiz and has_text and is_card_no_padding == false,
+					'ml-md-3': image_pos == 'right' and has_text and is_card_no_padding == false,
+					'mr-md-3': image_pos == 'left' and has_text and is_card_no_padding == false,
+					'mt-3': image_pos == 'bottom' and has_text and is_card_no_padding == false,
+					'has-border': item.image_has_border
+				}) }}>
+					<img src="{{ item.image | relative_url }}" alt="{{ item.title }}" {{ classNames('', {
+						'mx-auto': image_align_x == 'center',
+						'ml-auto': image_align_x == 'right'
+					}) }} />
+				</div>
+			</div>
+			{% endif %}
+			{% if has_text %}
+			<div {{ classNames({
+				'cell-12': is_horiz,
+				'cell-md-9': is_horiz and image_width == 'twenty-five',
+				'cell-md-8': is_horiz and image_width == 'thirty-three',
+				'cell-md-7': is_horiz and image_width == 'fourty',
+				'cell-md-6': is_horiz and image_width == 'fifty',
+				'cell-md-5': is_horiz and image_width == 'sixty',
+				'order-md-first': has_image and image_pos == 'right',
+				'order-first': has_image and image_pos == 'bottom',
+				'mb-auto': is_card and image_pos == 'bottom' and image_has_padding == false
+			}) }}>
+				<div {{ classNames('item__body', {
+					'p-3': has_image and is_card_no_padding,
+					'px-sm-4': has_image and is_card_no_padding,
+					'pb-sm-4': has_image and is_card_no_padding and image_pos != 'bottom',
+					'pt-sm-4': has_image and is_card_no_padding and image_pos == 'bottom',
+					'py-md-4': has_image and is_card_no_padding and is_horiz,
+					'pr-md-4': has_image and is_card_no_padding and image_pos == 'left',
+					'pl-md-3': has_image and is_card_no_padding and image_pos == 'left',
+					'pl-md-4': has_image and is_card_no_padding and image_pos == 'right',
+					'pr-md-3': has_image and is_card_no_padding and image_pos == 'right'
+				}) }}>
+					{% if item.title %}
+						{% if section.title %}
+						<h3 {{ classNames('item__title', {
+							'h3': columns == 'two',
+							'h4': columns == 'three',
+							'h5': columns == 'four',
+							'text-center': title_align_x == 'center',
+							'text-right': title_align_x == 'right'
+						}) }}>{{ item.title }}</h3>
+						{% else %}
+						<h2 {{ classNames('item__title', {
+							'h3': columns == 'two',
+							'h4': columns == 'three',
+							'h5': columns == 'four',
+							'text-center': title_align_x == 'center',
+							'text-right': title_align_x == 'right'
+						}) }}>{{ item.title }}</h2>
+						{% endif %}
+					{% endif %}
+					{% if item.subtitle %}
+					<div {{ classNames('item__subtitle', {
+						'text-center': title_align_x == 'center',
+						'text-right': title_align_x == 'right'
+					}) }}>
+						{{ item.subtitle }}
+					</div>
+					{% endif %}
+					{% if item.content %}
+					<div {{ classNames('item__copy', {
+						'text-center': content_align_x == 'center',
+						'text-right': content_align_x == 'right'
+					}) }}>
+						{{ item.content | markdownify }}
+					</div>
+					{% endif %}
+					{% if item.actions %}
+					<div {{ classNames('item__actions', 'btn-group', {
+						'item__actions--fill': actions_width == 'full-width',
+						'text-center': actions_align_x == 'center',
+						'text-right': actions_align_x == 'right'
+					}) }}>
+						{% set include_dict = {'actions': item.actions} %}
+						{% include "section_actions.html" %}
+					</div>
+					{% endif %}
+				</div>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

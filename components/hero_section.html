@@ -1,0 +1,109 @@
+{% set section = include_dict.section %}
+
+{% set padding_top = section.padding_top | default('medium', true) %}
+{% set padding_bottom = section.padding_bottom | default('medium', true) %}
+{% set align_x = section.align | default('center', true) %}
+
+{% set bg_color = section.background_color | default('none', true) %}
+{% set bg_img_opacity_pct = section.background_image_opacity | default(100, true) %}
+{% set bg_img_opacity = bg_img_opacity_pct*0.01 %}
+{% set bg_img_size = section.background_image_size | default('cover', true) %}
+{% set bg_img_position = section.background_image_position | default('center center', true) %}
+{% set bg_img_repeat = section.background_image_repeat | default('no-repeat', true) %}
+
+{% set has_text = false %}
+{% if section.title or section.subtitle or section.content or section.actions %}
+	{% set has_text = true %}
+{% endif %}
+
+{% set has_media = false %}
+{% if section.image or section.video_url %}
+	{% set has_media = true %}
+{% endif %}
+{% set media_width = section.media_width | default('fifty', true) %}
+{% set media_pos = section.media_position | default('top', true) %}
+{% if has_media == false or has_text == false %}
+	{% set media_pos = 'top' %}
+{% endif %}
+
+{% set is_horiz = false %}
+{% if media_pos == 'left' or media_pos == 'right' %}
+	{% set is_horiz = true %}
+{% endif %}
+
+{% set is_vert = false %}
+{% if media_pos == 'top' or media_pos == 'bottom' %}
+	{% set is_vert = true %}
+{% endif %}
+
+<section {{ classNames('section', 'hero', {
+	'has-border': section.has_border,
+	'has-cover': section.background_image,
+	'bg-none': bg_color == 'none',
+	'bg-primary': bg_color == 'primary',
+	'bg-secondary': bg_color == 'secondary',
+	'pt-5': padding_top == 'small',
+	'pt-6': padding_top == 'medium' or padding_top == 'large',
+	'pt-md-7': padding_top == 'large',
+	'pb-5': padding_bottom == 'small',
+	'pb-6': padding_bottom == 'medium' or padding_bottom == 'large',
+	'pb-md-7': padding_bottom == 'large'
+}) }}>
+
+	{% if section.background_image %}
+	<div class="cover-img" style="background-image: url('{{ section.background_image | relative_url }}'); opacity: {{ bg_img_opacity }}; background-size: {{ bg_img_size }}; background-repeat: {{ bg_img_repeat }}; background-position: {{ bg_img_position }}"></div>
+	{% endif %}
+
+	<div {{ classNames('container', {
+		'max-w-medium': is_vert
+	}) }}>
+		<div class="hero__content grid items-center">
+			{% if has_media %}
+			<div {{ classNames('hero__media', 'my-2', 'cell-12', {
+				'cell-md-5': is_horiz and has_text and media_width == 'fourty',
+				'cell-md-6': is_horiz and has_text and media_width == 'fifty',
+				'cell-md-7': is_horiz and has_text and media_width == 'sixty',
+				'has-border': section.media_has_border
+			}) }}>
+				{% if section.video_url %}
+					<a href="{{ section.video_url }}" class="js-embed-link" data-embed-width="{{ section.video_width | default('640', true) }}" data-embed-height="{{ section.video_height | default('360', true) }}">{{ section.video_url }}</a>
+				{% else %}
+					<img src="{{ section.image | relative_url }}" alt="{{ section.title }}" {{ classNames({
+						'mx-auto': align_x == 'center',
+						'ml-auto': align_x == 'right'
+					}) }} />
+				{% endif %}
+			</div>
+			{% endif %}
+			{% if has_text %}
+			<div {{ classNames('hero__body', 'my-2', 'cell-12', {
+				'cell-md-7': is_horiz and has_media and media_width == 'fourty',
+				'cell-md-6': is_horiz and has_media and media_width == 'fifty',
+				'cell-md-5': is_horiz and has_media and media_width == 'sixty',
+				'order-md-first': has_media and media_pos == 'right',
+				'order-first': has_media and media_pos == 'bottom',
+				'text-center': align_x == 'center',
+				'text-right': align_x == 'right'
+			}) }}>
+				{% if section.title %}
+				<h1 class="hero__title">{{ section.title | safe }}</h1>
+				{% endif %}
+				{% if section.subtitle %}
+				<div class="hero__subtitle">{{ section.subtitle }}</div>
+				{% endif %}
+				{% if section.content %}
+				<div class="hero__copy">
+					{{ section.content | markdownify }}
+				</div>
+				{% endif %}
+				{% if section.actions %}
+				<div class="hero__actions btn-group">
+					{% set include_dict = {'actions': section.actions} %}
+					{% include "section_actions.html" %}
+				</div>
+				{% endif %}
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

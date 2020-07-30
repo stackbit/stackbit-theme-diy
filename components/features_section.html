@@ -1,0 +1,60 @@
+{% set section = include_dict.section %}
+
+{% set align_x = section.align | default('center', true) %}
+{% set padding_top = section.padding_top | default('medium', true) %}
+{% set padding_bottom = section.padding_bottom | default('medium', true) %}
+
+{% set bg_color = section.background_color | default('none', true) %}
+{% set bg_img_opacity_pct = section.background_image_opacity | default(100, true) %}
+{% set bg_img_opacity = bg_img_opacity_pct*0.01 %}
+{% set bg_img_size = section.background_image_size | default('cover', true) %}
+{% set bg_img_position = section.background_image_position | default('center center', true) %}
+{% set bg_img_repeat = section.background_image_repeat | default('no-repeat', true) %}
+
+{% set feature_padding_y = section.feature_padding_vert | default('medium', true) %}
+
+<section {{ classNames('section', 'features', {
+	'has-border': section.has_border,
+	'has-cover': section.background_image,
+	'bg-none': bg_color == 'none',
+	'bg-primary': bg_color == 'primary',
+	'bg-secondary': bg_color == 'secondary',
+	'pt-5': padding_top == 'small',
+	'pt-6': padding_top == 'medium' or padding_top == 'large',
+	'pt-md-7': padding_top == 'large',
+	'pb-5': padding_bottom == 'small',
+	'pb-6': padding_bottom == 'medium' or padding_bottom == 'large',
+	'pb-md-7': padding_bottom == 'large'
+}) }}>
+
+	{% if section.background_image %}
+	<div class="cover-img" style="background-image: url('{{ section.background_image | relative_url }}'); opacity: {{ bg_img_opacity }}; background-size: {{ bg_img_size }}; background-repeat: {{ bg_img_repeat }}; background-position: {{ bg_img_position }}"></div>
+	{% endif %}
+
+	{% if section.title or section.subtitle %}
+	<div {{ classNames('container', 'max-w-medium', {
+		'mb-4': feature_padding_y == 'small',
+		'mb-3': feature_padding_y == 'medium',
+		'mb-1': feature_padding_y == 'large',
+		'text-center': align_x == 'center',
+		'text-right': align_x == 'right'
+	}) }}>
+		{% if section.subtitle %}
+		<div class="section__subtitle">{{ section.subtitle }}</div>
+		{% endif %}
+		{% if section.title %}
+		<h2 class="section__title">{{ section.title }}</h2>
+		{% endif %}
+	</div>
+	{% endif %}
+
+	{% if section.features %}
+	<div class="container">
+		{% for feature in section.features %}
+			{% set include_dict = {'section': section, 'feature': feature} %}
+			{% include "feature.html" %}
+		{% endfor %}
+	</div>
+	{% endif %}
+
+</section>

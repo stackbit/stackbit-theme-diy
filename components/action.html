@@ -1,0 +1,18 @@
+{% set action = include_dict.action %}
+{% set action_style = action.style | default('link', true) %}
+{% set action_icon_pos = action.icon_position | default('right', true) %}
+<a {{ classNames({
+	'btn': action_style == 'primary' or action_style == 'secondary' or action.has_icon,
+	'btn--primary': action_style == 'primary',
+	'btn--secondary': action_style == 'secondary',
+	'btn--icon': action.has_icon and action_icon_pos == 'center',
+	'btn--clear': action.has_icon and action_style == 'link'
+}) }} href="{{ action.url | relative_url }}" {% if action.new_window %}target="_blank" rel="noopener"{% endif %}>
+	{% if action.has_icon %}
+		{% set include_dict = {'icon': action.icon} %}
+		{% include "icon.html" %}
+		<span {{ classNames({'order-first': action_icon_pos == 'right', 'sr-only': action_icon_pos == 'center'}) }}>{{ action.label }}</span>
+	{% else %}
+		{{ action.label }}
+	{% endif %}
+</a>

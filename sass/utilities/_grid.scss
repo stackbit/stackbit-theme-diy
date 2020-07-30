@@ -1,0 +1,59 @@
+/**
+ * Grid
+ */
+.grid {
+	@include make-grid();
+}
+
+.cell,
+[class*="cell-"] {
+	@include make-cell-default();
+}
+
+.grid-gap-none {
+	@include make-grid-gap(0);
+}
+
+.grid-gap-small {
+	@include make-grid-gap($grid-gap-small);
+}
+
+@include media-breakpoint-up(sm) {
+	.grid-gap-large {
+		@include make-grid-gap($grid-gap-large);
+	}
+}
+
+.cell {
+	@include make-cell();
+}
+
+.cell-auto {
+	@include make-cell-auto();
+}
+
+@for $i from 1 through $grid-cells {
+	.cell-#{$i} {
+		@include make-cell-size($i, $grid-cells);
+	}
+}
+
+@each $breakpoint in map-keys($media-breakpoints) {
+	$infix: "#{$breakpoint}";
+
+	@include media-breakpoint-up($breakpoint, $media-breakpoints) {
+		.cell-#{$infix} {
+			@include make-cell();
+		}
+
+		.cell-#{$infix}-auto {
+			@include make-cell-auto();
+		}
+
+		@for $i from 1 through $grid-cells {
+			.cell-#{$infix}-#{$i} {
+				@include make-cell-size($i, $grid-cells);
+			}
+		}
+	}
+}

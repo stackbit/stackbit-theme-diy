@@ -1,0 +1,30 @@
+{% set field = include_dict.field %}
+
+{% if field.input_type != 'checkbox' %}
+	{% if field.label %}
+		<label id="{{ field.name }}-label" for="{{ field.name }}">{{ field.label }}</label>
+	{% endif %}
+{% endif %}
+{% if field.input_type == 'checkbox' %}
+	<div class="form-checkbox">
+		<input id="{{ field.name }}" type="checkbox" name="{{ field.name }}"{% if field.label %} aria-labelledby="{{ field.name }}-label"{% endif %}{% if field.is_required %} required{% endif %}>
+		{% if field.label %}
+		<label for="{{ field.name }}" id="{{ field.name }}-label">{{ field.label }}</label>
+		{% endif %}
+	</div>
+{% elif field.input_type == 'select' %}
+	<div class="form-select">
+		<select id="{{ field.name }}" name="{{ field.name }}"{% if field.label %} aria-labelledby="{{ field.name }}-label"{% endif %}{% if field.is_required %} required{% endif %}>
+			{% if field.default_value %}
+			<option value="">{{ field.default_value }}</option>
+			{% endif %}
+			{% for option in field.options %}
+				<option value="{{ option }}">{{ option }}</option>
+			{% endfor %}
+		</select>
+	</div>
+{% elif field.input_type == 'textarea' %}
+	<textarea id="{{ field.name }}" name="{{ field.name }}" rows="5"{% if field.label %} aria-labelledby="{{ field.name }}-label"{% endif %}{% if field.default_value %} placeholder="{{ field.default_value }}"{% endif %}{% if field.is_required %} required{% endif %}></textarea>
+{% else %}
+	<input id="{{ field.name }}" type="{{ field.input_type }}" name="{{ field.name }}" {% if field.label %} aria-labelledby="{{ field.name }}-label"{% endif %}{% if field.default_value %} placeholder="{{ field.default_value }}"{% endif %}{% if field.is_required %} required{% endif %} />
+{% endif %}

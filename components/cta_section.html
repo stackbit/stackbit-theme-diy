@@ -1,0 +1,99 @@
+{% set section = include_dict.section %}
+
+{% set padding_top = section.padding_top | default('medium', true) %}
+{% set padding_bottom = section.padding_bottom | default('medium', true) %}
+{% set align_x = section.align | default('center', true) %}
+
+{% set bg_color = section.background_color | default('none', true) %}
+{% set bg_img_opacity_pct = section.background_image_opacity | default(100, true) %}
+{% set bg_img_opacity = bg_img_opacity_pct*0.01 %}
+{% set bg_img_size = section.background_image_size | default('cover', true) %}
+{% set bg_img_position = section.background_image_position | default('center center', true) %}
+{% set bg_img_repeat = section.background_image_repeat | default('no-repeat', true) %}
+
+{% set has_text = false %}
+{% if section.title or section.content %}
+	{% set has_text = true %}
+{% endif %}
+
+{% set has_actions = false %}
+{% if section.actions %}
+	{% set has_actions = true %}
+{% endif %}
+{% set actions_width = section.actions_width | default('fifty', true) %}
+{% set actions_pos = section.actions_position | default('bottom', true) %}
+{% if has_actions == false or has_text == false %}
+	{% set actions_pos = 'bottom' %}
+{% endif %}
+
+{% set is_horiz = false %}
+{% if actions_pos == 'left' or actions_pos == 'right' %}
+	{% set is_horiz = true %}
+{% endif %}
+
+{% set is_vert = false %}
+{% if actions_pos == 'top' or actions_pos == 'bottom' %}
+	{% set is_vert = true %}
+{% endif %}
+
+<section {{ classNames('section', 'cta', {
+	'has-border': section.has_border,
+	'has-cover': section.background_image,
+	'bg-none': bg_color == 'none',
+	'bg-primary': bg_color == 'primary',
+	'bg-secondary': bg_color == 'secondary',
+	'pt-5': padding_top == 'small',
+	'pt-6': padding_top == 'medium' or padding_top == 'large',
+	'pt-md-7': padding_top == 'large',
+	'pb-5': padding_bottom == 'small',
+	'pb-6': padding_bottom == 'medium' or padding_bottom == 'large',
+	'pb-md-7': padding_bottom == 'large'
+}) }}>
+
+	{% if section.background_image %}
+	<div class="cover-img" style="background-image: url('{{ section.background_image | relative_url }}'); opacity: {{ bg_img_opacity }}; background-size: {{ bg_img_size }}; background-repeat: {{ bg_img_repeat }}; background-position: {{ bg_img_position }}"></div>
+	{% endif %}
+
+	<div {{ classNames('container', {
+		'max-w-medium': is_vert
+	}) }}>
+		<div class="cta__content grid items-center">
+			{% if has_text %}
+			<div {{ classNames('cta__body', 'my-1', 'cell-12', {
+				'cell-md-7': is_horiz and has_actions and actions_width == 'fourty',
+				'cell-md-6': is_horiz and has_actions and actions_width == 'fifty',
+				'cell-md-5': is_horiz and has_actions and actions_width == 'sixty',
+				'text-center': align_x == 'center',
+				'text-right': align_x == 'right'
+			}) }}>
+				{% if section.title %}
+				<h1 class="hero__title">{{ section.title | safe }}</h1>
+				{% endif %}
+				{% if section.content %}
+				<div class="hero__copy">
+					{{ section.content | markdownify }}
+				</div>
+				{% endif %}
+			</div>
+			{% endif %}
+			{% if has_actions %}
+			<div {{ classNames('cta__actions', 'my-1', 'cell-12', {
+				'cell-md-5': is_horiz and has_text and actions_width == 'fourty',
+				'cell-md-6': is_horiz and has_text and actions_width == 'fifty',
+				'cell-md-7': is_horiz and has_text and actions_width == 'sixty',
+				'order-md-first': has_actions and actions_pos == 'left',
+				'order-first': has_actions and actions_pos == 'top'
+			}) }}>
+				<div {{ classNames('cta__actions', 'btn-group', {
+					'justify-md-center': is_horiz,
+					'justify-center': align_x == 'center',
+					'justify-end': align_x == 'right'
+				}) }}>
+					{% set include_dict = {'actions': section.actions} %}
+					{% include "section_actions.html" %}
+				</div>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

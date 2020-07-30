@@ -1,0 +1,95 @@
+{% set has_logo = false %}
+{% if site.params.footer.logo %}
+	{% set has_logo = true %}
+{% endif %}
+{% set footer_content = false %}
+{% if site.params.footer.content or site.params.footer.links %}
+	{% set footer_content = true %}
+{% endif %}
+{% set footer_social = false %}
+{% if site.params.footer.has_social and site.params.footer.social_links %}
+	{% set footer_social = true %}
+{% endif %}
+
+<footer class="site-footer">
+	{% if has_logo or site.params.footer.has_primary_nav or site.params.footer.has_secondary_nav or site.params.footer.has_tertiary_nav %}
+	<div class="site-footer__nav py-5 py-md-6">
+		<div class="container">
+			<div {{ classNames('grid', {
+				'justify-md-center': has_logo == false
+			}) }}>
+				{% if has_logo %}
+				<div class="site-footer__logo cell-12 cell-md-5 my-4">
+					<img src="{{ site.params.footer.logo | relative_url }}" alt="{{ site.params.header.title }}" />
+				</div>
+				{% endif %}
+				{% if site.params.footer.has_primary_nav and site.params.footer.primary_nav_links %}
+				<div class="site-footer__menu cell-12 cell-md my-4">
+					{% if site.params.footer.primary_nav_title %}
+					<h2 class="h4 mb-3">{{ site.params.footer.primary_nav_title }}</h2>
+					{% endif %}
+					{% set include_dict = {'footer_menu': site.params.footer.primary_nav_links} %}
+					{% include "footer_menu.html" %}
+				</div>
+				{% endif %}
+				{% if site.params.footer.has_secondary_nav and site.params.footer.secondary_nav_links %}
+				<div class="site-footer__menu cell-12 cell-md my-4">
+					{% if site.params.footer.secondary_nav_title %}
+					<h2 class="h4 mb-3">{{ site.params.footer.secondary_nav_title }}</h2>
+					{% endif %}
+					{% set include_dict = {'footer_menu': site.params.footer.secondary_nav_links} %}
+					{% include "footer_menu.html" %}
+				</div>
+				{% endif %}
+				{% if site.params.footer.has_tertiary_nav and site.params.footer.tertiary_nav_links %}
+				<div class="site-footer__menu cell-12 cell-md my-4">
+					{% if site.params.footer.tertiary_nav_title %}
+					<h2 class="h4 mb-3">{{ site.params.footer.tertiary_nav_title }}</h2>
+					{% endif %}
+					{% set include_dict = {'footer_menu': site.params.footer.tertiary_nav_links} %}
+					{% include "footer_menu.html" %}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+	{% if footer_content or footer_social %}
+	<div class="site-footer__info py-2 py-sm-3">
+		<div class="container">
+			<div class="grid items-center">
+				{% if footer_content %}
+				<div {{ classNames('site-footer__copyright', 'cell-12', {
+					'cell-sm': footer_social
+				}) }}>
+					{{ site.params.footer.content | safe }}
+					{% for link in site.params.footer.links %}
+						<a href="{{ link.url | relative_url }}" {% if link.new_window %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
+					{% endfor %}
+				</div>
+				{% endif %}
+				{% if footer_social %}
+				<div {{ classNames('site-footer__social', 'cell-12', {
+					'cell-sm-auto': footer_content
+				}) }}>
+					{% for link in site.params.footer.social_links %}
+						{% set link_style = link.style | default('link', true) %}
+						{% if link.has_icon and link.icon %}
+						<a {{ classNames('btn', 'btn--icon', {
+							'btn--primary': link_style == 'primary',
+							'btn--secondary': link_style == 'secondary',
+							'btn--clear': link_style == 'link'
+						}) }} href="{{ link.url | relative_url }}" {% if link.new_window %}target="_blank" rel="noopener"{% endif %}>
+							{% set include_dict = {'icon': link.icon} %}
+							{% include "icon.html" %}
+							<span class="sr-only">{{ link.label }}</span>
+						</a>
+						{% endif %}
+					{% endfor %}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+</footer>

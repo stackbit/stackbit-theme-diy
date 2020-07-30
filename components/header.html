@@ -1,0 +1,42 @@
+<header class="site-header py-2">
+	<div class="container">
+		<nav class="navbar flex items-center" aria-label="Main Navigation">
+			<a class="sr-only" href="#content">Skip to main content</a>
+			<div class="navbar__branding mr-2">
+				{% if site.params.header.logo %}
+				<a class="navbar__logo m-0" href="{{ '/' | relative_url }}"><img src="{{ site.params.header.logo | relative_url }}" alt="{{ site.params.header.title }}" /></a>
+				{% else %}
+				<a class="navbar__title h4 m-0" href='{{ "/" | relative_url }}'>{{ site.params.header.title }}</a>
+				{% endif %}
+			</div>
+			{% if site.params.header.has_primary_nav or site.params.header.has_secondary_nav %}
+			<div class="navbar__container">
+				<div class="navbar__scroller">
+					<div class="navbar__inner">
+						<button aria-label="Close" class="btn btn--icon btn--clear navbar__close-btn js-nav-toggle">
+							{% set include_dict = {'icon': 'close'} %}
+							{% include "icon.html" %}
+							<span class="sr-only">Close</span>
+						</button>
+						<div class="navbar__menu">
+							{% if site.params.header.has_primary_nav and site.params.header.primary_nav_links %}
+								{% set include_dict = {'header_menu': site.params.header.primary_nav_links} %}
+								{% include "header_menu.html" %}
+							{% endif %}
+							{% if site.params.header.has_secondary_nav and site.params.header.secondary_nav_links %}
+								{% set include_dict = {'header_menu': site.params.header.secondary_nav_links} %}
+								{% include "header_menu.html" %}
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<button aria-label="Menu" class="btn btn--icon btn--clear navbar__menu-btn js-nav-toggle ml-auto">
+				{% set include_dict = {'icon': 'menu'} %}
+				{% include "icon.html" %}
+				<span class="sr-only">Menu</span>
+			</button>
+			{% endif %}
+		</nav>
+	</div>
+</header>

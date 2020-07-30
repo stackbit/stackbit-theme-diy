@@ -1,0 +1,29 @@
+{% set author = include_dict.author %}
+{% set container_class = include_dict.container_class %}
+{% set avatar_size = include_dict.avatar_size %}
+<div class="{{ container_class }}">
+	{% set author_data = getData(author) %}
+	{% if author_data.link %}
+	<a class="flex items-center" href="{{ author_data.link | relative_url }}">
+		{% if author_data.photo %}
+		<figure {{ classNames('avatar', 'mr-1', {
+			'avatar--small': avatar_size == 'small'
+		}) }}>
+			<img class="avatar__img" src="{{ author_data.photo | relative_url }}" alt="{{ author_data.first_name }}{% if author_data.last_name %} {{ author_data.last_name }}{% endif %} Photo" />
+		</figure>
+		{% endif %}
+		<span>{{ author_data.first_name }} {{ author_data.last_name }}</span>
+	</a>
+	{% else %}
+	<div class="flex items-center">
+		{% if author_data.photo %}
+		<figure {{ classNames('avatar', 'mr-1', {
+			'avatar--small': avatar_size == 'small'
+		}) }}>
+			<img class="avatar__img" src="{{ author_data.photo | relative_url }}" alt="{{ author_data.first_name }}{% if author_data.last_name %} {{ author_data.last_name }}{% endif %} Photo" />
+		</figure>
+		{% endif %}
+		<span>{{ author_data.first_name }} {{ author_data.last_name }}</span>
+	</div>
+	{% endif %}
+</div>

@@ -1,0 +1,69 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<article class="post py-5 py-sm-6">
+	{% set has_image = false %}
+	{% if page.params.image %}
+		{% set has_image = true %}
+	{% endif %}
+	{% set image_pos = page.params.image_position | default('top', true) %}
+	<div {{ classNames('container', {
+		'max-w-medium': image_pos == 'top' or has_image == false
+	}) }}>
+		<div {{ classNames('mb-4', {
+			'mb-md-5': image_pos != 'top',
+			'mb-lg-6': image_pos != 'top',
+			'grid': image_pos != 'top',
+			'items-center': has_image and image_pos != 'top'
+		}) }}>
+			{% if has_image %}
+			<div {{ classNames('post__image', 'mb-3', {
+				'cell-12': image_pos != 'top',
+				'cell-lg-7': image_pos != 'top',
+				'mb-lg-0': image_pos != 'top'
+			}) }}>
+				<img src="{{ page.params.image | relative_url }}" alt="{{ page.params.title }}" />
+			</div>
+			{% endif %}
+
+			<header {{ classNames('post__header', {
+				'cell-12': image_pos != 'top',
+				'cell-lg-5': image_pos != 'top',
+				'order-lg-first': has_image and image_pos == 'right'
+			}) }}>
+				<div class="post__meta">
+					{% if page.params.categories %}
+						{% set include_dict = {'categories': page.params.categories, 'container_class': 'post__cat'} %}
+						{% include "blog_post_categories.html" %}
+					{% endif %}
+					<span class="post__date"><time datetime="{{page.date | date_format("%Y-%m-%d %H:%M") }}">{{ page.date | date_format("%B %d, %Y") }}</time></span>
+				</div>
+				<h1 class="post__title">{{ page.params.title }}</h1>
+				{% if page.params.subtitle %}
+					<p class="post__subtitle">{{ page.params.subtitle }}</p>
+				{% endif %}
+				{% if page.params.author %}
+					{% set include_dict = {'author': page.params.author, 'container_class': 'post__byline', 'avatar_size': 'medium'} %}
+					{% include "blog_post_author.html" %}
+				{% endif %}
+			</header>
+		</div>
+	</div>
+
+	<div class="container max-w-medium">
+		<div class="post__body">
+			{{ page.content }}
+		</div>
+	
+		{% if page.params.tags %}
+		<footer class="post__footer mt-4 mt-md-5">
+			{% set include_dict = {'tags': page.params.tags} %}
+			{% include "blog_post_tags.html" %}
+		</footer>
+		{% endif %}
+	</div>
+
+</article>
+
+{% endblock %}

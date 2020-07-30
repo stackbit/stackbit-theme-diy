@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600px" height="1600px" viewBox="0 0 1600 1600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Hero Minimal Dark</title>
+    <defs>
+        <rect id="path-1" x="1.13686838e-13" y="2.27373675e-13" width="1032.8472" height="1172.556"></rect>
+        <filter x="-1.5%" y="-1.2%" width="103.1%" height="102.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.202005026 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M232.2,123 L132,178.8 L29.8,123 C26,120.8 21,122.4 19,126.2 C16.8,130 18.4,135 22.2,137 L128.2,195 C130.6,196.4 133.6,196.4 136,195 L240,137 C243.8,134.8 245.2,130 243,126.2 C240.8,122.2 236,120.8 232.2,123 L232.2,123 Z M42.2,86 L132,35.2 L232,93 C235.8,95.2 240.8,93.8 243,90 C245.2,86.2 243.8,81.2 240,79 L136,19 C133.6,17.6 130.6,17.6 128,19 L22,79 C16.6,82 16.6,89.8 22,93 L128,153 C131.8,155.2 136.8,153.8 139,150 C141.2,146.2 139.8,141.2 136,139 L42.2,86 Z M1,128 L1,88 C0.2,78.8 4.4,69.4 13.6,64.2 L119.6,4.2 C127.4,-0.2 136.8,-0.2 144.4,4.4 L248.4,64.4 C257,69.4 261.6,78.8 260.8,88 L260.8,128 C261.6,137.4 256.8,147 248,151.8 L144,209.8 C136.4,214 127.4,214 119.8,209.8 L13.8,151.8 C5,147 0.4,137.6 1,128 Z" id="path-4"></path>
+        <polygon id="path-6" points="0 0 1440 0 1440 1024 0 1024"></polygon>
+        <rect id="path-8" x="1.13686838e-13" y="2.27373675e-13" width="1032.8472" height="1172.556"></rect>
+        <filter x="-1.6%" y="-1.3%" width="103.3%" height="102.9%" filterUnits="objectBoundingBox" id="filter-10">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.202005026 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M232.2,123 L132,178.8 L29.8,123 C26,120.8 21,122.4 19,126.2 C16.8,130 18.4,135 22.2,137 L128.2,195 C130.6,196.4 133.6,196.4 136,195 L240,137 C243.8,134.8 245.2,130 243,126.2 C240.8,122.2 236,120.8 232.2,123 L232.2,123 Z M42.2,86 L132,35.2 L232,93 C235.8,95.2 240.8,93.8 243,90 C245.2,86.2 243.8,81.2 240,79 L136,19 C133.6,17.6 130.6,17.6 128,19 L22,79 C16.6,82 16.6,89.8 22,93 L128,153 C131.8,155.2 136.8,153.8 139,150 C141.2,146.2 139.8,141.2 136,139 L42.2,86 Z M1,128 L1,88 C0.2,78.8 4.4,69.4 13.6,64.2 L119.6,4.2 C127.4,-0.2 136.8,-0.2 144.4,4.4 L248.4,64.4 C257,69.4 261.6,78.8 260.8,88 L260.8,128 C261.6,137.4 256.8,147 248,151.8 L144,209.8 C136.4,214 127.4,214 119.8,209.8 L13.8,151.8 C5,147 0.4,137.6 1,128 Z" id="path-11"></path>
+        <polygon id="path-13" points="0 0 1440 0 1440 1024 0 1024"></polygon>
+    </defs>
+    <g id="Hero-Minimal-Dark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(114.000000, 95.000000)">
+            <g id="Rectangle">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                    <use fill="#1C1B1B" xlink:href="#path-1"></use>
+                </g>
+                <rect fill="#585555" mask="url(#mask-2)" x="-11" y="-8" width="1061" height="39"></rect>
+            </g>
+            <g id="Group" transform="translate(12.000000, 10.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <circle id="Oval" cx="5.98752" cy="5.98752" r="5.98752"></circle>
+                <circle id="Oval" cx="23.95008" cy="5.98752" r="5.98752"></circle>
+                <circle id="Oval" cx="41.91264" cy="5.98752" r="5.98752"></circle>
+            </g>
+            <rect id="Rectangle" fill="#323131" fill-rule="nonzero" opacity="0.486142113" x="57.28464" y="195.59232" width="924.28056" height="458.69292"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="59.9824" y="708.5232" width="513" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" opacity="0.76" x="59.9824" y="763.4088" width="198" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="59.9824" y="818.2944" width="879" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="59.9824" y="873.18" width="842" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="59.9824" y="928.0656" width="908" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="54.8856" y="982.9512" width="928.0656" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="54.8856" y="1032.8472" width="928.0656" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="54.8856" y="1087.7328" width="598.752" height="3"></rect>
+            <g id="Clipped" transform="translate(386.000000, 324.000000)">
+                <mask id="mask-5" fill="white">
+                    <use xlink:href="#path-4"></use>
+                </mask>
+                <g id="Shape"></g>
+                <g mask="url(#mask-5)">
+                    <g transform="translate(-106.000000, -588.000000)">
+                        <mask id="mask-7" fill="white">
+                            <use xlink:href="#path-6"></use>
+                        </mask>
+                        <g id="Path" stroke="none" fill="none"></g>
+                        <polygon id="Path" stroke="none" fill="#1C1B1B" fill-rule="nonzero" mask="url(#mask-7)" points="102 584 372 584 372 806 102 806"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="Group-2" transform="translate(454.000000, 332.000000)">
+            <g id="Rectangle">
+                <mask id="mask-9" fill="white">
+                    <use xlink:href="#path-8"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-8"></use>
+                    <use stroke="#585555" stroke-width="2" fill="#1C1B1B" xlink:href="#path-8"></use>
+                </g>
+                <rect fill="#585555" mask="url(#mask-9)" x="-11" y="-8" width="1061" height="39"></rect>
+            </g>
+            <g id="Group" transform="translate(12.000000, 10.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <circle id="Oval" cx="5.98752" cy="5.98752" r="5.98752"></circle>
+                <circle id="Oval" cx="23.95008" cy="5.98752" r="5.98752"></circle>
+                <circle id="Oval" cx="41.91264" cy="5.98752" r="5.98752"></circle>
+            </g>
+            <rect id="Rectangle" fill="#323131" fill-rule="nonzero" x="57.28464" y="195.59232" width="924.28056" height="458.69292"></rect>
+            <rect id="Rectangle" fill="#323131" fill-rule="nonzero" x="57" y="706" width="252.11088" height="239.5008"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="349.272" y="708.5232" width="349.272" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" opacity="0.76" x="349.272" y="763.4088" width="134.7192" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="349.272" y="818.2944" width="598.752" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="349.272" y="873.18" width="573.804" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="349.272" y="928.0656" width="618.7104" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="54.8856" y="982.9512" width="928.0656" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="54.8856" y="1032.8472" width="928.0656" height="3"></rect>
+            <rect id="Rectangle" fill="#585555" fill-rule="nonzero" x="54.8856" y="1087.7328" width="598.752" height="3"></rect>
+            <g id="Clipped" transform="translate(386.000000, 324.000000)">
+                <polygon id="Path" fill="#FFFFFF" points="133 5 259 88 226.13 109.652 259 130 133 208 7 130 39.87 109.652 7 88"></polygon>
+                <mask id="mask-12" fill="white">
+                    <use xlink:href="#path-11"></use>
+                </mask>
+                <g id="Shape"></g>
+                <g mask="url(#mask-12)">
+                    <g transform="translate(-106.000000, -588.000000)">
+                        <mask id="mask-14" fill="white">
+                            <use xlink:href="#path-13"></use>
+                        </mask>
+                        <g id="Path" stroke="none" fill="none"></g>
+                        <polygon id="Path" stroke="none" fill="#3EB0FD" fill-rule="nonzero" mask="url(#mask-14)" points="102 584 372 584 372 806 102 806"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

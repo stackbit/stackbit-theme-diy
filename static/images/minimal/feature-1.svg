@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400px" height="1282px" viewBox="0 0 1400 1282" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Feature</title>
+    <g id="Feature" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#1C1B1B" stroke-width="5" x="266.5" y="266.5" width="856" height="749"></rect>
+        <rect id="Rectangle" stroke="#1C1B1B" stroke-width="5" x="696.5" y="266.5" width="426" height="749"></rect>
+        <rect id="Rectangle" stroke="#1C1B1B" stroke-width="5" x="266.5" y="643.5" width="856" height="372"></rect>
+        <g id="Group-2" transform="translate(991.351562, 503.000000)">
+            <rect id="Rectangle" stroke="#585555" stroke-width="0.8" fill="#1C1B1B" transform="translate(138.000000, 138.000000) rotate(-90.000000) translate(-138.000000, -138.000000) " x="0.4" y="0.4" width="275.2" height="275.2" rx="3"></rect>
+            <g id="Group-6" transform="translate(138.500000, 138.500000) rotate(-90.000000) translate(-138.500000, -138.500000) translate(77.000000, 77.000000)">
+                <polygon id="Fill-4" fill="#0099FF" points="92 123 123 123 123 92 92 92"></polygon>
+                <polyline id="Fill-5" fill="#585555" points="61 123 61 92.499207 30.499207 92.499207 30.499207 62 0 62 0 123 61 123"></polyline>
+                <polygon id="Fill-6" fill="#0099FF" points="0 31 31 31 31 0 0 0"></polygon>
+                <polygon id="Fill-7" fill="#585555" points="62 61 123 61 123 0 62 0"></polygon>
+            </g>
+        </g>
+        <g id="Group-5" transform="translate(132.000000, 504.804687)">
+            <rect id="Rectangle" fill="#1C1B1B" transform="translate(138.000000, 138.000000) rotate(-270.000000) translate(-138.000000, -138.000000) " x="0" y="0" width="276" height="276" rx="3"></rect>
+            <path d="M140,76.1953125 L109.970102,76.1953125 C99.9780745,86.1843498 89.9890373,96.1763769 80,106.165414 L80,136.195313 C81.7939007,134.401412 138.176201,78.0161217 140,76.1953125" id="Fill-19" fill="#00CC88"></path>
+            <path d="M170.011965,77.1953125 C169.829494,77.4286359 80.0209393,167.186339 80,167.204286 L80,197.195313 C84.9685911,192.229713 195.121149,82.0711725 200,77.1953125 L170.011965,77.1953125 Z" id="Fill-20" fill="#585555"></path>
+            <path d="M110,198.195313 L140.032891,198.195313 C160.021928,178.205612 180.010964,158.215912 200,138.226212 L200,108.195313 C195.386225,112.80625 114.589853,193.605307 110,198.195313" id="Fill-21" fill="#00CC88"></path>
+            <path d="M171,198.195313 L200.979065,198.195313 C200.985046,198.189332 200.991028,198.183352 201,198.174382 L201,168.195313 C200.862426,168.299967 171.071777,198.108599 171,198.195313" id="Fill-22" fill="#585555"></path>
+        </g>
+        <g id="Group" transform="translate(695.351562, 643.000000) rotate(-315.000000) translate(-695.351562, -643.000000) translate(557.351562, 505.000000)" fill="#1C1B1B" stroke="#585555" stroke-width="0.8">
+            <rect id="Rectangle" x="0.4" y="0.4" width="275.2" height="275.2" rx="3"></rect>
+        </g>
+        <g id="Group-3" transform="translate(696.464466, 650.277129) rotate(-315.000000) translate(-696.464466, -650.277129) translate(615.964466, 569.777129)" fill="#FFFFFF">
+            <polyline id="Fill-313" opacity="0.8" points="40.1694808 0.632467632 0.169480834 40.6324676 0.169480834 0.632467632 40.1694808 0.632467632"></polyline>
+            <polyline id="Fill-314" points="80.1694808 0.632467632 40.1694808 40.6324676 40.1694808 0.632467632 80.1694808 0.632467632"></polyline>
+            <polyline id="Fill-315" opacity="0.8" points="120.169481 0.632467632 80.1694808 40.6324676 80.1694808 0.632467632 120.169481 0.632467632"></polyline>
+            <polyline id="Fill-316" points="160.169481 0.632467632 120.169481 40.6324676 120.169481 0.632467632 160.169481 0.632467632"></polyline>
+            <polyline id="Fill-317" opacity="0.8" points="40.1694808 40.6324676 0.169480834 80.6324676 0.169480834 40.6324676 40.1694808 40.6324676"></polyline>
+            <polyline id="Fill-318" points="80.1694808 40.6324676 40.1694808 80.6324676 40.1694808 40.6324676 80.1694808 40.6324676"></polyline>
+            <polyline id="Fill-319" opacity="0.8" points="120.169481 40.6324676 80.1694808 80.6324676 80.1694808 40.6324676 120.169481 40.6324676"></polyline>
+            <polyline id="Fill-320" points="160.169481 40.6324676 120.169481 80.6324676 120.169481 40.6324676 160.169481 40.6324676"></polyline>
+            <polyline id="Fill-321" opacity="0.8" points="40.1694808 80.6324676 0.169480834 120.632468 0.169480834 80.6324676 40.1694808 80.6324676"></polyline>
+            <polyline id="Fill-322" points="80.1694808 80.6324676 40.1694808 120.632468 40.1694808 80.6324676 80.1694808 80.6324676"></polyline>
+            <polyline id="Fill-323" opacity="0.8" points="120.169481 80.6324676 80.1694808 120.632468 80.1694808 80.6324676 120.169481 80.6324676"></polyline>
+            <polyline id="Fill-324" points="160.169481 80.6324676 120.169481 120.632468 120.169481 80.6324676 160.169481 80.6324676"></polyline>
+            <polyline id="Fill-325" opacity="0.8" points="40.1694808 120.632468 0.169480834 160.632468 0.169480834 120.632468 40.1694808 120.632468"></polyline>
+            <polyline id="Fill-326" points="80.1694808 120.632468 40.1694808 160.632468 40.1694808 120.632468 80.1694808 120.632468"></polyline>
+            <polyline id="Fill-327" opacity="0.8" points="120.169481 120.632468 80.1694808 160.632468 80.1694808 120.632468 120.169481 120.632468"></polyline>
+            <polyline id="Fill-328" points="160.169481 120.632468 120.169481 160.632468 120.169481 120.632468 160.169481 120.632468"></polyline>
+        </g>
+        <g id="Group-2" transform="translate(991.703125, 137.000000)">
+            <rect id="Rectangle" stroke="#585555" stroke-width="0.8" fill="#1C1B1B" transform="translate(138.000000, 138.000000) rotate(-90.000000) translate(-138.000000, -138.000000) " x="0.4" y="0.4" width="275.2" height="275.2" rx="3"></rect>
+            <g id="Group-6" transform="translate(138.500000, 138.500000) rotate(-180.000000) translate(-138.500000, -138.500000) translate(77.000000, 77.000000)">
+                <polygon id="Fill-4" fill="#585555" points="92 123 123 123 123 92 92 92"></polygon>
+                <polyline id="Fill-5" fill="#FF3366" points="61 123 61 92.499207 30.499207 92.499207 30.499207 62 0 62 0 123 61 123"></polyline>
+                <polygon id="Fill-6" fill="#585555" points="0 31 31 31 31 0 0 0"></polygon>
+                <polygon id="Fill-7" fill="#585555" points="62 61 123 61 123 0 62 0"></polygon>
+            </g>
+        </g>
+        <g id="Group-5" transform="translate(132.351563, 138.804687)">
+            <rect id="Rectangle" fill="#1C1B1B" transform="translate(138.000000, 138.000000) rotate(-270.000000) translate(-138.000000, -138.000000) " x="0" y="0" width="276" height="276" rx="3"></rect>
+            <g id="Group-3" transform="translate(76.351562, 76.195313)">
+                <polyline id="Fill-4" fill="#FF3366" transform="translate(90.000000, 91.000000) rotate(-270.000000) translate(-90.000000, -91.000000) " points="59 60 59 91 90 91 90 122 121 122 121 60 59 60"></polyline>
+                <polyline id="Fill-5" fill="#585555" transform="translate(61.500000, 61.500000) rotate(-270.000000) translate(-61.500000, -61.500000) " points="61.4992005 30.7503998 30.7488007 30.7503998 30.7488007 0 0 0 0 123 123 123 123 92.2496002 92.2496002 92.2496002 92.2496002 61.5007995 61.4992005 61.5007995 61.4992005 30.7503998"></polyline>
+            </g>
+        </g>
+        <g id="Group" transform="translate(556.703125, 137.000000)">
+            <rect id="Rectangle" stroke="#585555" stroke-width="0.8" fill="#1C1B1B" x="0.4" y="0.4" width="275.2" height="275.2" rx="3"></rect>
+            <g id="Group-4" transform="translate(138.500000, 138.500000) rotate(-180.000000) translate(-138.500000, -138.500000) translate(76.000000, 76.000000)">
+                <path d="M0,61.56 C41.3983854,61.56 82.8,61.56 124.2,61.56 L124.2,46.44 C82.8,46.44 41.3983854,46.44 0,46.44 L0,61.56" id="Fill-4" fill="#585555"></path>
+                <path d="M0,92.88 C41.3983854,92.88 82.8,92.88 124.2,92.88 L124.2,77.76 C82.8,77.76 41.3983854,77.76 0,77.76 L0,92.88" id="Fill-5" fill="#00CC88"></path>
+                <path d="M0,124.2 L124.2,124.2 L124.2,109.08 C82.8,109.08 41.3983854,109.08 0,109.08 L0,124.2" id="Fill-6" fill="#585555"></path>
+                <path d="M0,31.32 C41.3983854,31.32 82.8,31.32 124.2,31.32 L124.2,0 L0,0 L0,31.32" id="Fill-7" fill="#00CC88"></path>
+            </g>
+        </g>
+        <g id="Group-2" transform="translate(991.703125, 867.000000)">
+            <rect id="Rectangle" stroke="#585555" stroke-width="0.8" fill="#1C1B1B" transform="translate(138.000000, 138.000000) rotate(-90.000000) translate(-138.000000, -138.000000) " x="0.4" y="0.4" width="275.2" height="275.2" rx="3"></rect>
+            <g id="Group-6" transform="translate(138.500000, 138.500000) rotate(-90.000000) translate(-138.500000, -138.500000) translate(77.000000, 77.000000)">
+                <polygon id="Fill-4" fill="#0099FF" points="92 123 123 123 123 92 92 92"></polygon>
+                <polyline id="Fill-5" fill="#585555" points="61 123 61 92.499207 30.499207 92.499207 30.499207 62 0 62 0 123 61 123"></polyline>
+                <polygon id="Fill-6" fill="#0099FF" points="0 31 31 31 31 0 0 0"></polygon>
+                <polygon id="Fill-7" fill="#585555" points="62 61 123 61 123 0 62 0"></polygon>
+            </g>
+            <g id="Group-6" transform="translate(138.500000, 138.500000) rotate(-360.000000) translate(-138.500000, -138.500000) translate(77.000000, 77.000000)" fill="#0099FF">
+                <polygon id="Fill-4" points="92 123 123 123 123 92 92 92"></polygon>
+                <polygon id="Fill-6" points="0 31 31 31 31 0 0 0"></polygon>
+            </g>
+        </g>
+        <g id="Group-5" transform="translate(132.351563, 868.804687)">
+            <rect id="Rectangle" fill="#1C1B1B" transform="translate(138.000000, 138.000000) rotate(-270.000000) translate(-138.000000, -138.000000) " x="0" y="0" width="276" height="276" rx="3"></rect>
+            <g id="Group-4" transform="translate(138.148437, 137.695313) rotate(-180.000000) translate(-138.148437, -137.695313) translate(75.648437, 75.195313)">
+                <path d="M0,61.56 C41.3983854,61.56 82.8,61.56 124.2,61.56 L124.2,46.44 C82.8,46.44 41.3983854,46.44 0,46.44 L0,61.56" id="Fill-4" fill="#585555"></path>
+                <path d="M0,92.88 C41.3983854,92.88 82.8,92.88 124.2,92.88 L124.2,77.76 C82.8,77.76 41.3983854,77.76 0,77.76 L0,92.88" id="Fill-5" fill="#0099FF"></path>
+                <path d="M0,124.2 L124.2,124.2 L124.2,109.08 C82.8,109.08 41.3983854,109.08 0,109.08 L0,124.2" id="Fill-6" fill="#585555"></path>
+                <path d="M0,31.32 C41.3983854,31.32 82.8,31.32 124.2,31.32 L124.2,0 L0,0 L0,31.32" id="Fill-7" fill="#0099FF"></path>
+            </g>
+        </g>
+        <g id="Group" transform="translate(556.703125, 867.000000)">
+            <rect id="Rectangle" stroke="#585555" stroke-width="0.8" fill="#1C1B1B" x="0.4" y="0.4" width="275.2" height="275.2" rx="3"></rect>
+            <g id="Group-4" transform="translate(138.500000, 138.500000) rotate(-90.000000) translate(-138.500000, -138.500000) translate(76.000000, 76.000000)">
+                <path d="M0,61.56 C41.3983854,61.56 82.8,61.56 124.2,61.56 L124.2,46.44 C82.8,46.44 41.3983854,46.44 0,46.44 L0,61.56" id="Fill-4" fill="#585555"></path>
+                <path d="M0,92.88 C41.3983854,92.88 82.8,92.88 124.2,92.88 L124.2,77.76 C82.8,77.76 41.3983854,77.76 0,77.76 L0,92.88" id="Fill-5" fill="#00CC88"></path>
+                <path d="M0,124.2 L124.2,124.2 L124.2,109.08 C82.8,109.08 41.3983854,109.08 0,109.08 L0,124.2" id="Fill-6" fill="#585555"></path>
+                <path d="M0,31.32 C41.3983854,31.32 82.8,31.32 124.2,31.32 L124.2,0 L0,0 L0,31.32" id="Fill-7" fill="#00CC88"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+{% set categories = include_dict.categories %}
+{% set container_class = include_dict.container_class %}
+<span class="{{ container_class }}">
+	{% for category in categories %}
+		{% set category_data = getData(category) %}
+		{% if category_data.link %}
+			<a href="{{ category_data.link | relative_url }}">{{ category_data.title }}</a>{% if not loop.last %}, {% endif %}
+		{% else %}
+			<span>{{ category_data.title }}</span>{% if not loop.last %}, {% endif %}
+		{% endif %}
+	{% endfor %}
+</span>

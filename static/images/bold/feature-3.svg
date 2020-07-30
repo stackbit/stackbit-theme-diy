@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1500px" height="1350px" viewBox="0 0 1500 1350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>feature</title>
+    <defs>
+        <path d="M224.8884,118.746 L127.494,172.9836 L28.1556,118.746 C24.462,116.6076 19.602,118.1628 17.658,121.8564 C15.5196,125.55 17.0748,130.41 20.7684,132.354 L123.8004,188.73 C126.1332,190.0908 129.0492,190.0908 131.382,188.73 L232.47,132.354 C236.1636,130.2156 237.5244,125.55 235.386,121.8564 C233.2476,117.9684 228.582,116.6076 224.8884,118.746 L224.8884,118.746 Z M40.2084,82.782 L127.494,33.4044 L224.694,89.586 C228.3876,91.7244 233.2476,90.3636 235.386,86.67 C237.5244,82.9764 236.1636,78.1164 232.47,75.978 L131.382,17.658 C129.0492,16.2972 126.1332,16.2972 123.606,17.658 L20.574,75.978 C15.3252,78.894 15.3252,86.4756 20.574,89.586 L123.606,147.906 C127.2996,150.0444 132.1596,148.6836 134.298,144.99 C136.4364,141.2964 135.0756,136.4364 131.382,134.298 L40.2084,82.782 Z M0.162,123.606 L0.162,84.726 C-0.6156,75.7836 3.4668,66.6468 12.4092,61.5924 L115.4412,3.2724 C123.0228,-1.0044 132.1596,-1.0044 139.5468,3.4668 L240.6348,61.7868 C248.994,66.6468 253.4652,75.7836 252.6876,84.726 L252.6876,123.606 C253.4652,132.7428 248.7996,142.074 240.246,146.7396 L139.158,203.1156 C131.7708,207.198 123.0228,207.198 115.6356,203.1156 L12.6036,146.7396 C4.05,142.074 -0.4212,132.9372 0.162,123.606 Z" id="path-1"></path>
+        <polygon id="path-3" points="0 0 1399.68 0 1399.68 995.328 0 995.328"></polygon>
+    </defs>
+    <g id="feature" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Featured" transform="translate(125.000000, 162.000000)">
+            <line x1="1127.7" y1="836.1" x2="60.3" y2="836.1" id="Line" stroke="#262626" stroke-width="16.2" stroke-linecap="square"></line>
+            <line x1="156.6" y1="869.4" x2="156.6" y2="305.1" id="Line" stroke="#262626" stroke-width="16.2" stroke-linecap="square"></line>
+            <line x1="1070.1" y1="869.4" x2="1070.1" y2="305.1" id="Line" stroke="#262626" stroke-width="16.2" stroke-linecap="square"></line>
+            <rect id="Rectangle" fill="#1C1B1B" x="20.7" y="696.06" width="310.23" height="310.23"></rect>
+            <rect id="Rectangle" fill="#1C1B1B" x="473.49" y="696.96" width="310.23" height="310.23"></rect>
+            <rect id="Rectangle" fill="#1C1B1B" x="20.7" y="242.46" width="310.23" height="310.23"></rect>
+            <rect id="Rectangle" fill="#1C1B1B" x="929.52" y="242.46" width="310.23" height="310.23"></rect>
+            <rect id="Rectangle" fill="#1C1B1B" x="924.48" y="702.36" width="310.23" height="310.23"></rect>
+            <rect id="Rectangle" stroke="#1C1B1B" stroke-width="6" fill="#FFFFFF" x="3" y="686.46" width="304.23" height="304.23"></rect>
+            <rect id="Rectangle" stroke="#1C1B1B" stroke-width="6" fill="#FFFFFF" x="455.79" y="686.46" width="304.23" height="304.23"></rect>
+            <rect id="Rectangle" stroke="#1C1B1B" stroke-width="6" fill="#FFFFFF" x="908.58" y="686.46" width="304.23" height="304.23"></rect>
+            <rect id="Rectangle" stroke="#1C1B1B" stroke-width="6" fill="#FFFFFF" x="3" y="226.56" width="304.23" height="304.23"></rect>
+            <polygon id="Triangle" fill="#01BE54" points="157.05 319.5 214.2 433.8 99.9 433.8"></polygon>
+            <rect id="Rectangle" stroke="#1C1B1B" stroke-width="6" fill="#FFFFFF" x="917.58" y="226.56" width="304.23" height="304.23"></rect>
+            <rect id="Rectangle" fill="#1C1B1B" x="1057" y="436" width="36" height="36"></rect>
+            <rect id="Rectangle" fill="#1C1B1B" x="1057" y="286" width="36" height="36"></rect>
+            <rect id="Rectangle" fill="#1C1B1B" x="998" y="360" width="36" height="36"></rect>
+            <circle id="Oval" fill="#EC5033" cx="607.95" cy="836.55" r="60.75"></circle>
+            <rect id="Rectangle" fill="#1C1B1B" x="437.4" y="18.9" width="403.38" height="403.38"></rect>
+            <rect id="Rectangle" fill="#2859DA" x="975.24" y="854.37" width="162" height="33.21"></rect>
+            <rect id="Rectangle" fill="#2859DA" x="975.24" y="796.05" width="162" height="33.21"></rect>
+            <rect id="Rectangle" stroke="#1C1B1B" stroke-width="6" fill="#FFFFFF" x="428.7" y="3" width="397.38" height="397.38"></rect>
+            <g id="logo" transform="translate(500.220000, 98.010000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Shape"></g>
+                <g id="Clipped" mask="url(#mask-2)">
+                    <g transform="translate(-103.842000, -572.346000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="Path" stroke="none" fill="none"></g>
+                        <polygon id="Path" stroke="none" fill="#2859DA" fill-rule="nonzero" mask="url(#mask-4)" points="99.144 567.648 361.584 567.648 361.584 783.432 99.144 783.432"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <rect id="Rectangle" fill="#1C1B1B" x="183" y="904" width="36" height="36"></rect>
+        <rect id="Rectangle" fill="#1C1B1B" x="173" y="1041" width="56" height="56"></rect>
+        <rect id="Rectangle" fill="#1C1B1B" x="337" y="900" width="43" height="43"></rect>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+// Gets a value from a map.
+@function map-deep-get($map, $keys...) {
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+	@return $map;
+}
+
+@function _max-width($key) {
+	@return map-get($max-widths, $key);
+}
+
+@function _font($style, $key) {
+	@return map-deep-get($theme-styles, $style, "fonts", $key);
+}
+
+@function _palette($style, $key) {
+	@return map-deep-get($theme-styles, $style, "colors", $key);
+}

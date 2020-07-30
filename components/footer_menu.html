@@ -1,0 +1,9 @@
+{% set menu = include_dict.footer_menu %}
+<ul class="menu">
+{% for menu_item in menu %}
+	<li class="menu__item">
+		{% set include_dict = {'action': menu_item} %}
+		{% include "action.html" %}
+	</li>
+{% endfor %}
+</ul>

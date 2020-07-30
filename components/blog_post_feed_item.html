@@ -1,0 +1,90 @@
+{% set post = include_dict.post_page %}
+{% set blog_feed_section = include_dict.blog_feed_section %}
+{% set columns = blog_feed_section.blog_feed_cols | default('three', true) %}
+
+{% set is_card = false %}
+{% if blog_feed_section.enable_cards %}
+	{% set is_card = true %}
+{% endif %}
+
+{% set has_image = false %}
+{% if post.params.thumb_image %}
+	{% set has_image = true %}
+{% endif %}
+
+{% set show_image = false %}
+{% if blog_feed_section.show_image %}
+	{% set show_image = true %}
+{% endif %}
+
+{% set no_image = false %}
+{% if has_image == false or show_image == false %}
+	{% set no_image = true %}
+{% endif %}
+
+{% set show_categories = false %}
+{% if blog_feed_section.show_categories and post.params.categories %}
+	{% set show_categories = true %}
+{% endif %}
+
+<article {{ classNames('cell-12', 'cell-md-6', 'my-2', {
+	'cell-lg-4': columns == 'three'
+}) }}>
+	<div {{ classNames('item', {
+		'card': is_card,
+		'card--vert': is_card
+	}) }}>
+		<div class="flex flex-column">
+			{% if has_image and show_image %}
+			<div {{ classNames('item__media', 'mb-3', {
+				'card__media': is_card,
+				'card__media--fill': is_card,
+				'card__media--top': is_card,
+				'has-border': blog_feed_section.image_has_border
+			}) }}>
+				<img src="{{ post.params.thumb_image | relative_url }}" alt="{{ post.params.title }}" />
+			</div>
+			{% endif %}
+			<div {{ classNames('item__body', {
+				'px-3': is_card,
+				'pb-3': is_card,
+				'pt-3': is_card and no_image,
+				'px-sm-4': is_card,
+				'pb-sm-4': is_card,
+				'pt-4': is_card and no_image
+			}) }}>
+				{% if blog_feed_section.show_date or show_categories %}
+				<div class="item__meta">
+					{% if show_categories %}
+						{% set include_dict = {'categories': post.params.categories, 'container_class': 'item__cat'} %}
+						{% include "blog_post_categories.html" %}
+					{% endif %}
+					{% if blog_feed_section.show_date %}
+						<span class="item__date"><time datetime="{{post.date | date_format("%Y-%m-%d %H:%M") }}">{{ post.date | date_format("%B %d, %Y") }}</time></span>
+					{% endif %}
+				</div>
+				{% endif %}
+				{% if blog_feed_section.title %}
+					<h3 {{ classNames('item__title', {
+						'h3': columns == 'two',
+						'h4': columns == 'three'
+					}) }}><a href="{{ post.url | relative_url }}">{{ post.params.title }}</a></h3>
+				{% else %}
+					<h2 {{ classNames('item__title', {
+						'h3': columns == 'two',
+						'h4': columns == 'three'
+					}) }}><a href="{{ post.url | relative_url }}">{{ post.params.title }}</a></h2>
+				{% endif %}
+				{% if blog_feed_section.show_excerpt and post.params.excerpt %}
+				<div class="item__copy">
+					<p>{{ post.params.excerpt }}</p>
+				</div>
+				{% endif %}
+				{% if blog_feed_section.show_author and post.params.author %}
+					{% set include_dict = {'author': post.params.author, 'container_class': 'item__byline', 'avatar_size': 'small'} %}
+					{% include "blog_post_author.html" %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</article>

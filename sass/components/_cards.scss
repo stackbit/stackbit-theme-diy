@@ -1,0 +1,54 @@
+.card {
+	background-color: $color-bg;
+	border: 1px solid red;
+	box-sizing: border-box;
+	height: 100%;
+	transition: .25s ease;
+
+	.flex,
+	.grid {
+		height: 100%;
+	}
+}
+
+
+
+/*
+.card__media--fill {
+	height: 100%;
+
+	img {
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+}
+*/
+
+.card__media--fill {
+	height: 0;
+	padding-top: 56.25%;
+	position: relative;
+	width: 100%;
+}
+
+@include media-breakpoint-up(md) {
+	.card--horiz {
+		.card__media--fill {
+			height: 100%;
+			padding-top: 0;
+		}
+	}
+}
+
+
+.card__media--fill {
+	img {
+		height: 100%;
+		left: 0;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}

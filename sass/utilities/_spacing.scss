@@ -1,0 +1,156 @@
+/**
+ * Spacing
+ */
+@each $key, $size in $spacers {
+	.m-#{$key} {
+		margin: $size;
+	}
+
+	.mt-#{$key},
+	.my-#{$key} {
+		margin-top: $size;
+	}
+
+	.mr-#{$key},
+	.mx-#{$key} {
+		margin-right: $size;
+	}
+
+	.mb-#{$key},
+	.my-#{$key} {
+		margin-bottom: $size;
+	}
+
+	.ml-#{$key},
+	.mx-#{$key} {
+		margin-left: $size;
+	}
+
+	.p-#{$key} {
+		padding: $size;
+	}
+
+	.pt-#{$key},
+	.py-#{$key} {
+		padding-top: $size;
+	}
+
+	.pr-#{$key},
+	.px-#{$key} {
+		padding-right: $size;
+	}
+
+	.pb-#{$key},
+	.py-#{$key} {
+		padding-bottom: $size;
+	}
+
+	.pl-#{$key},
+	.px-#{$key} {
+		padding-left: $size;
+	}
+}
+
+.m-auto {
+	margin: auto;
+}
+
+.mt-auto,
+.my-auto {
+	margin-top: auto;
+}
+
+.mr-auto,
+.mx-auto {
+	margin-right: auto;
+}
+
+.mb-auto,
+.my-auto {
+	margin-bottom: auto;
+}
+
+.ml-auto,
+.mx-auto {
+	margin-left: auto;
+}
+
+@each $breakpoint in map-keys($media-breakpoints) {
+	$infix: "#{$breakpoint}";
+
+	@include media-breakpoint-up($breakpoint) {
+		@each $key, $size in $spacers {
+			.m-#{$infix}-#{$key} {
+				margin: $size;
+			}
+		
+			.mt-#{$infix}-#{$key},
+			.my-#{$infix}-#{$key} {
+				margin-top: $size;
+			}
+		
+			.mr-#{$infix}-#{$key},
+			.mx-#{$infix}-#{$key} {
+				margin-right: $size;
+			}
+		
+			.mb-#{$infix}-#{$key},
+			.my-#{$infix}-#{$key} {
+				margin-bottom: $size;
+			}
+		
+			.ml-#{$infix}-#{$key},
+			.mx-#{$infix}-#{$key} {
+				margin-left: $size;
+			}
+
+			.p-#{$infix}-#{$key} {
+				padding: $size;
+			}
+		
+			.pt-#{$infix}-#{$key},
+			.py-#{$infix}-#{$key} {
+				padding-top: $size;
+			}
+		
+			.pr-#{$infix}-#{$key},
+			.px-#{$infix}-#{$key} {
+				padding-right: $size;
+			}
+		
+			.pb-#{$infix}-#{$key},
+			.py-#{$infix}-#{$key} {
+				padding-bottom: $size;
+			}
+		
+			.pl-#{$infix}-#{$key},
+			.px-#{$infix}-#{$key} {
+				padding-left: $size;
+			}
+		}
+
+		.m-#{$infix}-auto {
+			margin: auto;
+		}
+
+		.mt-#{$infix}-auto,
+		.my-#{$infix}-auto {
+			margin-top: auto;
+		}
+
+		.mr-#{$infix}-auto,
+		.mx-#{$infix}-auto {
+			margin-right: auto;
+		}
+
+		.mb-#{$infix}-auto,
+		.my-#{$infix}-auto {
+			margin-bottom: auto;
+		}
+
+		.ml-#{$infix}-auto,
+		.mx-#{$infix}-auto {
+			margin-left: auto;
+		}
+	}
+}

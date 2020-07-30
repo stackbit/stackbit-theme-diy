@@ -1,0 +1,25 @@
+{% set site = include_dict.site %}
+{% set align_x = site.params.header.anncmnt_align | default('left', true) %}
+{% set has_close_btn = site.params.header.anncmnt_has_close %}
+<div {{ classNames('announcement-bar', 'py-2', {
+	'js-announcement': has_close_btn,
+	'is-hidden': has_close_btn
+}) }}{% if has_close_btn %} data-anncmnt-id="{{ site.params.header.anncmnt_id }}"{% endif %}>
+	<div class="container">
+		<div class="announcement-bar__content">
+			<div {{ classNames('announcement-bar__copy', {
+				'text-center': align_x == 'center',
+				'text-right': align_x == 'right'
+			}) }}>
+				{{ site.params.header.anncmnt_content | markdownify }}
+			</div>
+			{% if has_close_btn %}
+			<button aria-label="Close" class="btn btn--icon btn--clear js-announcment-close">
+				{% set include_dict = {'icon': 'close'} %}
+				{% include "icon.html" %}
+				<span class="sr-only">Close</span>
+			</button>
+			{% endif %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,93 @@
+{% set section = include_dict.section %}
+{% set feature = include_dict.feature %}
+
+{% set padding_y = section.feature_padding_vert | default('medium', true) %}
+{% set align_x = feature.align | default('left', true) %}
+
+{% set has_text = false %}
+{% if feature.title or feature.subtitle or feature.content or feature.actions %}
+	{% set has_text = true %}
+{% endif %}
+
+{% set has_media = false %}
+{% if feature.image or feature.video_url %}
+	{% set has_media = true %}
+{% endif %}
+{% set media_width = feature.media_width | default('fifty', true) %}
+{% set media_pos = feature.media_position | default('top', true) %}
+{% if has_media == false or has_text == false %}
+	{% set media_pos = 'top' %}
+{% endif %}
+
+{% set is_horiz = false %}
+{% if media_pos == 'left' or media_pos == 'right' %}
+	{% set is_horiz = true %}
+{% endif %}
+
+{% set is_vert = false %}
+{% if media_pos == 'top' or media_pos == 'bottom' %}
+	{% set is_vert = true %}
+{% endif %}
+
+<div {{ classNames('item', {
+	'max-w-medium': is_vert,
+	'mx-auto': is_vert,
+	'py-0': padding_y == 'small',
+	'py-1': padding_y != 'small',
+	'py-sm-3': padding_y == 'large'
+}) }}>
+	<div class="item__content grid items-center">
+		{% if has_media %}
+		<div {{ classNames('item__media', 'my-2', 'cell-12', {
+			'cell-md-4': is_horiz and has_text and media_width == 'thirty-three',
+			'cell-md-5': is_horiz and has_text and media_width == 'fourty',
+			'cell-md-6': is_horiz and has_text and media_width == 'fifty',
+			'cell-md-7': is_horiz and has_text and media_width == 'sixty',
+			'has-border': feature.media_has_border
+		}) }}>
+			{% if feature.video_url %}
+				<a href="{{ feature.video_url }}" class="js-embed-link" data-embed-width="{{ feature.video_width | default('640', true) }}" data-embed-height="{{ feature.video_height | default('360', true) }}">{{ feature.video_url }}</a>
+			{% else %}
+				<img src="{{ feature.image | relative_url }}" alt="{{ feature.title }}" {{ classNames({
+					'mx-auto': align_x == 'center',
+					'ml-auto': align_x == 'right'
+				}) }} />
+			{% endif %}
+		</div>
+		{% endif %}
+		{% if has_text %}
+		<div {{ classNames('item__body', 'my-2', 'cell-12', {
+			'cell-md-8': is_horiz and has_media and media_width == 'thirty-three',
+			'cell-md-7': is_horiz and has_media and media_width == 'fourty',
+			'cell-md-6': is_horiz and has_media and media_width == 'fifty',
+			'cell-md-5': is_horiz and has_media and media_width == 'sixty',
+			'order-md-first': has_media and media_pos == 'right',
+			'order-first': has_media and media_pos == 'bottom',
+			'text-center': align_x == 'center',
+			'text-right': align_x == 'right'
+		}) }}>
+			{% if feature.title %}
+				{% if section.title %}
+				<h3 class="item__title h2">{{ feature.title }}</h3>
+				{% else %}
+				<h2 class="item__title h2">{{ feature.title }}</h2>
+				{% endif %}
+			{% endif %}
+			{% if feature.subtitle %}
+			<div class="item__subtitle">{{ feature.subtitle }}</div>
+			{% endif %}
+			{% if feature.content %}
+			<div class="item__copy">
+				{{ feature.content | markdownify }}
+			</div>
+			{% endif %}
+			{% if feature.actions %}
+			<div class="item__actions btn-group">
+				{% set include_dict = {'actions': feature.actions} %}
+				{% include "section_actions.html" %}
+			</div>
+			{% endif %}
+		</div>
+		{% endif %}
+	</div>
+</div>

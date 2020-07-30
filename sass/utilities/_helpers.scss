@@ -1,0 +1,71 @@
+/**
+ * Helper Classes
+ */
+
+/* Containers */
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: _max-width(large);
+	padding-left: 1.875rem;
+	padding-right: 1.875rem;
+
+	@include media-breakpoint-down(sm) {
+		padding-left: 0.9375rem;
+		padding-right: 0.9375rem;
+	}
+}
+
+@each $key, $size in $max-widths {
+	.max-w-#{$key} {
+		max-width: #{$size};
+	}
+}
+
+/* Headings */
+.h1 {
+	@extend h1;
+}
+
+.h2 {
+	@extend h2;
+}
+
+.h3 {
+	@extend h3;
+}
+
+.h4 {
+	@extend h4;
+}
+
+.h5 {
+	@extend h5;
+}
+
+.h6 {
+	@extend h6;
+}
+
+/* Text alignment */
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* Text meant only for screen readers */
+.sr-only {
+	@include sr-only();
+}
+
+/* Clear floats */
+.clear {
+	@include clearfix();
+}

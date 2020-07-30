@@ -1,0 +1,5 @@
+{% set actions = include_dict.actions %}
+{% for action in actions %}
+	{% set include_dict = {'action': action} %}
+	{% include "action.html" %}
+{% endfor %}

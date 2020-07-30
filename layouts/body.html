@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="site-wrap" class="site">
+
+	{% if site.params.header.has_anncmnt and site.params.header.anncmnt_content %}
+		{% if site.params.header.anncmnt_is_home_only %}
+			{% if page.url == '/' %}
+				{% set include_dict = {'site': site} %}
+				{% include "announcement.html" %}
+			{% endif %}
+		{% else %}
+			{% set include_dict = {'site': site} %}
+			{% include "announcement.html" %}
+		{% endif %}
+	{% endif %}
+
+	{% include "header.html" %}
+
+	<main id="content" class="site-content">
+		{% block content %}{% endblock %}
+	</main>
+
+	{% include "footer.html" %}
+
+</div>
+
+{% if site.params.header.has_primary_nav or site.params.header.has_secondary_nav %}
+<div class="nav-overlay js-nav-toggle"></div>
+{% endif %}
+
+{% endblock %}
