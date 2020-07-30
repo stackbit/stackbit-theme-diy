@@ -5,12 +5,11 @@ sections:
     title: Get in touch
     subtitle: >-
       Have a question? Send us a note using the form below and we will be in touch soon.
-    align_horiz: center
+    align: center
     padding_top: small
     padding_bottom: small
     has_border: true
-    background:
-      background_color: none
+    background_color: none
   - type: grid_section
     grid_items:
       - title: Partnering and Sponsorships

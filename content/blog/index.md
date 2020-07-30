@@ -4,28 +4,29 @@ sections:
   - type: hero_section
     title: Blog
     subtitle: The optional subtitle
-    align_horiz: center
+    align: center
     padding_top: medium
-    padding_bottom: small
-    background:
-      background_color: none
+    padding_bottom: none
+    background_color: none
   - type: blog_feed_section
-    show_recent: false
-    posts_per_row: three
+    blog_feed_cols: three
     enable_cards: true
-    show_image: true
+    show_recent: false
+    show_date: true
     show_categories: true
     show_author: true
     show_excerpt: true
-    has_border: true
-    padding_top: none
+    show_image: true
+    image_has_border: false
+    padding_top: medium
     padding_bottom: large
+    has_border: true
   - type: form_section
     title: Inline Form
-    title_align_horiz: center
+    title_align: center
     content: >-
       Subscribe to our newsletter to make sure you don't miss anything.
-    content_align_horiz: center
+    content_align: center
     form_position: bottom
     form_layout: inline
     form_id: subscribeForm
@@ -43,6 +44,7 @@ sections:
     submit_label: Subscribe
     padding_top: small
     padding_bottom: small
+    has_border: false
     background_color: secondary
 layout: advanced
 ---

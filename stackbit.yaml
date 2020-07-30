@@ -832,16 +832,6 @@ models:
         description: Filter posts by a category
         models: [category]
       - type: boolean
-        name: show_image
-        label: Show image
-        description: Show the post image thumbnail
-        default: true
-      - type: boolean
-        name: image_has_border
-        label: Image border
-        default: false
-        description: Add border around image
-      - type: boolean
         name: show_date
         label: Show date
         description: Show the publish date of the post
@@ -861,6 +851,16 @@ models:
         label: Show excerpt
         description: Show the excerpt of the post
         default: false
+      - type: boolean
+        name: show_image
+        label: Show image
+        description: Show the post image thumbnail
+        default: true
+      - type: boolean
+        name: image_has_border
+        label: Image border
+        default: false
+        description: Add border around image
       - type: enum
         name: align
         label: Section alignment

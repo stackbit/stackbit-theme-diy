@@ -8,8 +8,7 @@ sections:
     align: center
     padding_top: large
     padding_bottom: small
-    background:
-      background_color: secondary
+    background_color: secondary
   - type: grid_section
     grid_items:
       - title: Personal

@@ -40,7 +40,7 @@ params:
     anncmnt_id: New
     anncmnt_content: >-
       Curabitur ac tellus mattis, tempor ipsum eu, eleifend sapien. **[Learn More](/pricing/)**
-    anncmnt_align_horiz: left
+    anncmnt_align: left
     anncmnt_is_home_only: true
     anncmnt_has_close: true
   footer:
