@@ -32,8 +32,8 @@ sections:
     form_layout: inline
     form_id: subscribeForm
     form_fields:
-      - input_type: name
-        name: text
+      - input_type: text
+        name: name
         label: Name
         default_value: Your name
         is_required: true
