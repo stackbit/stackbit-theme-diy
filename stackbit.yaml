@@ -1160,6 +1160,80 @@ models:
           - bottom
         default: top
         description: The vertical alignment of the section text content and form. Used only when the form position is set to "left" or "right"
+      - type: enum
+        name: padding_top
+        label: Section top padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the top of the section
+      - type: enum
+        name: padding_bottom
+        label: Section bottom padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the bottom of the section
+      - type: boolean
+        name: has_border
+        label: Section border
+        default: false
+        description: Add section bottom border
+      - type: enum
+        name: background_color
+        label: Background color
+        options:
+          - none
+          - primary
+          - secondary
+        default: none
+        description: The background color of the section
+      - type: image
+        name: background_image
+        label: Background image
+        description: The image displayed in the background of the section
+      - type: number
+        name: background_image_opacity
+        label: Background image opacity
+        description: An integer between 0 and 100. A lower value makes the image more transparent
+      - type: enum
+        name: background_image_size
+        label: Background image size
+        options:
+          - auto
+          - contain
+          - cover
+        default: cover
+        description: The size of the background image
+      - type: enum
+        name: background_image_position
+        label: Background image position
+        options:
+          - left top
+          - left center
+          - left bottom
+          - center top
+          - center center
+          - center bottom
+          - right top
+          - right center
+          - right bottom
+        default: center center
+        description: The starting position of a background image. The first value is the horizontal position, and the second value is the vertical
+      - type: enum
+        name: background_image_repeat
+        label: Background image repeat
+        options:
+          - repeat
+          - no-repeat
+        default: no-repeat
+        description: Repeat the image to cover the whole area
   feature:
     type: object
     label: Feature

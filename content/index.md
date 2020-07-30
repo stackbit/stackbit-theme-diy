@@ -91,7 +91,7 @@ sections:
         image: images/classic/feature-3.png
         media_position: right
         media_has_border: true
-    features_spacing_vert: small
+    feature_padding_vert: small
     align: left
     background_color: secondary
     background_image: images/noise.png
