@@ -30,7 +30,7 @@
 	{% endif %}
 
 	{% if section.title or section.subtitle %}
-	<div {{ classNames('container', 'max-w-medium', 'mb-3', {
+	<div {{ classNames('container', 'container--medium', 'mb-3', {
 		'text-center': align_x == 'center',
 		'text-right': align_x == 'right'
 	}) }}>
@@ -74,11 +74,11 @@
 	</div>
 
 	{% if section.actions %}
-	<div {{ classNames('container', 'max-w-medium', 'mt-4', {
-		'text-center': align_x == 'center',
-		'text-right': align_x == 'right'
-	}) }}>
-		<div class="section__actions btn-group">
+	<div class="container container--medium mt-4">
+		<div {{ classNames('section__actions', 'btn-group', {
+			'justify-center': align_x == 'center',
+			'justify-end': align_x == 'right'
+		}) }}>
 			{% set include_dict = {'actions': section.actions} %}
 			{% include "section_actions.html" %}
 		</div>

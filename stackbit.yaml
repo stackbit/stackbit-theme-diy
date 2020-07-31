@@ -1126,7 +1126,7 @@ models:
           - stacked
           - inline
         default: stacked
-        description: The layout of the form. "Inline" layout can only be used if the form has up to two fields
+        description: The layout of the form. "Inline" layout can only be used if the form has one input field
       - type: boolean
         name: enable_card
         label: Display form in a box

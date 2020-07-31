@@ -1,0 +1,15 @@
+body.has-theme-bar {
+	#site-wrap {
+		top: 60px;
+		padding-top: 60px;
+		@media only screen and (max-width: 801px) {
+			top: 60px;
+			padding-top: 0;
+		}
+		.site-header {
+			@media only screen and (min-width: 801px) {
+			top: 60px;
+			}
+		}
+	}
+}

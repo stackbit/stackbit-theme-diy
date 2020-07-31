@@ -3,7 +3,8 @@
 {% set has_close_btn = site.params.header.anncmnt_has_close %}
 <div {{ classNames('announcement-bar', 'py-2', {
 	'js-announcement': has_close_btn,
-	'is-hidden': has_close_btn
+	'is-hidden': has_close_btn,
+	'inverse': site.params.style == 'bold'
 }) }}{% if has_close_btn %} data-anncmnt-id="{{ site.params.header.anncmnt_id }}"{% endif %}>
 	<div class="container">
 		<div class="announcement-bar__content">

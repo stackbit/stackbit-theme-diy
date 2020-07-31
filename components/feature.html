@@ -82,7 +82,10 @@
 			</div>
 			{% endif %}
 			{% if feature.actions %}
-			<div class="item__actions btn-group">
+			<div {{ classNames('item__actions', 'btn-group', {
+				'justify-center': align_x == 'center',
+				'justify-end': align_x == 'right'
+			}) }}>
 				{% set include_dict = {'actions': feature.actions} %}
 				{% include "section_actions.html" %}
 			</div>

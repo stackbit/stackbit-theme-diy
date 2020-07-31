@@ -1,11 +1,11 @@
 {% set page = include_dict.page %}
 {% set menu = include_dict.header_menu %}
-<ul class="menu">
+<ul class="menu flex-md items-md-center">
 {% for item in menu %}
 	{% set page_url = page.url | trim('/') %}
 	{% set item_url = item.url | trim('/') %}
 	{% set item_style = item.style | default('link', true) %}
-	<li {{ classNames('menu__item', {'is-active': page_url == item_url and item_style == 'link', 'menu__item-btn': item_style != 'link'}) }}>
+	<li {{ classNames('menu__item', 'ml-md-3', {'is-active': page_url == item_url and item_style == 'link', 'menu__item-btn': item_style != 'link'}) }}>
 		{% set include_dict = {'action': item} %}
 		{% include "action.html" %}
 	</li>

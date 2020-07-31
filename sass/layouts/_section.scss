@@ -1,0 +1,129 @@
+/**
+ * Sections
+ */
+.section {
+	&.has-border {
+		border-bottom: 1px solid $color-border;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
+	.container {
+		position: relative;
+	}
+}
+
+.hero__media,
+.item__media {
+	img {
+		display: block;
+	}
+}
+
+.hero__media,
+.item__media:not(.card__media--fill) {
+	&.has-border {
+		img,
+		iframe {
+			border: 1px solid $color-border;
+		}
+	}
+}
+
+.card__media--fill {
+	&.has-border {
+		&.card__media--top,
+		&.card__media--left,
+		&.card__media--right {
+			border-bottom: 1px solid $color-border;
+		}
+
+		&.card__media--bottom {
+			border-top: 1px solid $color-border;
+		}
+
+		@include media-breakpoint-up(md) {
+			&.card__media--left {
+				border-bottom: 0;
+				border-right: 1px solid $color-border;
+			}
+	
+			&.card__media--right {
+				border-bottom: 0;
+				border-left: 1px solid $color-border;
+			}
+		}
+	}
+}
+
+.cta__actions {
+	@include media-breakpoint-up(md) {
+		&.justify-md-center {
+			.btn {
+				margin-left: 0.5em;
+				margin-right: 0.5em;
+			}
+		}
+	}
+}
+
+.style-bold {
+	.section {
+		&.has-border {
+			border-bottom-color: $color-border-dark;
+			border-bottom-width: 2px;
+		}
+	}
+
+	.hero__media,
+	.item__media {
+		&.has-border {
+			img {
+				border-color: $color-border-dark;
+				border-width: 2px;
+			}
+		}
+	}
+
+	.hero__media,
+	.item__media:not(.card__media--fill) {
+		&.has-border {
+			img,
+			iframe {
+				border-color: $color-border-dark;
+				border-width: 2px;
+			}
+		}
+	}
+
+	.card__media--fill {
+		&.has-border {
+			&.card__media--top,
+			&.card__media--left,
+			&.card__media--right {
+				border-bottom-color: $color-border-dark;
+				border-bottom-width: 2px;
+			}
+
+			&.card__media--bottom {
+				border-top-color: $color-border-dark;
+				border-top-width: 2px;
+			}
+
+			@include media-breakpoint-up(md) {
+				&.card__media--left {
+					border-right-color: $color-border-dark;
+					border-right-width: 2px;
+				}
+		
+				&.card__media--right {
+					border-left-color: $color-border-dark;
+					border-left-width: 2px;
+				}
+			}
+		}
+	}
+}
+

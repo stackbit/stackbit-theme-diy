@@ -9,7 +9,7 @@
 	{% endif %}
 	{% set image_pos = page.params.image_position | default('top', true) %}
 	<div {{ classNames('container', {
-		'max-w-medium': image_pos == 'top' or has_image == false
+		'container--medium': image_pos == 'top' or has_image == false
 	}) }}>
 		<div {{ classNames('mb-4', {
 			'mb-md-5': image_pos != 'top',
@@ -51,8 +51,8 @@
 		</div>
 	</div>
 
-	<div class="container max-w-medium">
-		<div class="post__body">
+	<div class="container container--medium">
+		<div class="post__body text-block">
 			{{ page.content }}
 		</div>
 	

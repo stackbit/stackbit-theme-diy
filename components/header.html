@@ -10,7 +10,7 @@
 				{% endif %}
 			</div>
 			{% if site.params.header.has_primary_nav or site.params.header.has_secondary_nav %}
-			<div class="navbar__container">
+			<div class="navbar__container flex-md-auto">
 				<div class="navbar__scroller">
 					<div class="navbar__inner">
 						<button aria-label="Close" class="btn btn--icon btn--clear navbar__close-btn js-nav-toggle">
@@ -18,7 +18,7 @@
 							{% include "icon.html" %}
 							<span class="sr-only">Close</span>
 						</button>
-						<div class="navbar__menu">
+						<div class="navbar__menu flex-md">
 							{% if site.params.header.has_primary_nav and site.params.header.primary_nav_links %}
 								{% set include_dict = {'header_menu': site.params.header.primary_nav_links, "page": page} %}
 								{% include "header_menu.html" %}

@@ -5,12 +5,25 @@ html {
 	font-size: 100%;
 }
 
+@each $style in map-keys($theme-styles) {
+	$style-suffix: "#{$style}";
+	$fonts: map-deep-get($theme-styles, $style, "fonts");
+	@each $font, $stack in $fonts {
+		$font-suffix: "#{$font}";
+		.style-#{$style-suffix} {
+			&.font-#{$font-suffix} {
+				font-family: $stack;
+			}
+		}
+	}
+}
+
 body {
 	background-color: $color-bg;
 	color: $color-text;
 	line-height: 1.625;
 	text-rendering: optimizeLegibility;
-	@include font-smooth();
+	@include font-smooth();//???
 }
 
 a {
@@ -31,7 +44,7 @@ h6 {
 	color: $color-heading;
 	font-weight: 700;
 	line-height: 1.2;
-	margin: 1em 0 0.25em;
+	margin: 1.25em 0 0.5em;
 
 	&:first-child {
 		margin-top: 0;
@@ -44,23 +57,23 @@ h6 {
 }
 
 h1 {
-	font-size: 2.66667em;
+	font-size: 2.625em;
 }
 
 h2 {
-	font-size: 2.22222em;
+	font-size: 2em;
 }
 
 h3 {
-	font-size: 1.66667em;
+	font-size: 1.625em;
 }
 
 h4 {
-	font-size: 1.33333em;
+	font-size: 1.375em;
 }
 
 h5 {
-	font-size: 1.16667em;
+	font-size: 1.125em;
 }
 
 h6 {
@@ -69,38 +82,37 @@ h6 {
 
 mark,
 ins {
-	background-color: $color-mark-bg;
-	color: $color-text;
+	background-color: $color-highlight-bg;
+	color: $color-highlight-text;
 	padding: 0.125em 0.25em;
 	text-decoration: none;
 }
 
 blockquote {
-	border-left: 3px solid $color-blockquote-border;
-	font-size: 1.33333em;
-	font-style: normal;
-	line-height: 1.5;
-	margin: 1.875rem 0;
-	padding: 0 0 0 1.875rem;
+	color: $color-blockquote-text;
+	margin: 0 0 1em;
+	padding: 0 0 0 1.625em;
+	position: relative;
 
-	&:first-child {
-		margin-top: 0;
+	&:before {
+		color: currentColor;
+		content: "\201C";
+		font-size: 2.625em;
+		left: 0;
+		line-height: 1;
+		position: absolute;
+		top: 0;
 	}
 }
 
-code,
 pre {
-	font-family: $font-family-monospace;
-}
-
-pre {
-	background-color: $color-bg-alt;
+	background-color: $color-bg-light;
 	border: 1px solid $color-border;
 	font-size: 0.875em;
 	line-height: 1.5;
-	margin: 0 0 1.875rem;
+	margin: 0 0 1em;
 	overflow: auto;
-	padding: 1.5rem;
+	padding: 1.5em;
 	white-space: pre;
 }
 
@@ -112,7 +124,7 @@ ol {
 
 ul,
 ol {
-  padding: 0 0 0 1em;
+	padding: 0 0 0 1.25em;
 }
 
 ul {
@@ -139,7 +151,7 @@ hr {
 	background-color: $color-border;
 	border: 0;
 	height: 1px;
-	margin: 2.5rem 0;
+	margin: 1em 0;
 
 	&:first-child {
 		margin-top: 0;
@@ -160,15 +172,35 @@ img {
 }
 
 figure {
-	margin: 0;
+	margin: 0 0 1em;
 }
 
-@include media-breakpoint-down(sm) {
+figcaption {
+	color: $color-text-muted;
+	font-size: 0.875em;
+	text-align: left;
+}
+
+@include media-breakpoint-down(xs) {
 	h1 {
-		font-size: 2.33333em;
+		font-size: 2.25em;
 	}
 	
 	h2 {
-		font-size: 2em;
+		font-size: 1.875em;
+	}
+}
+
+.style-classic {
+	.site-content {
+		img {
+			border-radius: 6px;
+		}
+	}
+}
+
+.style-bold {
+	pre {
+		///???
 	}
 }

@@ -167,9 +167,9 @@
 					{% endif %}
 					{% if item.actions %}
 					<div {{ classNames('item__actions', 'btn-group', {
-						'item__actions--fill': actions_width == 'full-width',
-						'text-center': actions_align_x == 'center',
-						'text-right': actions_align_x == 'right'
+						'btn-group--fill': actions_width == 'full-width',
+						'justify-center': actions_align_x == 'center',
+						'justify-end': actions_align_x == 'right'
 					}) }}>
 						{% set include_dict = {'actions': item.actions} %}
 						{% include "section_actions.html" %}

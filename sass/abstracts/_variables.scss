@@ -45,47 +45,62 @@ $font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","
 
 // Base
 $color-text:                       #1c1b1b !default;
-$color-heading:                    #1c1b1b !default;
 $color-text-muted:                 #9d9999 !default;
+$color-heading:                    #1c1b1b !default;
+
 $color-bg:                         #fff !default;
-$color-bg-alt:                     #f3f3f3 !default;
+$color-bg-light:                   #f9f9f9 !default;
+$color-bg-dark:                    #1c1b1b !default;
+$color-bg-primary:                 #585555 !default;//primary
+$color-bg-secondary:               #eae9e9 !default;
+
 $color-border:                     #eae9e9 !default;
-$color-border-alt:                #1c1b1b !default;
+$color-border-dark:                #1c1b1b !default;
 
 // Inline texts
-$color-mark-bg:                    #fff7c5 !default;
+$color-highlight-text:             #1c1b1b !default;
+$color-highlight-bg:               #fff7c5 !default;
 
 // Links
 $color-link:                       #1c1b1b !default;
-$color-link-hover-border:          #cdcbcb !default;
 
 // Blockquotes
-$color-blockquote-border:          #cdcbcb !default;
+$color-blockquote-text:            #1c1b1b !default;
 
 // Main nav
 $color-nav-link-text:              #1c1b1b !default;
-$color-nav-link-hover-border:      #cdcbcb !default;
+$color-nav-link-border:            #585555 !default;//primary
 
 // Buttons
-$color-btn-text:                   #1c1b1b !default;
-$color-btn-bg:                     #cdcbcb !default;
-$color-btn-border:                 #cdcbcb !default;
-$color-btn-alt-text:               #fff !default;
-$color-btn-alt-bg:                 #1c1b1b !default;
-$color-btn-alt-border:             #1c1b1b !default;
-$color-btn-shadow:                 #9d9999 !default;
-$color-btn-hover-text:             #1c1b1b !default;
-$color-btn-hover-bg:               transparent !default;
-$color-btn-hover-border:           #1c1b1b !default;
+$color-btn-text:                   #fff !default;
+$color-btn-bg:                     #585555 !default;//primary
+$color-btn-border:                 #585555 !default;//primary
+$color-btn-alt-text:               #585555 !default;//primary
+$color-btn-alt-bg:                 transparent !default;
+$color-btn-alt-border:             #585555 !default;//primary
+$color-btn-shadow:                 #1c1b1b !default;
 
-// Section background variations
-$color-primary-bg:                 #cdcbcb !default;
-$color-primary-btn-text:           #1c1b1b !default;
-$color-primary-btn-bg:         #fff !default;
-$color-primary-btn-border:     #fff !default;
+// Inverse (light text on dark background)
+$color-inverse-text:                       #fff !default;
+$color-inverse-text-muted:                 #9d9999 !default;
+$color-inverse-heading:                    #fff !default;
 
-$color-secondary-bg:                #eae9e9 !default;
-$color-secondary-btn-shadow:                 #9d9999 !default;
+$color-inverse-bg:                         #1c1b1b !default;
+$color-inverse-bg-light:                   #f9f9f9 !default;
+$color-inverse-bg-dark:                    #1c1b1b !default;
+$color-inverse-bg-secondary:               #eae9e9 !default;
+
+$color-inverse-border:                     #eae9e9 !default;
+$color-inverse-border-dark:                #1c1b1b !default;
+
+// Links
+$color-inverse-link:                       #fff !default;
+
+
+
+
+
+
 
 
 
@@ -139,9 +154,18 @@ $spacers: (
 	7: ($spacer * 5.625)
 ) !default;
 
+// Sizing
+$sizes: (
+	0: 0,
+	25: 25%,
+	33: 33%,
+	50: 50%,
+	100: 100%,
+	auto: auto
+) !default;
+
 // Container max widths
-$max-widths: (
-	xsmall: 370px,
+$container-sizes: (
 	small: 570px,
 	medium: 770px,
 	large: 1170px,

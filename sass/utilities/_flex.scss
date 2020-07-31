@@ -5,10 +5,7 @@
 	display: flex;
 }
 
-.flex-inline {
-	display: inline-flex;
-}
-
+// Flex wrap
 .flex-wrap {
 	flex-wrap: wrap;
 }
@@ -70,12 +67,28 @@
 	$infix: "#{$breakpoint}";
 
 	@include media-breakpoint-up($breakpoint, $media-breakpoints) {
+		.flex-#{$infix} {
+			display: flex;
+		}
+
+		.flex-#{$infix}-wrap {
+			flex-wrap: wrap;
+		}
+
 		.flex-#{$infix}-column {
 			flex-direction: column;
 		}
 
 		.flex-#{$infix}-row {
 			flex-direction: row;
+		}
+
+		.flex-#{$infix}-grow {
+			flex-grow: 1;
+		}
+		
+		.flex-#{$infix}-auto {
+			flex: 1 1 auto;
 		}
 
 		.justify-#{$infix}-center {

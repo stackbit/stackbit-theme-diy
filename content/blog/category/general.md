@@ -28,15 +28,10 @@ sections:
     content: >-
       Subscribe to our newsletter to make sure you don't miss anything.
     content_align: center
-    form_position: bottom
+    form_position: left
     form_layout: inline
     form_id: subscribeForm
     form_fields:
-      - input_type: text
-        name: name
-        label: Name
-        default_value: Your name
-        is_required: true
       - input_type: email
         name: email
         label: Email

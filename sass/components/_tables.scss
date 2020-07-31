@@ -1,0 +1,51 @@
+/**
+ * Tables
+ */
+table {
+	border-bottom: 1px solid $color-border;
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 1.5;
+	margin: 0;
+	max-width: 100%;
+	text-align: left;
+	width: 100%;
+}
+
+caption {
+	color: $color-text-muted;
+	font-size: 0.875em;
+	margin: 0 0 1em;
+	text-align: left;
+}
+
+th,
+td {
+	border-top: 1px solid $color-border;
+	padding: 0.5em;
+}
+
+th {
+	background-color: $color-bg-light;
+	color: $color-heading;
+	font-weight: 700;
+}
+
+:not(.responsive-table) > table {
+	margin: 0 0 1.5rem;
+}
+
+.responsive-table {
+	display: block;
+	margin: 0 0 1.5rem;
+	overflow-x: auto;
+	width: 100%;
+}
+
+.style-bold {
+	th {
+		background-color: $color-bg-dark;
+		color: #fff;
+		//???
+	}
+}

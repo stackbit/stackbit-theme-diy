@@ -47,7 +47,7 @@
 {% endif %}
 
 {% set form_is_inline = false %}
-{% if form_field_count < 3 and form_layout == 'inline' %}
+{% if form_field_count < 2 and form_layout == 'inline' %}
 	{% set form_is_inline = true %}
 {% endif %}
 
@@ -70,7 +70,7 @@
 	{% endif %}
 
 	{% if section.title or section.subtitle %}
-	<div {{ classNames('container', 'max-w-medium', 'mb-3', {
+	<div {{ classNames('container', 'container--medium', 'mb-3', {
 		'text-center': title_align_x == 'center',
 		'text-right': title_align_x == 'right'
 	}) }}>
@@ -84,7 +84,7 @@
 	{% endif %}
 
 	<div {{ classNames('container', {
-		'max-w-medium': is_vert
+		'container--medium': is_vert
 	}) }}>
 		<div {{ classNames('section__content', 'grid', {
 			'items-center': is_horiz and align_y == 'middle',
@@ -127,6 +127,8 @@
 							{% for field in section.form_fields %}
 							<div {{ classNames('form-group', {
 								'mb-2': form_is_inline == false,
+								'mb-1': form_is_inline == true,
+								'mb-xs-0': form_is_inline == true,
 								'flex-auto': form_is_inline
 							}) }}>
 								{% set include_dict = {'field': field} %}
@@ -136,7 +138,10 @@
 						{% endif %}
 
 						<div {{ classNames('form-submit', {
-							'mt-3': form_is_inline == false
+							'mt-3': form_is_inline == false,
+							'mx-auto': form_is_inline == true,
+							'mr-xs-0': form_is_inline == true,
+							'ml-xs-1': form_is_inline == true
 						}) }}>
 							<button type="submit" class="btn btn--primary">{{ section.submit_label }}</button>
 						</div>

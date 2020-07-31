@@ -55,7 +55,7 @@
 	{% endif %}
 
 	<div {{ classNames('container', {
-		'max-w-medium': is_vert
+		'container--medium': is_vert
 	}) }}>
 		<div class="hero__content grid items-center">
 			{% if has_media %}
@@ -97,7 +97,10 @@
 				</div>
 				{% endif %}
 				{% if section.actions %}
-				<div class="hero__actions btn-group">
+				<div {{ classNames('hero__actions', 'btn-group', {
+					'justify-center': align_x == 'center',
+					'justify-end': align_x == 'right'
+				}) }}>
 					{% set include_dict = {'actions': section.actions} %}
 					{% include "section_actions.html" %}
 				</div>

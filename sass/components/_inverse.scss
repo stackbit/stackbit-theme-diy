@@ -1,0 +1,20 @@
+/**
+ * Styles for dark backgrounds
+ */
+.inverse {
+	background-color: $color-inverse-bg;
+	color: $color-inverse-text;
+
+	a {
+		color: $color-inverse-link;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $color-inverse-heading;
+	}
+}
