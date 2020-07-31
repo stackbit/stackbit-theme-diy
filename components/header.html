@@ -20,11 +20,11 @@
 						</button>
 						<div class="navbar__menu">
 							{% if site.params.header.has_primary_nav and site.params.header.primary_nav_links %}
-								{% set include_dict = {'header_menu': site.params.header.primary_nav_links} %}
+								{% set include_dict = {'header_menu': site.params.header.primary_nav_links, "page": page} %}
 								{% include "header_menu.html" %}
 							{% endif %}
 							{% if site.params.header.has_secondary_nav and site.params.header.secondary_nav_links %}
-								{% set include_dict = {'header_menu': site.params.header.secondary_nav_links} %}
+								{% set include_dict = {'header_menu': site.params.header.secondary_nav_links, 'page': page} %}
 								{% include "header_menu.html" %}
 							{% endif %}
 						</div>
