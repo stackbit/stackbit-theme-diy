@@ -1,8 +1,11 @@
 {% set menu = include_dict.header_menu %}
 <ul class="menu">
-{% for menu_item in menu %}
-	<li class="menu__item">
-		{% set include_dict = {'action': menu_item} %}
+{% for item in menu %}
+	{% set page_url = page.url | trim('/') %}
+	{% set item_url = item.url | trim('/') %}
+	{% set item_style = item.style | default('link', true) %}
+	<li {{ classNames('menu__item', {'is-active': page_url == item_url and item_style == 'link', 'menu__item-btn': item_style != 'link'}) }}>
+		{% set include_dict = {'action': item} %}
 		{% include "action.html" %}
 	</li>
 {% endfor %}
