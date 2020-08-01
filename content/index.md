@@ -171,7 +171,7 @@ sections:
         image_has_border: false
     grid_cols: three
     grid_gap_horiz: medium
-    grid_gap_vert: medium
+    grid_gap_vert: small
     enable_cards: true
     align: center
     background_color: none

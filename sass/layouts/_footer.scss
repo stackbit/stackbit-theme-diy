@@ -3,7 +3,7 @@
  */
 .site-footer__nav,
 .site-footer__info {
-	border-top: 1px solid $color-border;
+	border-top: 1px solid $color-footer-border
 }
 
 .site-footer__menu {
@@ -40,7 +40,7 @@
 	.site-footer__nav,
 	.site-footer__info {
 		border-top-width: 2px;
-		border-top-color: $color-border-dark;
+		border-top-color: $color-bold-footer-border;
 	}
 }
 

@@ -2,13 +2,13 @@
  * Sizing
  */
 @each $key, $size in $container-sizes {
-	.max-w-#{$key} {
+	.maxw-#{$key} {
 		max-width: #{$size};
 	}
 }
 
 @each $key, $size in $sizes {
-	.max-w-#{$key} {
+	.maxw-#{$key} {
 		max-width: #{$size};
 	}
 }

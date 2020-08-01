@@ -8,12 +8,12 @@
 		{% set has_image = true %}
 	{% endif %}
 	{% set image_pos = page.params.image_position | default('top', true) %}
-	<div {{ classNames('container', {
+	<div {{ classNames('post__hero', 'container', {
 		'container--medium': image_pos == 'top' or has_image == false
 	}) }}>
 		<div {{ classNames('mb-4', {
 			'mb-md-5': image_pos != 'top',
-			'mb-lg-6': image_pos != 'top',
+			'mb-md-6': image_pos != 'top',
 			'grid': image_pos != 'top',
 			'items-center': has_image and image_pos != 'top'
 		}) }}>

@@ -18,12 +18,12 @@ input[type="search"],
 input[type="url"],
 select,
 textarea {
-	background: $color-bg;
-	border: 1px solid $color-border;
+	background: $color-input-bg;
+	border: 1px solid $color-input-border;
 	border-radius: 0;
 	box-shadow: none;
 	box-sizing: border-box;
-	color: inherit;
+	color: $color-input-text;
 	display: block;
 	font-size: 16px;
 	font-weight: normal;
@@ -120,7 +120,7 @@ textarea {
 	input[type="url"],
 	select,
 	textarea {
-		background: $color-bg-light;
+		background: $color-bold-input-bg;
 		border: 0;
 	}
 }

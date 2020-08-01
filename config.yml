@@ -3,9 +3,9 @@ title: "Stackbit DIY Theme"
 page_load_js: "js/scripts.js"
 params:
   description: A "do it yourself" theme for Stackbit
-  layout: full-width
-  style: bold
-  palette: blue
+  layout: boxed
+  style: classic
+  palette: gray
   mode: light
   base_font: sans-serif
   header:

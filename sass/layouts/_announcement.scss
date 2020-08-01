@@ -57,15 +57,12 @@
 .style-classic,
 .style-minimal {
 	.announcement-bar {
-		background: $color-bg-secondary;
-		border-bottom: 1px solid $color-border;
+		background: $color-anncmnt-bg;
 	}
 }
 
-.announcement-bar {
-	border: 0;
-
-	a {
-		color: inherit;
+.style-bold {
+	.announcement-bar {
+		background: $color-bold-anncmnt-bg;
 	}
 }

@@ -32,7 +32,7 @@
 }
 
 .post__footer {
-	color: $color-text-muted;
+	color: $color-meta;
 	font-size: 0.875em;
 
 	span {
@@ -41,5 +41,11 @@
 		&:before {
 			content: "\0023";
 		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.post__hero {
+		max-width: container-max-width(medium);
 	}
 }

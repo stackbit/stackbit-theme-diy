@@ -2,7 +2,7 @@
  * Site Header
  */
 .site-header {
-	border-bottom: 1px solid $color-border;
+	border-bottom: 1px solid $color-header-border;
 }
 
 .navbar__logo,
@@ -20,7 +20,7 @@
 	.navbar__container {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
-		background-color: $color-bg;
+		background-color: $color-nav-mobile-bg;
 		bottom: 0;
 		right: -100%;
 		max-width: container-max-width(small);
@@ -45,7 +45,7 @@
 	}
 
 	.navbar__menu {
-		border-top: 1px solid $color-border;
+		border-top: 1px solid $color-nav-mobile-border;
 		margin-top: 1.25rem;
 		padding-top: 1.25rem;
 		text-align: left;
@@ -69,7 +69,7 @@
 	}
 
 	.nav-overlay {
-		background: rgba($color-bg-light, .8);
+		background: $color-nav-mobile-overlay;
 		height: 100vh;
 		left: 0;
 		opacity: 0;
@@ -181,6 +181,6 @@
 
 .style-bold {
 	.site-header {
-		border-bottom: 2px solid $color-border-dark;
+		border-bottom: 2px solid $color-bold-header-border;
 	}
 }

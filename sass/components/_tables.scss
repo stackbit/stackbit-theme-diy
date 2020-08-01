@@ -2,7 +2,7 @@
  * Tables
  */
 table {
-	border-bottom: 1px solid $color-border;
+	border-bottom: 1px solid $color-table-border;
 	border-collapse: collapse;
 	border-spacing: 0;
 	line-height: 1.5;
@@ -13,7 +13,7 @@ table {
 }
 
 caption {
-	color: $color-text-muted;
+	color: $color-meta;
 	font-size: 0.875em;
 	margin: 0 0 1em;
 	text-align: left;
@@ -21,13 +21,13 @@ caption {
 
 th,
 td {
-	border-top: 1px solid $color-border;
+	border-top: 1px solid $color-table-border;
 	padding: 0.5em;
 }
 
 th {
-	background-color: $color-bg-light;
-	color: $color-heading;
+	background-color: $color-table-bg;
+	color: $color-table-heading;
 	font-weight: 700;
 }
 
@@ -43,9 +43,14 @@ th {
 }
 
 .style-bold {
+	table,
+	th,
+	td {
+		border-width: 2px;
+	}
+
 	th {
-		background-color: $color-bg-dark;
-		color: #fff;
+		background-color: $color-bold-table-bg;
 		//???
 	}
 }

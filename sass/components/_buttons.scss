@@ -36,7 +36,7 @@
 
 	&:not(.btn--clear),
 	&:not(.btn--icon) {
-		min-width: 8.125em;
+		min-width: 10em;
 	}
 }
 
@@ -55,11 +55,11 @@
 }
 
 .btn--icon {
-	font-size: 1.125rem;
-	height: 1.875rem;
+	font-size: 1rem;
+	height: 1.66667em;
 	padding: 0;
 	position: relative;
-	width: 1.875rem;
+	width: 1.66667em;
 }
 
 .btn-group {
@@ -67,7 +67,7 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	a {
+	a:not(.btn) {
 		font-size: 0.88889em;
 	}
 
@@ -136,19 +136,38 @@
 		}
 	}
 
-	.btn--secondary {
-		background-color: $color-bg;
-	}
-
 	.btn--primary,
 	.btn--secondary {
-		box-shadow: 0.375em 0.375em 0 0 $color-btn-shadow;
+		//box-shadow: 0.375em 0.375em 0 0 $color-bold-btn-shadow;
 		position: relative;
+
+		&:after {
+			background-color: $color-bold-btn-shadow;
+			border: 2px solid $color-bold-btn-shadow;
+			content: "";
+			height: 100%;
+			left: -2px;
+			position: absolute;
+			top: -2px;
+			-webkit-transition: .2s ease-in;
+			transition: .2s ease-in;
+			width: 100%;
+			z-index: -1;
+			margin-left: 6px;
+				margin-top: 6px;
+		}
 
 		&:hover,
 		&:focus,
 		&:active {
+			transform: translateY(6px);
 			//???
+
+			&:after {
+				transform: translateY(0);
+				
+			
+			}
 		}
 	}
 }

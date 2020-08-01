@@ -17,7 +17,7 @@
 	{% else %}
 	<div class="flex items-center">
 		{% if author_data.photo %}
-		<figure {{ classNames('avatar', 'mr-1', {
+		<figure {{ classNames('avatar', 'mr-2', {
 			'avatar--small': avatar_size == 'small'
 		}) }}>
 			<img class="avatar__img" src="{{ author_data.photo | relative_url }}" alt="{{ author_data.first_name }}{% if author_data.last_name %} {{ author_data.last_name }}{% endif %} Photo" />

@@ -34,9 +34,8 @@
 
 	{% if section.title or section.subtitle %}
 	<div {{ classNames('container', 'container--medium', {
-		'mb-4': grid_gap_y == 'small',
-		'mb-3': grid_gap_y == 'medium',
-		'mb-2': grid_gap_y == 'large',
+		'mb-5': grid_gap_y == 'small' or grid_gap_y == 'medium',
+		'mb-4': grid_gap_y == 'large',
 		'text-center': align_x == 'center',
 		'text-right': align_x == 'right'
 	}) }}>

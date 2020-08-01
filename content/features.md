@@ -20,7 +20,7 @@ sections:
         video_url: https://youtu.be/DJJ_y8FYRl0
         video_width: 560
         video_height: 315
-        media_position: right
+        media_position: top
     feature_padding_vert: large
     padding_top: large
     padding_bottom: large

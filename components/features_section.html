@@ -33,9 +33,8 @@
 
 	{% if section.title or section.subtitle %}
 	<div {{ classNames('container', 'container--medium', {
-		'mb-4': feature_padding_y == 'small',
-		'mb-3': feature_padding_y == 'medium',
-		'mb-1': feature_padding_y == 'large',
+		'mb-5': feature_padding_y == 'small' or feature_padding_y == 'medium',
+		'mb-4': feature_padding_y == 'large',
 		'text-center': align_x == 'center',
 		'text-right': align_x == 'right'
 	}) }}>

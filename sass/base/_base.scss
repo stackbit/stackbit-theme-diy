@@ -19,8 +19,8 @@ html {
 }
 
 body {
-	background-color: $color-bg;
-	color: $color-text;
+	background-color: $color-body-bg;
+	color: $color-body-text;
 	line-height: 1.66667;
 	text-rendering: optimizeLegibility;
 	@include font-smooth();//???
@@ -106,8 +106,9 @@ blockquote {
 }
 
 pre {
-	background-color: $color-bg-light;
-	border: 1px solid $color-border;
+	background-color: $color-code-bg;
+	border: 1px solid $color-code-border;
+	color: $color-code-text;
 	font-size: 0.88889em;
 	line-height: 1.5;
 	margin: 0 0 1em;
@@ -148,10 +149,10 @@ dd {
 }
 
 hr {
-	background-color: $color-border;
+	background-color: $color-hr-border;
 	border: 0;
 	height: 1px;
-	margin: 1em 0;
+	margin: 1.11111em 0;
 
 	&:first-child {
 		margin-top: 0;
@@ -176,7 +177,7 @@ figure {
 }
 
 figcaption {
-	color: $color-text-muted;
+	color: $color-meta;
 	font-size: 0.88889em;
 	text-align: left;
 }
@@ -207,8 +208,13 @@ figcaption {
 	}
 }
 
-.style-bold {
+.style-bold {//???
 	pre {
-		///???
+		background-color: $color-bold-code-bg;
+		border: 0;
+	}
+
+	hr {
+		height: 2px;
 	}
 }

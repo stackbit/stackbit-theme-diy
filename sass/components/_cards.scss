@@ -1,5 +1,6 @@
 .card {
-	background-color: $color-bg;
+	background-color: $color-card-bg;
+	border: 1px solid $color-card-border;
 	box-sizing: border-box;
 	height: 100%;
 	transition: .3s ease;
@@ -39,8 +40,6 @@
 
 .style-minimal {
 	.card {
-		border: 1px solid $color-border;
-
 		&:hover {
 			transform: translateY(-4px);
 		}
@@ -49,12 +48,11 @@
 
 .style-classic {
 	.card {
-		border: 1px solid $color-border;
 		border-radius: 6px;
 		box-shadow: none;
 
 		&:hover {
-			box-shadow: 0 2px 30px rgba($color-border,.8);
+			box-shadow: 0 2px 30px $color-classic-card-shadow;
 		}
 	}
 
@@ -91,7 +89,29 @@
 
 .style-bold {
 	.card {
-		border: 2px solid $color-border-dark;
+		border: 2px solid $color-bold-card-border;
+		position: relative;
+
+
+		&:after {
+			border: 2px solid transparent;
+			content: "";
+			height: 100%;
+			left: 6px;
+			position: absolute;
+			top: 6px;
+			-webkit-transition: border-color .3s ease-in;
+			transition: border-color .3s ease-in;
+			width: 100%;
+			z-index: -1;
+		}
+
+		&:hover {
+			&:after {
+				border-color: $color-bold-card-border-alt;
+			}
+		}
+
 		// highlight
 	}
 }
