@@ -28,7 +28,6 @@
 @import "components/containers";
 @import "components/banner";
 @import "components/text-block";
-@import "components/inverse";
 
 // Layouts
 @import "layouts/site";
@@ -39,5 +38,5 @@
 @import "layouts/post";
 @import "layouts/page";
 
-// Font, style, color variations based on theme options
+// Color variations
 @import "variations/palettes";

@@ -51,14 +51,13 @@ $color-body-bg:                     #fff !default;
 
 // Links
 $color-link:                        #2c343c !default;
-$color-link-border:                 #45515e !default;
-
-// Blockquotes
-$color-blockquote-text:             #2c343c !default;
 
 // Highlight
 $color-highlight-text:              #2c343c !default;
 $color-highlight-bg:                #fff7c5 !default;
+
+// Blockquotes
+$color-blockquote:                  #2c343c !default;
 
 // Code blocks
 $color-code-text:                   #2c343c !default;
@@ -100,15 +99,12 @@ $color-nav-mobile-overlay:          rgba(236,238,241,.8) !default;
 
 // Announcement
 $color-anncmnt-bg:                  #eceef1 !default;
-$color-bold-anncmnt-bg:             #eceef1 !default;
 
 // Header
 $color-header-border:               #eceef1 !default;
-$color-bold-header-border:          #eceef1 !default;
 
 // Footer
 $color-footer-border:               #eceef1 !default;
-$color-bold-footer-border:          #eceef1 !default;
 
 // Cards
 $color-card-text:                   #2c343c !default;
@@ -121,10 +117,14 @@ $color-bold-card-border-hover:      #8696a6 !default;
 // Sections
 $color-sect-border:                 #eceef1  !default;
 $color-sect-prim-bg:                #45515e !default;
-$color-sect-second-bg:              #eceef1  !default;
+$color-sect-prim-text:              #fff !default;
+$color-sect-prim-heading:           #fff !default;
+$color-sect-prim-link:              #fff !default;
 $color-sect-prim-btn-text:          #2c343c !default;
 $color-sect-prim-btn-bg:            #fff !default;
 $color-sect-prim-btn-border:        #fff !default;
+$color-sect-second-bg:              #eceef1  !default;
+$color-sect-prim-second-input-bg:   #fff !default;
 
 $color-bold-sect-border:            #eceef1  !default;
 $color-classic-sect-title-line:     #45515e !default;
@@ -136,56 +136,6 @@ $color-bold-media-border:           #2c343c !default;
 // Boxed layout
 $color-boxed-bg:                    #f7f8f9 !default;
 $color-boxed-border:                #eceef1  !default;
-$color-bold-boxed-border:           #eceef1  !default;
-
-
-// Inverse (light text on dark background)
-$color-inverse-text:                       #fff !default;
-$color-inverse-text-muted:                 #8696a6 !default;
-$color-inverse-heading:                    #fff !default;
-
-$color-inverse-bg:                         #2c343c !default;
-$color-inverse-bg-light:                   #f7f8f9 !default;
-$color-inverse-bg-dark:                    #2c343c !default;
-$color-inverse-bg-secondary:               #eceef1 !default;
-
-$color-inverse-border:                     #eceef1 !default;
-$color-inverse-border-dark:                #2c343c !default;
-
-// Links
-$color-inverse-link:                       #fff !default;
-
-
-
-
-
-
-// Dark mode
-$color-dark-text:              #fff !default;
-$color-dark-heading:           #fff !default;
-$color-dark-text-muted:        #9d9999 !default;
-$color-dark-bg:                #2c343c !default;
-$color-dark-border:            #292828 !default;
-$color-dark-link:              #fff !default;
-$color-mark:                   #2c343c !default;
-$color-mark-bg:                #eceef1   !default;
-$color-dark-layout-boxed-bg:   #171616 !default;
-
-$color-dark-btn-text:                 #2c343c !default;
-$color-dark-btn-bg:                   #fff !default;
-$color-dark-btn-border:               #fff !default;
-$color-dark-btn-hover-text:           #fff !default;
-$color-dark-btn-hover-bg:             transparent !default;
-$color-dark-btn-hover-border:         #fff !default;
-
-$color-dark-btn-clear-text: #fff !default;
-
-
-
-
-
-
-
 
 
 // Media breakpoints

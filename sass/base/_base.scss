@@ -5,6 +5,14 @@ html {
 	font-size: 112.5%;
 }
 
+body {
+	background-color: $color-body-bg;
+	color: $color-body-text;
+	line-height: 1.66667;
+	text-rendering: optimizeLegibility;
+	@include font-smooth();
+}
+
 @each $style in map-keys($theme-styles) {
 	$style-suffix: "#{$style}";
 	$fonts: map-deep-get($theme-styles, $style, "fonts");
@@ -16,14 +24,6 @@ html {
 			}
 		}
 	}
-}
-
-body {
-	background-color: $color-body-bg;
-	color: $color-body-text;
-	line-height: 1.66667;
-	text-rendering: optimizeLegibility;
-	@include font-smooth();//???
 }
 
 a {
@@ -89,7 +89,7 @@ ins {
 }
 
 blockquote {
-	color: $color-blockquote-text;
+	color: $color-blockquote;
 	margin: 0 0 1em;
 	padding: 0 0 0 2.22222em;
 	position: relative;
@@ -107,7 +107,6 @@ blockquote {
 
 pre {
 	background-color: $color-code-bg;
-	border: 1px solid $color-code-border;
 	color: $color-code-text;
 	font-size: 0.88889em;
 	line-height: 1.5;
@@ -201,6 +200,10 @@ figcaption {
 }
 
 .style-classic {
+	pre {
+		border: 1px solid $color-code-border;
+	}
+
 	.site-content {
 		img {
 			border-radius: 6px;
@@ -208,10 +211,9 @@ figcaption {
 	}
 }
 
-.style-bold {//???
+.style-bold {
 	pre {
 		background-color: $color-bold-code-bg;
-		border: 0;
 	}
 
 	hr {

@@ -3,10 +3,9 @@ title: "Stackbit DIY Theme"
 page_load_js: "js/scripts.js"
 params:
   description: A "do it yourself" theme for Stackbit
-  layout: boxed
+  layout: full-width
   style: classic
-  palette: gray
-  mode: light
+  palette: red
   base_font: serif
   header:
     title: DIY
@@ -124,4 +123,4 @@ sass:
   outputStyle: expanded
   precision: 10
 templates:
-  body_class: "layout-{{ site.params.layout }} style-{{ site.params.style }} palette-{{ site.params.palette }} mode-{{ site.params.mode }} font-{{ site.params.base_font }}"
+  body_class: "layout-{{ site.params.layout }} style-{{ site.params.style }} palette-{{ site.params.palette }} font-{{ site.params.base_font }}"

@@ -1,15 +1,19 @@
 .card {
 	background-color: $color-card-bg;
 	border: 1px solid $color-card-border;
+	color: $color-card-text;
 	box-sizing: border-box;
 	height: 100%;
-	transition: .3s ease;
 
 	.flex,
 	.grid {
 		height: 100%;
 		position: relative;
 	}
+}
+
+.card--highlight {
+	transition: .3s ease;
 }
 
 .card__media--fill {
@@ -39,9 +43,9 @@
 }
 
 .style-minimal {
-	.card {
+	.card--highlight {
 		&:hover {
-			transform: translateY(-4px);
+			transform: translateY(-6px);
 		}
 	}
 }
@@ -49,6 +53,9 @@
 .style-classic {
 	.card {
 		border-radius: 6px;
+	}
+
+	.card--highlight {
 		box-shadow: none;
 
 		&:hover {
@@ -90,8 +97,9 @@
 .style-bold {
 	.card {
 		border: 2px solid $color-bold-card-border;
-		position: relative;
+	}
 
+	.card--highlight {
 		&:hover {
 			border-color: $color-bold-card-border-hover;
 		}

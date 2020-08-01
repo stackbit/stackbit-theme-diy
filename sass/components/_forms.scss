@@ -3,6 +3,7 @@
  */
 label {
 	display: block;
+	color: inherit;
 	font-size: 0.88889em;
 	font-weight: 700;
 	line-height: 1.5;
@@ -29,7 +30,7 @@ textarea {
 	font-weight: normal;
 	line-height: 1.5;
 	max-width: 100%;
-	padding: 0.6875em;
+	padding: 0.75em;
 	width: 100%;
 
 	&:focus {
@@ -38,6 +39,7 @@ textarea {
 }
 
 .form-select {
+	color: inherit;
 	font-size: 16px;
 	position: relative;
 
@@ -93,6 +95,20 @@ textarea {
 .form-inline {
 	label {
 		@include sr-only();
+	}
+}
+
+.style-minimal {
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="search"],
+	input[type="url"],
+	select,
+	textarea {
+		border: 0;
 	}
 }
 

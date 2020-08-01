@@ -25,18 +25,15 @@
 	}
 
 	@media (min-width: 1401px) {
-		&.style-classic,
-		&.style-minimal {
-			.site {
-				border-left: 1px solid $color-boxed-border;
-				border-right: 1px solid $color-boxed-border;
-			}
+		.site {
+			border-left: 1px solid $color-boxed-border;
+			border-right: 1px solid $color-boxed-border;
 		}
 
 		&.style-bold {
 			.site {
-				border-left: 2px solid $color-bold-boxed-border;
-				border-right: 2px solid $color-bold-boxed-border;
+				border-left-width: 2px;
+				border-right-width: 2px;
 			}
 		}
 	}

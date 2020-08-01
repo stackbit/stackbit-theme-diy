@@ -20,7 +20,7 @@ sections:
         video_url: https://youtu.be/DJJ_y8FYRl0
         video_width: 560
         video_height: 315
-        media_position: top
+        media_position: right
     feature_padding_vert: large
     padding_top: large
     padding_bottom: large
@@ -76,6 +76,8 @@ sections:
     grid_items:
       - content: >-
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus.
+
+
           **Hanson Deck,** *App Developer, Studio*
         content_align: left
         image: images/hanson-deck.jpg
@@ -84,6 +86,8 @@ sections:
         image_align: left
       - content: >-
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus.
+
+
           **Ursula Gurnmeister** *CTO, Studio*
         content_align: left
         image: images/ursula-gurnmeister.jpg
@@ -106,11 +110,11 @@ sections:
       - label: Compare Plans
         url: /pricing
         style: primary
-    actions_position: right
-    align: left
+    actions_position: bottom
+    align: center
     padding_top: medium
     padding_bottom: medium
     has_border: false
-    background_color: none
+    background_color: secondary
 layout: advanced
 ---

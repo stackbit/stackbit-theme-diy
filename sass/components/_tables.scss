@@ -51,6 +51,11 @@ th {
 
 	th {
 		background-color: $color-bold-table-bg;
-		//???
+	}
+}
+
+.style-minimal {
+	th {
+		background: 0;
 	}
 }

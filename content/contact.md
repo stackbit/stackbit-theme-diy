@@ -37,7 +37,7 @@ sections:
         actions:
           - label: Get Support
             url: /general-enquiries
-            style: link
+            style: secondary
             has_icon: true
             icon: arrow-right
             icon_position: right
@@ -54,7 +54,7 @@ sections:
         actions:
           - label: Get Support
             url: /general-enquiries
-            style: link
+            style: primary
             has_icon: true
             icon: arrow-right
             icon_position: right
@@ -70,6 +70,6 @@ sections:
     align: center
     padding_top: large
     padding_bottom: large
-    background_color: secondary
+    background_color: primary
 layout: advanced
 ---

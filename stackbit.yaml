@@ -57,15 +57,6 @@ models:
         description: The palette of the site
         required: true
       - type: enum
-        name: mode
-        label: Mode
-        options:
-          - light
-          - dark
-        default: dark
-        description: The color scheme of the site
-        required: true
-      - type: enum
         name: base_font
         label: Font
         options:

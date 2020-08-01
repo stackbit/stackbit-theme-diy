@@ -6,19 +6,30 @@
 	
 		.style-#{$style-suffix} {
 			&.palette-#{$color-suffix} {
-
 				.btn--primary {
 					background-color: $value;
 					border-color: $value;
 				}
 
-				.bg-primary {
-					.btn--primary {
-						background-color: $color-sect-prim-btn-bg;
-						border-color: $color-sect-prim-btn-border;
+				#site-wrap {
+					.card {
+						.btn--primary {
+							background-color: $value;
+							border-color: $value;
+							color: $color-btn-text;
+						}
 					}
 				}
-				
+
+				@include media-breakpoint-up(md) {
+					.navbar__menu {
+						a:not(.btn) {
+							&:after {
+								background: $value;
+							}
+						}
+					}
+				}
 
 				.bg-primary {
 					background-color: $value;

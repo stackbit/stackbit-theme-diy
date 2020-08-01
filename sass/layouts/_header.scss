@@ -174,7 +174,19 @@
 .style-bold {
 	.site-header {
 		border-bottom-width: 2px;
-		border-bottom-color: $color-bold-header-border;
+
+		.btn--primary,
+		.btn--secondary {
+			box-shadow: none;
+			-webkit-transform: none;
+			transform: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				opacity: .85;
+			}
+		}
 	}
 
 	@include media-breakpoint-up(md) {

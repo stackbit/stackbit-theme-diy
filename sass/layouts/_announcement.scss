@@ -2,6 +2,7 @@
  * Announcement
  */
  .announcement-bar {
+	background: $color-anncmnt-bg;
 	position: relative;
 }
 
@@ -51,18 +52,5 @@
 		@include media-breakpoint-down(sm) {
 			right: 0.9375rem;
 		}
-	}
-}
-
-.style-classic,
-.style-minimal {
-	.announcement-bar {
-		background: $color-anncmnt-bg;
-	}
-}
-
-.style-bold {
-	.announcement-bar {
-		background: $color-bold-anncmnt-bg;
 	}
 }

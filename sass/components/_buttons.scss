@@ -38,9 +38,9 @@
 }
 
 .btn--secondary {
-	background-color: $color-btn-alt-bg;
-	border-color: $color-btn-alt-border;
-	color: $color-btn-alt-text;
+	background-color: $color-btn-alt-bg !important;
+	border-color: $color-btn-alt-border !important;
+	color: $color-btn-alt-text !important;
 }
 
 .btn--clear {
@@ -122,6 +122,7 @@
 		&:focus,
 		&:active {
 			box-shadow: 0 0 0 0 $color-bold-btn-shadow;
+			-webkit-transform: translate(6px,6px);//???
 			transform: translate(6px,6px);//???
 		}
 	}

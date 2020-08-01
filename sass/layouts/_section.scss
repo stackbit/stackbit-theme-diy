@@ -19,14 +19,6 @@
 	}
 }
 
-.bg-primary {
-	background: $color-sect-prim-bg;
-}
-
-.bg-secondary {
-	background: $color-sect-second-bg;
-}
-
 .hero__media,
 .item__media {
 	img {
@@ -182,6 +174,7 @@
 	}
 }
 
+// Style adjustments
 .style-classic {
 	.section__title {
 		&:after {
@@ -277,6 +270,113 @@
 				&.has-border {
 					border-color: $color-bold-card-border-hover;
 				}
+			}
+		}
+	}
+}
+
+// Section backgrounds
+.bg-primary {
+	background: $color-sect-prim-bg;
+	color: $color-sect-prim-text;
+
+	a {
+		color: $color-sect-prim-link;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $color-sect-prim-heading;
+	}
+
+	blockquote {
+		color: inherit;
+	}
+
+	.card {
+		a {
+			color: inherit;
+		}
+	
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		blockquote {
+			color: inherit;
+		}
+
+		.btn--primary {
+			background-color: $color-btn-bg;
+			border-color: $color-btn-border;
+			color: $color-btn-text;
+		}
+	}
+}
+
+#site-wrap {
+	.bg-primary {
+		.btn--primary {
+			background-color: $color-sect-prim-btn-bg;
+			border-color: $color-sect-prim-btn-border;
+			color: $color-sect-prim-btn-text;
+		}
+	}
+}
+
+.bg-secondary {
+	background: $color-sect-second-bg;
+}
+
+.bg-primary,
+.bg-secondary {
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="search"],
+	input[type="url"],
+	select,
+	textarea {
+		background-color: $color-sect-prim-second-input-bg;
+	}
+
+	.card {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		input[type="search"],
+		input[type="url"],
+		select,
+		textarea {
+			background-color: $color-input-bg;
+		}
+	}
+}
+
+.style-bold {
+	.bg-primary,
+	.bg-secondary {
+		.card {
+			input[type="text"],
+			input[type="password"],
+			input[type="email"],
+			input[type="tel"],
+			input[type="number"],
+			input[type="search"],
+			input[type="url"],
+			select,
+			textarea {
+				background: $color-bold-input-bg;
 			}
 		}
 	}
