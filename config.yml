@@ -4,9 +4,9 @@ page_load_js: "js/scripts.js"
 params:
   description: A "do it yourself" theme for Stackbit
   layout: boxed
-  style: bold
+  style: classic
   palette: green
-  base_font: sans-serif
+  base_font: serif
   header:
     title: DIY
     logo: "images/classic/logo.svg"
