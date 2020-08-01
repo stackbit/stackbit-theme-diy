@@ -97,9 +97,6 @@ sections:
     feature_padding_vert: large
     align: center
     background_color: secondary
-    background_image: images/noise.png
-    background_image_size: auto
-    background_image_repeat: repeat
   - type: features_section
     features:
       - title: >-
@@ -110,7 +107,7 @@ sections:
         media_position: right
         media_width: thirty-three
     feature_padding_vert: small
-    background_color: secondary
+    background_color: primary
   - type: grid_section
     title: Cards Grid Section
     subtitle: Grid Section Example

@@ -12,8 +12,25 @@
 
 .navbar__logo {
 	img {
-		max-height: 2.5rem;
+		max-height: 2.22222rem;
 	}
+}
+
+.navbar__menu-btn,
+.navbar__close-btn {
+	font-size: 1.11111em;
+}
+
+.nav-overlay {
+	background: $color-nav-mobile-overlay;
+	height: 100vh;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	transition: opacity .25s, visibility 0s .25s;
+	visibility: hidden;
+	width: 100%;
 }
 
 @include media-breakpoint-down(md) {
@@ -40,24 +57,28 @@
 	}
 
 	.navbar__inner {
-		padding: 1.875rem;
+		padding: 1.66667rem;
 		text-align: right;
 	}
 
 	.navbar__menu {
 		border-top: 1px solid $color-nav-mobile-border;
-		margin-top: 1.25rem;
-		padding-top: 1.25rem;
+		margin-top: 1.11111rem;
+		padding-top: 1.11111rem;
 		text-align: left;
 
 		.menu__item {
-			margin-bottom: 0.625rem;
+			margin-bottom: 0.55556rem;
+
+			& + .menu__item-btn {
+				margin-top: 0.83333rem;
+			}
 		}
 
 		a {
 			&:not(.btn) {
 				display: block;
-				padding: 0.625rem 0;
+				padding: 0.55556rem 0;
 			}
 		}
 
@@ -66,18 +87,6 @@
 			padding-right: 0.75rem;
 			width: 100%;
 		}
-	}
-
-	.nav-overlay {
-		background: $color-nav-mobile-overlay;
-		height: 100vh;
-		left: 0;
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		transition: opacity .25s, visibility 0s .25s;
-		visibility: hidden;
-		width: 100%;
 	}
 
 	.js-nav-open {
@@ -95,6 +104,12 @@
 			transition: right .3s ease;
 			visibility: visible;
 		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.navbar__inner {
+		padding: 1.11111rem 0.83333rem;
 	}
 }
 
@@ -127,8 +142,9 @@
 
 		.btn--primary,
 		.btn--secondary {
+			font-size: 0.83333em;
 			min-width: 0;
-			padding: 0.5em 0.9375em;
+			padding: 0.575em 1.33333em;
 		}
 	}
 }
@@ -156,6 +172,11 @@
 }
 
 .style-bold {
+	.site-header {
+		border-bottom-width: 2px;
+		border-bottom-color: $color-bold-header-border;
+	}
+
 	@include media-breakpoint-up(md) {
 		.navbar__menu {
 			a:not(.btn) {
@@ -177,10 +198,10 @@
 			}
 		}
 	}
-}
 
-.style-bold {
-	.site-header {
-		border-bottom: 2px solid $color-bold-header-border;
+	@include media-breakpoint-down(md) {
+		.navbar__menu {
+			border-top-width: 2px;
+		}
 	}
 }

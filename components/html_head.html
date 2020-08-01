@@ -10,12 +10,17 @@
   {% else %}
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   {% endif %}
-{% endif %}
-{% if style == "classic" %}
+{% elif style == "classic" %}
   {% if font == "serif" %}
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   {% else %}
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   {% endif %}
+{% else %}
+	{% if font == "serif" %}
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	{% else %}
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	{% endif %}
 {% endif %}
 <link rel="stylesheet" href="{{ 'css/main.css' | relative_url }}">

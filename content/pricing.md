@@ -8,7 +8,6 @@ sections:
     align: center
     padding_top: large
     padding_bottom: small
-    background_color: secondary
   - type: grid_section
     grid_items:
       - title: Personal
@@ -100,7 +99,7 @@ sections:
     grid_gap_horiz: small
     grid_gap_vert: small
     enable_cards: true
-    padding_top: medium
+    padding_top: small
     padding_bottom: medium
     has_border: false
     background_color: none
@@ -129,6 +128,6 @@ sections:
     padding_top: medium
     padding_bottom: medium
     has_border: false
-    background_color: none
+    background_color: secondary
 layout: advanced
 ---

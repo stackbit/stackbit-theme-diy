@@ -1,6 +1,6 @@
 // Variables
 
-// Theme options
+// Theme font and color variations
 $theme-styles: (
 	classic: (
 		fonts: (
@@ -26,8 +26,8 @@ $theme-styles: (
 	),
 	minimal: (
 		fonts: (
-			serif: (Georgia, Times, 'Times New Roman', serif),
-			sans-serif: ('Helvetica Neue', Helvetica, 'Roboto', sans-serif)
+			serif: ('IBM Plex Serif', Georgia, Times, 'Times New Roman', serif),
+			sans-serif: ('IBM Plex Sans','Helvetica Neue', Helvetica, 'Roboto', sans-serif)
 		),
 		colors: (
 			blue:   #0084ff,
@@ -37,126 +37,123 @@ $theme-styles: (
 	)
 );
 
-// Fonts
+// Monospace font
 $font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace !default;
 
 
 // Colors
 
 // Base
-$color-body-text:                   #1c1b1b !default;//3d3d3d
-$color-heading:                     #1c1b1b !default;
-$color-meta:                        #9d9999 !default;
+$color-body-text:                   #2c343c !default;
+$color-heading:                     #2c343c !default;
+$color-meta:                        #8696a6 !default;
 $color-body-bg:                     #fff !default;
 
 // Links
-$color-link:                        #1c1b1b !default;
-$color-link-border:                 #585555 !default;
+$color-link:                        #2c343c !default;
+$color-link-border:                 #45515e !default;
 
 // Blockquotes
-$color-blockquote-text:             #1c1b1b !default;
+$color-blockquote-text:             #2c343c !default;
 
 // Highlight
-$color-highlight-text:              #1c1b1b !default;
+$color-highlight-text:              #2c343c !default;
 $color-highlight-bg:                #fff7c5 !default;
 
 // Code blocks
-$color-code-text:                   #1c1b1b !default;
-$color-code-border:                 #eae9e9 !default;
-$color-code-bg:                     #f9f9f9 !default;
-$color-bold-code-bg:                #eae9e9 !default;
+$color-code-text:                   #2c343c !default;
+$color-code-border:                 #eceef1 !default;
+$color-code-bg:                     #f7f8f9 !default;
+$color-bold-code-bg:                #eceef1 !default;
 
 // Tables
-$color-table-text:                  #1c1b1b !default;
-$color-table-heading:               #1c1b1b !default;
-$color-table-border:                #eae9e9 !default;
-$color-table-bg:                    #f9f9f9 !default;
-$color-bold-table-bg:               #eae9e9 !default;
+$color-table-text:                  #2c343c !default;
+$color-table-heading:               #2c343c !default;
+$color-table-border:                #eceef1 !default;
+$color-table-bg:                    #f7f8f9 !default;
+$color-bold-table-bg:               #eceef1 !default;
 
 // HR
-$color-hr-border:                   #eae9e9 !default;
+$color-hr-border:                   #eceef1 !default;
 
 // Buttons
 $color-btn-text:                    #fff !default;
-$color-btn-bg:                      #585555 !default;
-$color-btn-border:                  #585555 !default;
+$color-btn-bg:                      #45515e !default;
+$color-btn-border:                  #45515e !default;
 $color-btn-alt-text:                #fff !default;
-$color-btn-alt-bg:                  #1c1b1b !default;
-$color-btn-alt-border:              #1c1b1b !default;
-$color-bold-btn-shadow:             #9d9999 !default;
+$color-btn-alt-bg:                  #2c343c !default;
+$color-btn-alt-border:              #2c343c !default;
+$color-bold-btn-shadow:             #8696a6 !default;
 
 // Forms
-$color-input-text:                  #1c1b1b !default;
-$color-input-bg:                    #f9f9f9 !default;
-$color-input-border:                #eae9e9 !default;
-$color-bold-input-bg:               #eae9e9 !default;
+$color-input-text:                  #2c343c !default;
+$color-input-bg:                    #f7f8f9 !default;
+$color-input-border:                #eceef1 !default;
+$color-bold-input-bg:               #eceef1 !default;
 
 // Main nav
-$color-nav-link-text:               #1c1b1b !default;
-$color-nav-link-border:             #585555 !default;
+$color-nav-link-text:               #2c343c !default;
+$color-nav-link-border:             #45515e !default;
 $color-nav-mobile-bg:               #fff !default;
-$color-nav-mobile-border:           #eae9e9 !default;
-$color-nav-mobile-overlay:          rgba(234,233,233,.8) !default;
+$color-nav-mobile-border:           #eceef1 !default;
+$color-nav-mobile-overlay:          rgba(236,238,241,.8) !default;
 
 // Announcement
-$color-anncmnt-bg:                  #eae9e9 !default;
-$color-bold-anncmnt-bg:             #eae9e9 !default;
+$color-anncmnt-bg:                  #eceef1 !default;
+$color-bold-anncmnt-bg:             #eceef1 !default;
 
 // Header
-$color-header-border:               #eae9e9 !default;
-$color-bold-header-border:          #eae9e9 !default;
+$color-header-border:               #eceef1 !default;
+$color-bold-header-border:          #eceef1 !default;
 
 // Footer
-$color-footer-border:               #eae9e9 !default;
-$color-bold-footer-border:          #eae9e9 !default;
+$color-footer-border:               #eceef1 !default;
+$color-bold-footer-border:          #eceef1 !default;
 
 // Cards
-$color-card-text:                   #1c1b1b !default;
+$color-card-text:                   #2c343c !default;
 $color-card-bg:                     #fff !default;
-$color-card-border:                 #eae9e9 !default;
-$color-classic-card-shadow:         rgba(234,233,233,.8) !default;
-$color-bold-card-border:            #1c1b1b !default;
-$color-bold-card-border-alt:        #1c1b1b !default;
+$color-card-border:                 #eceef1 !default;
+$color-classic-card-shadow:         rgba(236,238,241,.8) !default;
+$color-bold-card-border:            #2c343c !default;
+$color-bold-card-border-hover:      #8696a6 !default;
 
 // Sections
-$color-sect-border:                 #eae9e9 !default;
-$color-sect-prim-bg:                #585555 !default;
-$color-sect-second-bg:              #eae9e9 !default;
-$color-sect-prim-btn-text:          #1c1b1b !default;
+$color-sect-border:                 #eceef1  !default;
+$color-sect-prim-bg:                #45515e !default;
+$color-sect-second-bg:              #eceef1  !default;
+$color-sect-prim-btn-text:          #2c343c !default;
 $color-sect-prim-btn-bg:            #fff !default;
 $color-sect-prim-btn-border:        #fff !default;
 
-$color-bold-sect-border:            #eae9e9 !default;
-$color-classic-sect-title-line:     #585555 !default;
+$color-bold-sect-border:            #eceef1  !default;
+$color-classic-sect-title-line:     #45515e !default;
 
 // Media
-$color-media-border:                #eae9e9 !default;
-$color-bold-media-border:           #1c1b1b !default;
+$color-media-border:                #eceef1  !default;
+$color-bold-media-border:           #2c343c !default;
 
 // Boxed layout
-$color-boxed-bg:                    #f9f9f9 !default;
-$color-boxed-border:                #eae9e9 !default;
-$color-bold-boxed-border:           #eae9e9 !default;
+$color-boxed-bg:                    #f7f8f9 !default;
+$color-boxed-border:                #eceef1  !default;
+$color-bold-boxed-border:           #eceef1  !default;
 
 
 // Inverse (light text on dark background)
 $color-inverse-text:                       #fff !default;
-$color-inverse-text-muted:                 #9d9999 !default;
+$color-inverse-text-muted:                 #8696a6 !default;
 $color-inverse-heading:                    #fff !default;
 
-$color-inverse-bg:                         #1c1b1b !default;
-$color-inverse-bg-light:                   #f9f9f9 !default;
-$color-inverse-bg-dark:                    #1c1b1b !default;
-$color-inverse-bg-secondary:               #eae9e9 !default;
+$color-inverse-bg:                         #2c343c !default;
+$color-inverse-bg-light:                   #f7f8f9 !default;
+$color-inverse-bg-dark:                    #2c343c !default;
+$color-inverse-bg-secondary:               #eceef1 !default;
 
-$color-inverse-border:                     #eae9e9 !default;
-$color-inverse-border-dark:                #1c1b1b !default;
+$color-inverse-border:                     #eceef1 !default;
+$color-inverse-border-dark:                #2c343c !default;
 
 // Links
 $color-inverse-link:                       #fff !default;
-
-$color-primary: #585555 !default;
-
 
 
 
@@ -167,14 +164,14 @@ $color-primary: #585555 !default;
 $color-dark-text:              #fff !default;
 $color-dark-heading:           #fff !default;
 $color-dark-text-muted:        #9d9999 !default;
-$color-dark-bg:                #1c1b1b !default;
+$color-dark-bg:                #2c343c !default;
 $color-dark-border:            #292828 !default;
 $color-dark-link:              #fff !default;
-$color-mark:                   #1c1b1b !default;
-$color-mark-bg:                #eae9e9 !default;
+$color-mark:                   #2c343c !default;
+$color-mark-bg:                #eceef1   !default;
 $color-dark-layout-boxed-bg:   #171616 !default;
 
-$color-dark-btn-text:                 #1c1b1b !default;
+$color-dark-btn-text:                 #2c343c !default;
 $color-dark-btn-bg:                   #fff !default;
 $color-dark-btn-border:               #fff !default;
 $color-dark-btn-hover-text:           #fff !default;

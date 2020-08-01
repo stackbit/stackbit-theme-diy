@@ -4,7 +4,7 @@ sections:
   - type: hero_section
     title: General
     subtitle: The optional subtitle
-    align: left
+    align: center
     padding_top: medium
     padding_bottom: none
     background_color: none
@@ -19,7 +19,7 @@ sections:
     show_excerpt: true
     show_image: true
     image_has_border: false
-    padding_top: medium
+    padding_top: small
     padding_bottom: large
     has_border: true
   - type: form_section
@@ -28,7 +28,7 @@ sections:
     content: >-
       Subscribe to our newsletter to make sure you don't miss anything.
     content_align: center
-    form_position: left
+    form_position: bottom
     form_layout: inline
     form_id: subscribeForm
     form_fields:
@@ -38,9 +38,9 @@ sections:
         default_value: Your email address
         is_required: true
     submit_label: Subscribe
-    padding_top: small
-    padding_bottom: small
-    has_border: false
+    padding_top: medium
+    padding_bottom: medium
+    has_border: true
     background_color: secondary
 layout: advanced
 ---

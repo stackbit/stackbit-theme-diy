@@ -7,7 +7,7 @@ params:
   style: classic
   palette: gray
   mode: light
-  base_font: sans-serif
+  base_font: serif
   header:
     title: DIY
     logo: "images/classic/logo.svg"

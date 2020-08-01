@@ -10,13 +10,19 @@
 	max-width: 270px;
 }
 
+.site-footer__copyright,
+.site-footer__social {
+	text-align: center;
+}
+
 .site-footer__copyright {
 	font-size: 0.77778em;
 }
 
-.site-footer__copyright,
 .site-footer__social {
-	text-align: center;
+	.btn {
+		margin: 0.83333rem 0.41666rem 0; 
+	}
 }
 
 @include media-breakpoint-up(sm) {
@@ -30,7 +36,7 @@
 	.site-footer__social {
 		&:not(:only-child) {
 			.btn {
-				margin: 0 0 0 0.55556rem;
+				margin: 0 0 0 1.11111rem;
 			}
 		}
 	}

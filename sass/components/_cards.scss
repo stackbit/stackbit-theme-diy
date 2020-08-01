@@ -92,26 +92,8 @@
 		border: 2px solid $color-bold-card-border;
 		position: relative;
 
-
-		&:after {
-			border: 2px solid transparent;
-			content: "";
-			height: 100%;
-			left: 6px;
-			position: absolute;
-			top: 6px;
-			-webkit-transition: border-color .3s ease-in;
-			transition: border-color .3s ease-in;
-			width: 100%;
-			z-index: -1;
-		}
-
 		&:hover {
-			&:after {
-				border-color: $color-bold-card-border-alt;
-			}
+			border-color: $color-bold-card-border-hover;
 		}
-
-		// highlight
 	}
 }

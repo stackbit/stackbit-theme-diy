@@ -14,6 +14,7 @@
 	font-weight: 400;
 	justify-content: center;
 	line-height: 1.25;
+	min-width: 10em;
 	padding: 0.75em 1.875em;
 	text-decoration: none;
 	transition: .3s ease;
@@ -22,6 +23,7 @@
 	&:hover,
 	&:focus,
 	&:active {
+		opacity: .85;
 		outline: 0;
 	}
 
@@ -32,11 +34,6 @@
 			margin-left: 0;
 			margin-right: 5px;
 		}
-	}
-
-	&:not(.btn--clear),
-	&:not(.btn--icon) {
-		min-width: 10em;
 	}
 }
 
@@ -51,12 +48,14 @@
 	border: 0;
 	border-radius: 0;
 	color: inherit;
+	min-width: 0;
 	padding: 0;
 }
 
 .btn--icon {
 	font-size: 1rem;
 	height: 1.66667em;
+	min-width: 0;
 	padding: 0;
 	position: relative;
 	width: 1.66667em;
@@ -73,102 +72,57 @@
 
 	a,
 	.btn {
-		margin: 0 0.55556rem 0.55556rem 0;
+		margin: 0 1em 1em 0;
 	}
 
 	&.justify-center {
 		a,
 		.btn {
-			margin-left: 0.27778em;
-			margin-right: 0.27778em;
+			margin-left: 0.5em;
+			margin-right: 0.5em;
 		}
 	}
 
 	&.justify-end {
 		a,
 		.btn {
-			margin-left: 0.55556rem;
+			margin-left: 1em;
 			margin-right: 0;
 		}
 	}
 
 	&.btn-group--fill {
 		.btn {
-			max-width: 370px;
+			max-width: 22.5em;
 			width: 100%;
 		}
 	}
 }
 
-
-
-
 .style-classic {
 	.btn {
 		border-radius: 1.875em;
-
-		&:hover,
-		&:focus,
-		&:active {
-			opacity: .8;
-		}
 	}
 }
 
 .style-minimal {
 	.btn {
-		border-radius: 3px;
-
-		&:hover,
-		&:focus,
-		&:active {
-			opacity: .85;
-		}
+		border-radius: 2px;
 	}
 }
 
-.style-bold {//???
-	.btn--clear {
-		&:hover,
-		&:focus,
-		&:active {
-			opacity: .85;
-		}
-	}
-
+.style-bold {
 	.btn--primary,
 	.btn--secondary {
-		//box-shadow: 0.375em 0.375em 0 0 $color-bold-btn-shadow;
+		box-shadow: 0.375em 0.375em 0 0 $color-bold-btn-shadow;
+		opacity: 1;
 		position: relative;
-
-		&:after {
-			background-color: $color-bold-btn-shadow;
-			border: 2px solid $color-bold-btn-shadow;
-			content: "";
-			height: 100%;
-			left: -2px;
-			position: absolute;
-			top: -2px;
-			-webkit-transition: .2s ease-in;
-			transition: .2s ease-in;
-			width: 100%;
-			z-index: -1;
-			margin-left: 6px;
-				margin-top: 6px;
-		}
 
 		&:hover,
 		&:focus,
 		&:active {
-			transform: translateY(6px);
-			//???
-
-			&:after {
-				transform: translateY(0);
-				
-			
-			}
+			box-shadow: 0 0 0 0 $color-bold-btn-shadow;
+			transform: translate(6px,6px);//???
 		}
 	}
 }
-
