@@ -15,7 +15,7 @@ sections:
         url: /features
         style: secondary
     image: images/classic/hero.png
-    media_position: right
+    media_position: left
     media_width: fifty
     media_has_border: false
     align: left
@@ -103,7 +103,7 @@ sections:
           “Stackbit is fast! Themes are always up to date. It’s easy to use across the organization, and collaboration is easy.”
         subtitle: >-
           Brandon Guidelines, Sr. Design Manager at Company
-        image: images/brandon-guidelines.jpg
+        image: images/brandon-guidelines.png
         media_position: right
         media_width: thirty-three
     feature_padding_vert: small
@@ -181,7 +181,7 @@ sections:
 
 
           **Hanson Deck,** *App Developer, Studio*
-        image: images/hanson-deck.jpg
+        image: images/hanson-deck.png
         image_position: left
         image_width: twenty-five
       - content: >-
@@ -189,7 +189,7 @@ sections:
 
 
           **Miles Tone,** *CEO, Studio*
-        image: images/miles-tone.jpg
+        image: images/miles-tone.png
         image_position: left
         image_width: twenty-five
       - content: >-
@@ -197,7 +197,7 @@ sections:
 
 
           **Eleanor Carr,** *CTO, Studio*
-        image: images/eleanor-carr.jpg
+        image: images/eleanor-carr.png
         image_position: left
         image_width: twenty-five
       - content: >-
@@ -205,7 +205,7 @@ sections:
 
 
           **Gordon Norman,** *Web Designer, Studio*
-        image: images/gordon-norman.jpg
+        image: images/gordon-norman.png
         image_position: left
         image_width: twenty-five
     grid_cols: two

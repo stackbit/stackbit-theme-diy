@@ -4,31 +4,39 @@ sections:
   - type: hero_section
     title: About
     subtitle: >-
-      Optional subtitle
+      About Page Demo
     align: center
+    background_color: primary
   - type: features_section
     features:
-      - image: images/about.jpg
-    padding_top: none
-    padding_bottom: none
-    has_border: false
-    background_color: none
-  - type: grid_section
-    grid_items:
-      - content: >-
-          ## Ac felis donec et odio pellentesque sagittis vitae et leo duis ut diam quam nulla ullamcorper a lacus vestibulum
-        content_align: left
-      - content: >-
-          Proin tempor, lorem et molestie volutpat, dolor velit semper lacus, eget rutrum massa enim id odio. Ut at rutrum ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis dui nunc. Vestibulum non eros id orci lacinia elementum. Vivamus hendrerit mollis porta. Phasellus porta nisl mi, vel aliquet purus pulvinar in. Suspendisse laoreet tempus ipsum. Cras sem neque, tempus nec pulvinar vitae, mattis ac sem. Duis eu purus eget ex vehicula consectetur imperdiet a urna. Suspendisse ultrices urna ut dolor viverra porta. Sed tincidunt massa quam, sit amet consequat felis tincidunt sit amet. Proin rhoncus pellentesque nibh nec fringilla. 
-        content_align: left
-    grid_cols: two
-    grid_gap_horiz: large
-    grid_gap_vert: large
-    enable_cards: false
-    padding_top: medium
-    padding_bottom: medium
-    has_border: false
-    background_color: none
+      - title: The Section Title One
+        subtitle: >-
+          Odio et tortor laoreet, sed interdum augue ornare. 
+        content: >-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
+        image: images/about-5.jpg
+        media_position: right
+        media_width: fifty
+  - type: features_section
+    features:
+      - title: The Section Title Two
+        subtitle: >-
+          In fermentum odio et tortor laoreet, sed interdum augue ornare. 
+        content: >-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
+        image: images/about-2.jpg
+        media_position: left
+        media_width: fifty
+  - type: features_section
+    features:
+      - title: The Section Title Three
+        subtitle: >-
+          Donec nisl ligula, cursus id molestie vel. 
+        content: >-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
+        image: images/about-1.jpg
+        media_position: right
+        media_width: fifty
   - type: grid_section
     title: Our Officess
     grid_items:
@@ -116,6 +124,6 @@ sections:
     padding_top: medium
     padding_bottom: medium
     has_border: false
-    background_color: none
+    background_color: primary
 layout: advanced
 ---
