@@ -11,13 +11,7 @@
 }
 
 .site-footer__copyright {
-	font-size: 0.875em;
-}
-
-.site-footer__social {
-	.btn {
-		margin: 0.625rem 0.3125rem 0;
-	}
+	font-size: 0.77778em;
 }
 
 .site-footer__copyright,
@@ -36,7 +30,7 @@
 	.site-footer__social {
 		&:not(:only-child) {
 			.btn {
-				margin: 0 0 0 0.3125rem; 
+				margin: 0 0 0 0.55556rem;
 			}
 		}
 	}

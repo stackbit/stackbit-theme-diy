@@ -18,7 +18,7 @@ sections:
     show_excerpt: true
     show_image: true
     image_has_border: true
-    padding_top: medium
+    padding_top: small
     padding_bottom: large
     has_border: true
   - type: form_section

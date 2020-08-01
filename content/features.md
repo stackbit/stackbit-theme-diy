@@ -10,15 +10,21 @@ sections:
       - title: Feature 1
         content: >-
           Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam nulla dolor, aliquam ut dui sed, scelerisque vestibulum velit.
-        image: images/classic/feature-1.png
+        video_url: https://youtu.be/lv4WhC2iK4k
+        video_width: 560
+        video_height: 315
+        media_position: right
       - title: Feature 2
         content: >-
           Nulla sapien mi, ullamcorper sed ex cursus, tempus vehicula ipsum. Praesent quis volutpat sem, ut pretium purus. Vivamus fringilla mauris ut dui elementum porttitor.
-        image: images/classic/feature-1.png
-      - title: Feature 3
-        content: >-
-          Nam hendrerit tincidunt dui, quis commodo nulla mollis non. Etiam ultrices venenatis venenatis. Quisque a ante porta, semper elit sit amet, ullamcorper augue.
-        image: images/classic/feature-1.png
+        video_url: https://youtu.be/DJJ_y8FYRl0
+        video_width: 560
+        video_height: 315
+        media_position: right
+    feature_padding_vert: large
+    padding_top: large
+    padding_bottom: large
+    background_color: secondary
   - type: grid_section
     grid_items:
       - content: >-
@@ -64,7 +70,7 @@ sections:
     padding_top: medium
     padding_bottom: medium
     has_border: false
-    background_color: none
+    background_color: primary
   - type: grid_section
     title: What People Say
     grid_items:
@@ -100,7 +106,8 @@ sections:
       - label: Compare Plans
         url: /pricing
         style: primary
-    align: center
+    actions_position: right
+    align: left
     padding_top: medium
     padding_bottom: medium
     has_border: false

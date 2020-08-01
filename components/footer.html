@@ -26,7 +26,7 @@
 				{% if site.params.footer.has_primary_nav and site.params.footer.primary_nav_links %}
 				<div class="site-footer__menu cell-12 cell-md my-3 my-md-4">
 					{% if site.params.footer.primary_nav_title %}
-					<h2 class="h4 mb-3">{{ site.params.footer.primary_nav_title }}</h2>
+					<h2 class="h4 mb-3 mb-md-4">{{ site.params.footer.primary_nav_title }}</h2>
 					{% endif %}
 					{% set include_dict = {'footer_menu': site.params.footer.primary_nav_links} %}
 					{% include "footer_menu.html" %}
@@ -35,7 +35,7 @@
 				{% if site.params.footer.has_secondary_nav and site.params.footer.secondary_nav_links %}
 				<div class="site-footer__menu cell-12 cell-md my-3 my-md-4">
 					{% if site.params.footer.secondary_nav_title %}
-					<h2 class="h4 mb-3">{{ site.params.footer.secondary_nav_title }}</h2>
+					<h2 class="h4 mb-3 mb-md-4">{{ site.params.footer.secondary_nav_title }}</h2>
 					{% endif %}
 					{% set include_dict = {'footer_menu': site.params.footer.secondary_nav_links} %}
 					{% include "footer_menu.html" %}
@@ -44,7 +44,7 @@
 				{% if site.params.footer.has_tertiary_nav and site.params.footer.tertiary_nav_links %}
 				<div class="site-footer__menu cell-12 cell-md my-3 my-md-4">
 					{% if site.params.footer.tertiary_nav_title %}
-					<h2 class="h4 mb-3">{{ site.params.footer.tertiary_nav_title }}</h2>
+					<h2 class="h4 mb-3 mb-md-4">{{ site.params.footer.tertiary_nav_title }}</h2>
 					{% endif %}
 					{% set include_dict = {'footer_menu': site.params.footer.tertiary_nav_links} %}
 					{% include "footer_menu.html" %}

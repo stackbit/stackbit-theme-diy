@@ -69,6 +69,127 @@
 	}
 }
 
+.section__subtitle {
+	font-size: 0.88889em;
+	margin-bottom: 0.25em;
+}
+
+// Hero section ??? spacing if no subtitle, etc.
+.hero__title {
+	margin-bottom: 0.25em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.hero__subtitle {
+	font-size: 1.22222em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.hero__title + .hero__copy {
+	margin-top: 1em;
+}
+
+.hero__actions {
+	&:not(:first-child) {
+		margin-top: 2em;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.hero__body {
+		font-size: 1.11111rem;
+	}
+}
+
+// Features section
+.feature__subtitle {
+	font-size: 1.33333em;
+	line-height: 1.25;
+}
+
+.feature__actions {
+	margin-top: 1.66667em;
+}
+
+
+// Grid section
+.item__subtitle {
+
+}
+
+.item__actions {
+	margin-top: 1.66667em
+}
+
+// Blog section
+.item__meta,
+.item__byline {
+	font-size: 0.77778em;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.item__byline {
+	margin-top: 1.66667em;
+}
+
+.blog-feed {
+	.item__title {
+		margin-bottom: 0.83333em;
+	}
+}
+
+.item__cat + .item__date {
+	&:before {
+		content: "\00b7\00a0";
+		font-weight: 700;
+		margin: 0 3px;
+	}
+}
+
+// CTA section
+@include media-breakpoint-up(lg) {
+	.cta__copy,
+	.cta__actions {
+		font-size: 1.11111em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .style-bold {
 	.section {
 		&.has-border {

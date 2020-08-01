@@ -10,11 +10,11 @@
 	color: $color-btn-text;
 	cursor: pointer;
 	display: inline-flex;
-	font-size: 1em;
+	font-size: 0.88889em;
 	font-weight: 400;
 	justify-content: center;
 	line-height: 1.25;
-	padding: 0.75em 1.5em;
+	padding: 0.75em 1.875em;
 	text-decoration: none;
 	transition: .3s ease;
 	white-space: nowrap;
@@ -67,30 +67,36 @@
 	display: flex;
 	flex-wrap: wrap;
 
+	a {
+		font-size: 0.88889em;
+	}
+
 	a,
 	.btn {
-		margin: 0 1em 1em 0;
+		margin: 0 0.55556rem 0.55556rem 0;
 	}
 
 	&.justify-center {
 		a,
 		.btn {
-			margin-left: 0.5em;
-			margin-right: 0.5em;
+			margin-left: 0.27778em;
+			margin-right: 0.27778em;
 		}
 	}
 
 	&.justify-end {
 		a,
 		.btn {
-			margin-left: 1em;
+			margin-left: 0.55556rem;
 			margin-right: 0;
 		}
 	}
 
 	&.btn-group--fill {
-		max-width: 370px;
-		width: 100%;
+		.btn {
+			max-width: 370px;
+			width: 100%;
+		}
 	}
 }
 
@@ -116,7 +122,7 @@
 		&:hover,
 		&:focus,
 		&:active {
-			opacity: .8;
+			opacity: .85;
 		}
 	}
 }
@@ -126,7 +132,7 @@
 		&:hover,
 		&:focus,
 		&:active {
-			opacity: .8;
+			opacity: .85;
 		}
 	}
 
@@ -146,3 +152,4 @@
 		}
 	}
 }
+

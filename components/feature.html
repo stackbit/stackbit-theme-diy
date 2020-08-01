@@ -29,7 +29,7 @@
 	{% set is_vert = true %}
 {% endif %}
 
-<div {{ classNames('item', {
+<div {{ classNames('feature', {
 	'max-w-medium': is_vert,
 	'mx-auto': is_vert,
 	'py-0': padding_y == 'small',
@@ -38,7 +38,7 @@
 }) }}>
 	<div class="item__content grid items-center">
 		{% if has_media %}
-		<div {{ classNames('item__media', 'my-2', 'cell-12', {
+		<div {{ classNames('feature__media', 'my-2', 'cell-12', {
 			'cell-md-4': is_horiz and has_text and media_width == 'thirty-three',
 			'cell-md-5': is_horiz and has_text and media_width == 'fourty',
 			'cell-md-6': is_horiz and has_text and media_width == 'fifty',
@@ -56,7 +56,7 @@
 		</div>
 		{% endif %}
 		{% if has_text %}
-		<div {{ classNames('item__body', 'my-2', 'cell-12', {
+		<div {{ classNames('feature__body', 'my-2', 'cell-12', {
 			'cell-md-8': is_horiz and has_media and media_width == 'thirty-three',
 			'cell-md-7': is_horiz and has_media and media_width == 'fourty',
 			'cell-md-6': is_horiz and has_media and media_width == 'fifty',
@@ -68,21 +68,21 @@
 		}) }}>
 			{% if feature.title %}
 				{% if section.title %}
-				<h3 class="item__title h2">{{ feature.title }}</h3>
+				<h3 class="feature__title h2">{{ feature.title }}</h3>
 				{% else %}
-				<h2 class="item__title h2">{{ feature.title }}</h2>
+				<h2 class="feature__title h2">{{ feature.title }}</h2>
 				{% endif %}
 			{% endif %}
 			{% if feature.subtitle %}
-			<div class="item__subtitle">{{ feature.subtitle }}</div>
+			<p class="feature__subtitle">{{ feature.subtitle }}</p>
 			{% endif %}
 			{% if feature.content %}
-			<div class="item__copy">
+			<div class="feature__copy">
 				{{ feature.content | markdownify }}
 			</div>
 			{% endif %}
 			{% if feature.actions %}
-			<div {{ classNames('item__actions', 'btn-group', {
+			<div {{ classNames('feature__actions', 'btn-group', {
 				'justify-center': align_x == 'center',
 				'justify-end': align_x == 'right'
 			}) }}>

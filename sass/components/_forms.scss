@@ -3,9 +3,10 @@
  */
 label {
 	display: block;
+	font-size: 0.88889em;
 	font-weight: 700;
 	line-height: 1.5;
-	margin-bottom: 0.25em;
+	margin-bottom: 0.3em;
 }
 
 input[type="text"],
@@ -28,7 +29,7 @@ textarea {
 	font-weight: normal;
 	line-height: 1.5;
 	max-width: 100%;
-	padding: 0.625em;
+	padding: 0.6875em;
 	width: 100%;
 
 	&:focus {
@@ -37,7 +38,7 @@ textarea {
 }
 
 .form-select {
-	font-size: 1em;
+	font-size: 16px;
 	position: relative;
 
 	select {

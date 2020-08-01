@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<article class="post py-5 py-sm-6">
+<article class="post py-5 py-sm-6 py-md-7">
 	{% set has_image = false %}
 	{% if page.params.image %}
 		{% set has_image = true %}
@@ -32,14 +32,14 @@
 				'cell-lg-5': image_pos != 'top',
 				'order-lg-first': has_image and image_pos == 'right'
 			}) }}>
-				<div class="post__meta">
+				<div class="post__meta mb-2">
 					{% if page.params.categories %}
 						{% set include_dict = {'categories': page.params.categories, 'container_class': 'post__cat'} %}
 						{% include "blog_post_categories.html" %}
 					{% endif %}
 					<span class="post__date"><time datetime="{{page.date | date_format("%Y-%m-%d %H:%M") }}">{{ page.date | date_format("%B %d, %Y") }}</time></span>
 				</div>
-				<h1 class="post__title">{{ page.params.title }}</h1>
+				<h1 class="post__title mt-0">{{ page.params.title }}</h1>
 				{% if page.params.subtitle %}
 					<p class="post__subtitle">{{ page.params.subtitle }}</p>
 				{% endif %}

@@ -42,10 +42,10 @@
 	'bg-none': bg_color == 'none',
 	'bg-primary': bg_color == 'primary',
 	'bg-secondary': bg_color == 'secondary',
-	'pt-5': padding_top == 'small',
+	'pt-4': padding_top == 'small',
 	'pt-6': padding_top == 'medium' or padding_top == 'large',
 	'pt-md-7': padding_top == 'large',
-	'pb-5': padding_bottom == 'small',
+	'pb-4': padding_bottom == 'small',
 	'pb-6': padding_bottom == 'medium' or padding_bottom == 'large',
 	'pb-md-7': padding_bottom == 'large'
 }) }}>
@@ -67,10 +67,10 @@
 				'text-right': align_x == 'right'
 			}) }}>
 				{% if section.title %}
-				<h1 class="hero__title">{{ section.title | safe }}</h1>
+				<h1 class="cta__title">{{ section.title | safe }}</h1>
 				{% endif %}
 				{% if section.content %}
-				<div class="hero__copy">
+				<div class="cta__copy">
 					{{ section.content | markdownify }}
 				</div>
 				{% endif %}

@@ -54,7 +54,7 @@
 				'pt-4': is_card and no_image
 			}) }}>
 				{% if blog_feed_section.show_date or show_categories %}
-				<div class="item__meta">
+				<div class="item__meta mb-1">
 					{% if show_categories %}
 						{% set include_dict = {'categories': post.params.categories, 'container_class': 'item__cat'} %}
 						{% include "blog_post_categories.html" %}
@@ -65,12 +65,12 @@
 				</div>
 				{% endif %}
 				{% if blog_feed_section.title %}
-					<h3 {{ classNames('item__title', {
+					<h3 {{ classNames('item__title', 'mt-0', {
 						'h3': columns == 'two',
 						'h4': columns == 'three'
 					}) }}><a href="{{ post.url | relative_url }}">{{ post.params.title }}</a></h3>
 				{% else %}
-					<h2 {{ classNames('item__title', {
+					<h2 {{ classNames('item__title', 'mt-0', {
 						'h3': columns == 'two',
 						'h4': columns == 'three'
 					}) }}><a href="{{ post.url | relative_url }}">{{ post.params.title }}</a></h2>

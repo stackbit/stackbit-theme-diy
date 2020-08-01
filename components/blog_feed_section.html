@@ -17,10 +17,10 @@
 	'bg-none': bg_color == 'none',
 	'bg-primary': bg_color == 'primary',
 	'bg-secondary': bg_color == 'secondary',
-	'pt-5': padding_top == 'small',
+	'pt-4': padding_top == 'small',
 	'pt-6': padding_top == 'medium' or padding_top == 'large',
 	'pt-md-7': padding_top == 'large',
-	'pb-5': padding_bottom == 'small',
+	'pb-4': padding_bottom == 'small',
 	'pb-6': padding_bottom == 'medium' or padding_bottom == 'large',
 	'pb-md-7': padding_bottom == 'large'
 }) }}>
@@ -38,7 +38,7 @@
 		<div class="section__subtitle">{{ section.subtitle }}</div>
 		{% endif %}
 		{% if section.title %}
-		<h2 class="section__title">{{ section.title }}</h2>
+		<h2 class="section__title mt-0">{{ section.title }}</h2>
 		{% endif %}
 	</div>
 	{% endif %}

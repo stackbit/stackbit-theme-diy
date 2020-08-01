@@ -2,7 +2,7 @@
  * Base Styles
  */
 html {
-	font-size: 100%;
+	font-size: 112.5%;
 }
 
 @each $style in map-keys($theme-styles) {
@@ -21,7 +21,7 @@ html {
 body {
 	background-color: $color-bg;
 	color: $color-text;
-	line-height: 1.625;
+	line-height: 1.66667;
 	text-rendering: optimizeLegibility;
 	@include font-smooth();//???
 }
@@ -57,23 +57,23 @@ h6 {
 }
 
 h1 {
-	font-size: 2.625em;
+	font-size: 2.66667em;
 }
 
 h2 {
-	font-size: 2em;
+	font-size: 2.22222em;
 }
 
 h3 {
-	font-size: 1.625em;
+	font-size: 1.66667em;
 }
 
 h4 {
-	font-size: 1.375em;
+	font-size: 1.33333em;
 }
 
 h5 {
-	font-size: 1.125em;
+	font-size: 1.11111em;
 }
 
 h6 {
@@ -91,13 +91,13 @@ ins {
 blockquote {
 	color: $color-blockquote-text;
 	margin: 0 0 1em;
-	padding: 0 0 0 1.625em;
+	padding: 0 0 0 2.22222em;
 	position: relative;
 
 	&:before {
 		color: currentColor;
 		content: "\201C";
-		font-size: 2.625em;
+		font-size: 2.66667em;
 		left: 0;
 		line-height: 1;
 		position: absolute;
@@ -108,7 +108,7 @@ blockquote {
 pre {
 	background-color: $color-bg-light;
 	border: 1px solid $color-border;
-	font-size: 0.875em;
+	font-size: 0.88889em;
 	line-height: 1.5;
 	margin: 0 0 1em;
 	overflow: auto;
@@ -124,7 +124,7 @@ ol {
 
 ul,
 ol {
-	padding: 0 0 0 1.25em;
+	padding: 0 0 0 1.5em;
 }
 
 ul {
@@ -177,17 +177,25 @@ figure {
 
 figcaption {
 	color: $color-text-muted;
-	font-size: 0.875em;
+	font-size: 0.88889em;
 	text-align: left;
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
 	h1 {
-		font-size: 2.25em;
+		font-size: 2.22222em;
 	}
-	
+
 	h2 {
-		font-size: 1.875em;
+		font-size: 1.88889em;
+	}
+
+	h3 {
+		font-size: 1.55556em;
+	}
+
+	html {
+		font-size: 100%;
 	}
 }
 

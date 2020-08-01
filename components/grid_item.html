@@ -150,12 +150,12 @@
 						{% endif %}
 					{% endif %}
 					{% if item.subtitle %}
-					<div {{ classNames('item__subtitle', {
+					<p {{ classNames('item__subtitle', {
 						'text-center': title_align_x == 'center',
 						'text-right': title_align_x == 'right'
 					}) }}>
 						{{ item.subtitle }}
-					</div>
+					</p>
 					{% endif %}
 					{% if item.content %}
 					<div {{ classNames('item__copy', {

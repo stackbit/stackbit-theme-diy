@@ -50,11 +50,11 @@
 .style-classic {
 	.card {
 		border: 1px solid $color-border;
-		border-radius: 0.375em;
+		border-radius: 6px;
 		box-shadow: none;
 
 		&:hover {
-			box-shadow: 0 2px 30px rgba(210,212,222,.6);
+			box-shadow: 0 2px 30px rgba($color-border,.8);
 		}
 	}
 
