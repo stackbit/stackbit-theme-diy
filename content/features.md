@@ -23,7 +23,9 @@ sections:
           In fermentum odio et tortor laoreet, sed interdum augue ornare. 
         content: >-
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
-        image: images/about-2.jpg
+        video_url: https://youtu.be/aS1aPOOMQMk
+        video_width: 560
+        video_height: 315
         media_position: left
         media_width: fifty
   - type: features_section
