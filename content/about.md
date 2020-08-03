@@ -1,5 +1,5 @@
 ---
-title: Features
+title: About
 sections:
   - type: hero_section
     title: About
@@ -17,8 +17,6 @@ sections:
         image: images/about-5.jpg
         media_position: right
         media_width: fifty
-  - type: features_section
-    features:
       - title: The Section Title Two
         subtitle: >-
           In fermentum odio et tortor laoreet, sed interdum augue ornare. 
@@ -27,8 +25,6 @@ sections:
         image: images/about-2.jpg
         media_position: left
         media_width: fifty
-  - type: features_section
-    features:
       - title: The Section Title Three
         subtitle: >-
           Donec nisl ligula, cursus id molestie vel. 
