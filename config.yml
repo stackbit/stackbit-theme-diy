@@ -1,6 +1,8 @@
 baseurl: "/"
 title: "Stackbit DIY Theme"
-page_load_js: "js/scripts.js"
+init_is: "js/init.js"
+page_load_js: "js/page-load.js"
+page_unload_js: "js/page-unload.js"
 params:
   description: A "do it yourself" theme for Stackbit
   layout: boxed
@@ -36,12 +38,12 @@ params:
         url: /pricing
         style: primary
     has_anncmnt: true
-    anncmnt_id: New
     anncmnt_content: >-
       Curabitur ac tellus mattis, tempor ipsum eu, eleifend sapien. **[Learn More](/pricing/)**
     anncmnt_align: left
     anncmnt_is_home_only: true
     anncmnt_has_close: true
+    anncmnt_id: new-features
   footer:
     logo: "images/classic/logo.svg"
     has_primary_nav: true

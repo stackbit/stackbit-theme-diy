@@ -16,20 +16,14 @@ sections:
         image: images/about-3.jpg
         media_position: right
         media_width: fifty
-  - type: features_section
-    features:
       - title: The Section Title Two
         subtitle: >-
           In fermentum odio et tortor laoreet, sed interdum augue ornare. 
         content: >-
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
-        video_url: https://youtu.be/aS1aPOOMQMk
-        video_width: 560
-        video_height: 315
+        video_embed_html: <iframe width="560" height="315" src="https://www.youtube.com/embed/aS1aPOOMQMk?modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         media_position: left
         media_width: fifty
-  - type: features_section
-    features:
       - title: The Section Title Three
         subtitle: >-
           Donec nisl ligula, cursus id molestie vel. 

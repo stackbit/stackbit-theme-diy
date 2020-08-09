@@ -10,7 +10,7 @@
 {% endif %}
 
 {% set has_media = false %}
-{% if feature.image or feature.video_url %}
+{% if feature.image or feature.video_embed_html %}
 	{% set has_media = true %}
 {% endif %}
 {% set media_width = feature.media_width | default('fifty', true) %}
@@ -45,8 +45,8 @@
 			'cell-md-7': is_horiz and has_text and media_width == 'sixty',
 			'has-border': feature.media_has_border
 		}) }}>
-			{% if feature.video_url %}
-				<a href="{{ feature.video_url }}" class="js-embed-link" data-embed-width="{{ feature.video_width | default('640', true) }}" data-embed-height="{{ feature.video_height | default('360', true) }}">{{ feature.video_url }}</a>
+			{% if feature.video_embed_html %}
+				{{ feature.video_embed_html | safe }}
 			{% else %}
 				<img src="{{ feature.image | relative_url }}" alt="{{ feature.title }}" {{ classNames({
 					'mx-auto': align_x == 'center',

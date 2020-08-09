@@ -17,7 +17,7 @@
 {% endif %}
 
 {% set has_media = false %}
-{% if section.image or section.video_url %}
+{% if section.image or section.video_embed_html %}
 	{% set has_media = true %}
 {% endif %}
 {% set media_width = section.media_width | default('fifty', true) %}
@@ -65,8 +65,8 @@
 				'cell-md-7': is_horiz and has_text and media_width == 'sixty',
 				'has-border': section.media_has_border
 			}) }}>
-				{% if section.video_url %}
-					<a href="{{ section.video_url }}" class="js-embed-link" data-embed-width="{{ section.video_width | default('640', true) }}" data-embed-height="{{ section.video_height | default('360', true) }}">{{ section.video_url }}</a>
+				{% if section.video_embed_html %}
+					{{ section.video_embed_html | safe }}
 				{% else %}
 					<img src="{{ section.image | relative_url }}" alt="{{ section.title }}" {{ classNames({
 						'mx-auto': align_x == 'center',

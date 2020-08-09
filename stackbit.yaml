@@ -9,6 +9,12 @@ pagesDir: content
 pageLayoutKey: layout
 logicFields:
   - blog_feed_section.recent_count
+  - blog_feed_section.background_image_opacity
+  - features_section.background_image_opacity
+  - hero_section.background_image_opacity
+  - grid_section.background_image_opacity
+  - cta_section.background_image_opacity
+  - form_section.background_image_opacity
 metadata: 
   title: DIY
   description: A "do it yourself" Stackbit theme
@@ -114,10 +120,6 @@ models:
         label: Enable announcement
         description: Display the announcement above the site header
         default: false
-      - type: string
-        name: anncmnt_id
-        label: Announcement ID
-        description: A unique identifier, required if close button is enabled
       - type: markdown
         name: anncmnt_content
         label: Announcement content
@@ -141,6 +143,10 @@ models:
         label: Enable announcement close
         description: Display the announcement close button
         default: false
+      - type: string
+        name: anncmnt_id
+        label: Announcement ID
+        description: A unique identifier, required if close button is enabled. Must be updated each time the announcement content changes
   footer:
     type: object
     label: Footer configuration
@@ -399,18 +405,10 @@ models:
         name: image
         label: Image
         description: The image of the section
-      - type: url
-        name: video_url
-        label: Video URL
-        description: The url of the YouTube or Vimeo video
-      - type: number
-        name: video_width
-        label: Video width
-        description: The width of the video in pixels
-      - type: number
-        name: video_height
-        label: Video height
-        description: The height of the video in pixels
+      - type: html
+        name: video_embed_html
+        label: Video Embed Code
+        description: The HTML embed code for your video
       - type: enum
         name: media_position
         label: Image or video position
@@ -1252,18 +1250,10 @@ models:
         name: image
         label: Image
         description: The image of the feature
-      - type: url
-        name: video_url
-        label: Video URL
-        description: The url of the YouTube or Vimeo video
-      - type: number
-        name: video_width
-        label: Video width
-        description: The width of the video in pixels
-      - type: number
-        name: video_height
-        label: Video height
-        description: The height of the video in pixels
+      - type: html
+        name: video_embed_html
+        label: Video Embed Code
+        description: The HTML embed code for your video
       - type: enum
         name: media_position
         label: Image or video position
