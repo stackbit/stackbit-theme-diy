@@ -17,7 +17,6 @@ sections:
     image: images/classic/hero.png
     media_position: left
     media_width: fifty
-    media_has_border: false
     align: left
     padding_top: large
     padding_bottom: large
@@ -129,7 +128,6 @@ sections:
         image_position: top
         image_align: left
         image_has_padding: true
-        image_has_border: false
       - title: Section Item 2
         title_align: left
         content: >-
@@ -147,7 +145,6 @@ sections:
         image_position: top
         image_align: left
         image_has_padding: true
-        image_has_border: false
       - title: Section Item 3
         title_align: left
         content: >-
@@ -165,7 +162,6 @@ sections:
         image_position: top
         image_align: left
         image_has_padding: true
-        image_has_border: false
     grid_cols: three
     grid_gap_horiz: medium
     grid_gap_vert: small
@@ -240,25 +236,21 @@ sections:
         title_align: center
         image: images/gustav-purpleson.jpg
         image_position: top
-        image_has_border: true
       - title: Dianne Ameter
         subtitle: Software Engineer
         title_align: center
         image: images/dianne-ameter.jpg
         image_position: top
-        image_has_border: true
       - title: Hugh Saturation
         subtitle: Developer Advocate
         title_align: center
         image: images/hugh-saturation.jpg
         image_position: top
-        image_has_border: true
       - title: Hilary Ouse
         subtitle: Operations Manager
         title_align: center
         image: images/hilary-ouse.jpg
         image_position: top
-        image_has_border: true
     grid_cols: four
     align: center
     background_color: secondary

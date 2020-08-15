@@ -26,8 +26,6 @@ td {
 }
 
 th {
-	background-color: $color-table-bg;
-	color: $color-table-heading;
 	font-weight: 700;
 }
 
@@ -42,6 +40,12 @@ th {
 	width: 100%;
 }
 
+.style-classic {
+	th {
+		background-color: $color-table-bg;
+	}
+}
+
 .style-bold {
 	table,
 	th,
@@ -51,11 +55,5 @@ th {
 
 	th {
 		background-color: $color-bold-table-bg;
-	}
-}
-
-.style-minimal {
-	th {
-		background: 0;
 	}
 }

@@ -8,7 +8,7 @@ sections:
     background_color: primary
   - type: features_section
     features:
-      - title: The Section Title One
+      - title: Section Title One
         subtitle: >-
           Odio et tortor laoreet, sed interdum augue ornare. 
         content: >-
@@ -16,7 +16,7 @@ sections:
         image: images/about-3.jpg
         media_position: right
         media_width: fifty
-      - title: The Section Title Two
+      - title: Section Title Two
         subtitle: >-
           In fermentum odio et tortor laoreet, sed interdum augue ornare. 
         content: >-
@@ -24,7 +24,7 @@ sections:
         video_embed_html: <iframe width="560" height="315" src="https://www.youtube.com/embed/aS1aPOOMQMk?modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         media_position: left
         media_width: fifty
-      - title: The Section Title Three
+      - title: Section Title Three
         subtitle: >-
           Donec nisl ligula, cursus id molestie vel. 
         content: >-
@@ -53,7 +53,6 @@ sections:
         image_position: top
         image_align: left
         image_has_padding: true
-        image_has_border: false
       - title: Section Item 2
         title_align: left
         content: >-
@@ -71,7 +70,6 @@ sections:
         image_position: top
         image_align: left
         image_has_padding: true
-        image_has_border: false
       - title: Section Item 3
         title_align: left
         content: >-
@@ -89,7 +87,6 @@ sections:
         image_position: top
         image_align: left
         image_has_padding: true
-        image_has_border: false
       - title: Section Item 4
         title_align: left
         content: >-
@@ -107,7 +104,6 @@ sections:
         image_position: top
         image_align: left
         image_has_padding: true
-        image_has_border: false
     grid_cols: two
     grid_gap_horiz: medium
     grid_gap_vert: medium

@@ -40,8 +40,7 @@
 			<div {{ classNames('item__media', 'mb-3', {
 				'card__media': is_card,
 				'card__media--fill': is_card,
-				'card__media--top': is_card,
-				'has-border': blog_feed_section.image_has_border
+				'card__media--top': is_card
 			}) }}>
 				<a href="{{ post.url | relative_url }}"><img src="{{ post.params.thumb_image | relative_url }}" alt="{{ post.params.title }}" /></a>
 			</div>

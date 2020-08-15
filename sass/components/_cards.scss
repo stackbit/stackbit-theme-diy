@@ -1,7 +1,8 @@
+/**
+ * Cards
+ */
 .card {
-	background-color: $color-card-bg;
 	border: 1px solid $color-card-border;
-	color: $color-card-text;
 	box-sizing: border-box;
 	height: 100%;
 
@@ -13,7 +14,14 @@
 }
 
 .card--highlight {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
 	transition: .3s ease;
+
+	&:hover {
+		-webkit-transform: translateY(-5px);
+		transform: translateY(-5px);
+	}
 }
 
 .card__media--fill {
@@ -42,25 +50,9 @@
 	}
 }
 
-.style-minimal {
-	.card--highlight {
-		&:hover {
-			transform: translateY(-6px);
-		}
-	}
-}
-
 .style-classic {
 	.card {
 		border-radius: 6px;
-	}
-
-	.card--highlight {
-		box-shadow: none;
-
-		&:hover {
-			box-shadow: 0 2px 30px $color-classic-card-shadow;
-		}
 	}
 
 	.card__media--fill {
@@ -96,12 +88,6 @@
 
 .style-bold {
 	.card {
-		border: 2px solid $color-bold-card-border;
-	}
-
-	.card--highlight {
-		&:hover {
-			border-color: $color-bold-card-border-hover;
-		}
+		border-width: 2px;
 	}
 }

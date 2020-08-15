@@ -26,47 +26,10 @@
 	}
 }
 
-.hero__media,
-.item__media:not(.card__media--fill) {
-	&.has-border {
-		img,
-		iframe {
-			border: 1px solid $color-media-border;
-		}
-	}
-}
-
-.card__media--fill {
-	&.has-border {
-		&.card__media--top,
-		&.card__media--left,
-		&.card__media--right {
-			border-bottom: 1px solid $color-media-border;
-		}
-
-		&.card__media--bottom {
-			border-top: 1px solid $color-media-border;
-		}
-
-		@include media-breakpoint-up(md) {
-			&.card__media--left {
-				border-bottom: 0;
-				border-right: 1px solid $color-media-border;
-			}
-	
-			&.card__media--right {
-				border-bottom: 0;
-				border-left: 1px solid $color-media-border;
-			}
-		}
-	}
-}
-
 .hero__title,
 .cta__title {
 	span {
 		border-bottom: 2px solid currentColor;
-		//text-decoration: underline;
 	}
 }
 
@@ -174,11 +137,10 @@
 	}
 }
 
-// Style adjustments
 .style-classic {
 	.section__title {
 		&:after {
-			background-color: $color-classic-sect-title-line;
+			background-color: $color-classic-sect-underline;
 			content: "";
 			display: block;
 			height: 2px;
@@ -208,175 +170,53 @@
 .style-bold {
 	.section {
 		&.has-border {
-			border-bottom-color: $color-bold-sect-border;
 			border-bottom-width: 2px;
 		}
 	}
-
-	.hero__media,
-	.item__media {
-		&.has-border {
-			img {
-				border-color: $color-bold-media-border;
-				border-width: 2px;
-			}
-		}
-	}
-
-	.hero__media,
-	.item__media:not(.card__media--fill) {
-		&.has-border {
-			img,
-			iframe {
-				border-color: $color-bold-media-border;
-				border-width: 2px;
-			}
-		}
-	}
-
-	.card__media--fill {
-		&.has-border {
-			transition: .3s ease;
-
-			&.card__media--top,
-			&.card__media--left,
-			&.card__media--right {
-				border-bottom-color: $color-bold-media-border;
-				border-bottom-width: 2px;
-			}
-
-			&.card__media--bottom {
-				border-top-color: $color-bold-media-border;
-				border-top-width: 2px;
-			}
-
-			@include media-breakpoint-up(md) {
-				&.card__media--left {
-					border-right-color: $color-bold-media-border;
-					border-right-width: 2px;
-				}
-		
-				&.card__media--right {
-					border-left-color: $color-bold-media-border;
-					border-left-width: 2px;
-				}
-			}
-		}
-	}
-
-	.card {
-		&:hover {
-			.card__media--fill {
-				&.has-border {
-					border-color: $color-bold-card-border-hover;
-				}
-			}
-		}
-	}
 }
 
-// Section backgrounds
 .bg-primary {
-	background: $color-sect-prim-bg;
-	color: $color-sect-prim-text;
+	background: $color-primary-sect-bg;
+}
 
-	a {
-		color: $color-sect-prim-link;
-	}
+.bg-secondary {
+	background: $color-secondary-sect-bg;
+}
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		color: $color-sect-prim-heading;
-	}
-
-	blockquote {
-		color: inherit;
-	}
-
-	.card {
-		a {
-			color: inherit;
-		}
+@each $style in map-keys($theme-styles) {
+	$style-suffix: "#{$style}";
+	$colors: map-deep-get($theme-styles, $style, "colors");
+	@each $color, $value in $colors {
+		$color-suffix: "#{$color}";
 	
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		blockquote {
-			color: inherit;
-		}
-
-		.btn--primary {
-			background-color: $color-btn-bg;
-			border-color: $color-btn-border;
-			color: $color-btn-text;
+		.style-#{$style-suffix} {
+			&.palette-#{$color-suffix} {
+				.bg-primary {
+					background-color: $value;
+				}
+			}
 		}
 	}
 }
 
-#site-wrap {
+.style-classic {
+	$classic-colors: map-deep-get($theme-styles, "classic", "colors");
+	@each $color, $value in $classic-colors {
+		$color-suffix: "#{$color}";
+
+		&.palette-#{$color-suffix} {
+			.section__title {
+				&:after {
+					background-color: $value;
+				}
+			}
+		}
+	}
+
 	.bg-primary {
-		.btn--primary {
-			background-color: $color-sect-prim-btn-bg;
-			border-color: $color-sect-prim-btn-border;
-			color: $color-sect-prim-btn-text;
-		}
-	}
-}
-
-.bg-secondary {
-	background: $color-sect-second-bg;
-}
-
-.bg-primary,
-.bg-secondary {
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	input[type="tel"],
-	input[type="number"],
-	input[type="search"],
-	input[type="url"],
-	select,
-	textarea {
-		background-color: $color-sect-prim-second-input-bg;
-	}
-
-	.card {
-		input[type="text"],
-		input[type="password"],
-		input[type="email"],
-		input[type="tel"],
-		input[type="number"],
-		input[type="search"],
-		input[type="url"],
-		select,
-		textarea {
-			background-color: $color-input-bg;
-		}
-	}
-}
-
-.style-bold {
-	.bg-primary,
-	.bg-secondary {
-		.card {
-			input[type="text"],
-			input[type="password"],
-			input[type="email"],
-			input[type="tel"],
-			input[type="number"],
-			input[type="search"],
-			input[type="url"],
-			select,
-			textarea {
-				background: $color-bold-input-bg;
+		.section__title {
+			&:after {
+				background-color: currentColor;
 			}
 		}
 	}

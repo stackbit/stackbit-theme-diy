@@ -27,7 +27,7 @@ body {
 }
 
 a {
-	color: $color-link;
+	color: inherit;
 	text-decoration: underline;
 
 	&:hover {
@@ -41,7 +41,6 @@ h3,
 h4,
 h5,
 h6 {
-	color: $color-heading;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 1.25em 0 0.5em;
@@ -89,7 +88,6 @@ ins {
 }
 
 blockquote {
-	color: $color-blockquote;
 	margin: 0 0 1em;
 	padding: 0 0 0 2.22222em;
 	position: relative;
@@ -106,14 +104,27 @@ blockquote {
 }
 
 pre {
-	background-color: $color-code-bg;
-	color: $color-code-text;
+	border: 1px solid $color-code-border;
 	font-size: 0.88889em;
 	line-height: 1.5;
 	margin: 0 0 1em;
 	overflow: auto;
 	padding: 1.5em;
 	white-space: pre;
+}
+
+.style-classic {
+	pre {
+		background-color: $color-code-bg;
+		border-radius: 6px;
+	}
+}
+
+.style-bold {
+	pre {
+		background-color: $color-bold-code-bg;
+		border-width: 2px;
+	}
 }
 
 p,
@@ -150,11 +161,18 @@ dd {
 hr {
 	background-color: $color-hr-border;
 	border: 0;
+	color: inherit;
 	height: 1px;
 	margin: 1.11111em 0;
 
 	&:first-child {
 		margin-top: 0;
+	}
+}
+
+.style-bold {
+	hr {
+		height: 2px;
 	}
 }
 
@@ -169,6 +187,14 @@ video {
 img {
 	height: auto;
 	max-width: 100%;
+}
+
+.style-classic {
+	.site-content {
+		img {
+			border-radius: 6px;
+		}
+	}
 }
 
 figure {
@@ -196,27 +222,5 @@ figcaption {
 
 	html {
 		font-size: 100%;
-	}
-}
-
-.style-classic {
-	pre {
-		border: 1px solid $color-code-border;
-	}
-
-	.site-content {
-		img {
-			border-radius: 6px;
-		}
-	}
-}
-
-.style-bold {
-	pre {
-		background-color: $color-bold-code-bg;
-	}
-
-	hr {
-		height: 2px;
 	}
 }

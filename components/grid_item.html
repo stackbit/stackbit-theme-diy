@@ -98,8 +98,7 @@
 					'mb-md-0': is_horiz and has_text and is_card_no_padding == false,
 					'ml-md-3': image_pos == 'right' and has_text and is_card_no_padding == false,
 					'mr-md-3': image_pos == 'left' and has_text and is_card_no_padding == false,
-					'mt-3': image_pos == 'bottom' and has_text and is_card_no_padding == false,
-					'has-border': item.image_has_border
+					'mt-3': image_pos == 'bottom' and has_text and is_card_no_padding == false
 				}) }}>
 					<img src="{{ item.image | relative_url }}" alt="{{ item.title }}" {{ classNames('', {
 						'mx-auto': image_align_x == 'center',

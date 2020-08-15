@@ -18,7 +18,6 @@ sections:
     show_author: true
     show_excerpt: true
     show_image: true
-    image_has_border: false
     padding_top: small
     padding_bottom: large
     has_border: true

@@ -63,6 +63,15 @@ models:
         description: The palette of the site
         required: true
       - type: enum
+        name: mode
+        label: Mode
+        options:
+          - light
+          - dark
+        default: dark
+        description: The color scheme of the site
+        required: true
+      - type: enum
         name: base_font
         label: Font
         options:
@@ -428,11 +437,6 @@ models:
           - sixty
         default: fifty
         description: The image or video container width as a percentage of the section width. Used only when the image or video position is set to "left" or "right"
-      - type: boolean
-        name: media_has_border
-        label: Image or video border
-        default: false
-        description: Add border around image or video
       - type: enum
         name: align
         label: Section alignment
@@ -845,11 +849,6 @@ models:
         label: Show image
         description: Show the post image thumbnail
         default: true
-      - type: boolean
-        name: image_has_border
-        label: Image border
-        default: false
-        description: Add border around image
       - type: enum
         name: align
         label: Section alignment
@@ -1274,11 +1273,6 @@ models:
           - sixty
         default: fifty
         description: The image or video container width as a percentage of the feature width. Used only when the image or video position is set to "left" or "right"
-      - type: boolean
-        name: media_has_border
-        label: Image or video border
-        default: false
-        description: Add border around image or video
       - type: enum
         name: align
         label: Feature alignment
@@ -1380,11 +1374,6 @@ models:
           - center
         default: left
         description: The horizontal alignment of the image
-      - type: boolean
-        name: image_has_border
-        label: Image border
-        default: false
-        description: Add border around image
       - type: boolean
         name: image_has_padding
         label: Image padding

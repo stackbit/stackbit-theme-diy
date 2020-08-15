@@ -62,8 +62,7 @@
 			<div {{ classNames('hero__media', 'my-2', 'cell-12', {
 				'cell-md-5': is_horiz and has_text and media_width == 'fourty',
 				'cell-md-6': is_horiz and has_text and media_width == 'fifty',
-				'cell-md-7': is_horiz and has_text and media_width == 'sixty',
-				'has-border': section.media_has_border
+				'cell-md-7': is_horiz and has_text and media_width == 'sixty'
 			}) }}>
 				{% if section.video_embed_html %}
 					{{ section.video_embed_html | safe }}

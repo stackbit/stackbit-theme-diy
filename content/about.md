@@ -9,7 +9,7 @@ sections:
     background_color: secondary
   - type: features_section
     features:
-      - title: The Section Title One
+      - title: Section Title One
         subtitle: >-
           Odio et tortor laoreet, sed interdum augue ornare. 
         content: >-
@@ -17,7 +17,7 @@ sections:
         image: images/about-5.jpg
         media_position: right
         media_width: fifty
-      - title: The Section Title Two
+      - title: Section Title Two
         subtitle: >-
           In fermentum odio et tortor laoreet, sed interdum augue ornare. 
         content: >-
@@ -25,7 +25,7 @@ sections:
         image: images/about-2.jpg
         media_position: left
         media_width: fifty
-      - title: The Section Title Three
+      - title: Section Title Three
         subtitle: >-
           Donec nisl ligula, cursus id molestie vel. 
         content: >-
