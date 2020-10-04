@@ -2,7 +2,7 @@
 title: Home
 sections:
   - type: hero_section
-    title: This Is A Big <span>Hero Headline</span>
+    title: This Is A Big Hero Headline
     subtitle: >-
       Optional hero section subtitle
     content: >-
@@ -210,7 +210,7 @@ sections:
     align: center
     background_color: secondary
   - type: cta_section
-    title: This is Call To Action Section In <span>DIY Theme!</span>
+    title: This is Call To Action Section In DIY Theme!
     content: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
     actions:
@@ -276,7 +276,7 @@ sections:
     has_border: false
     background_color: none
   - type: cta_section
-    title: This is Call To Action Section In <span>DIY Theme!</span>
+    title: This is Call To Action Section In DIY Theme!
     content: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
     actions:

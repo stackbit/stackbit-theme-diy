@@ -414,7 +414,7 @@ models:
         name: image
         label: Image
         description: The image of the section
-      - type: html
+      - type: text
         name: video_embed_html
         label: Video Embed Code
         description: The HTML embed code for your video
@@ -1249,7 +1249,7 @@ models:
         name: image
         label: Image
         description: The image of the feature
-      - type: html
+      - type: text
         name: video_embed_html
         label: Video Embed Code
         description: The HTML embed code for your video

@@ -19,9 +19,9 @@
 				'justify-md-center': has_logo == false
 			}) }}>
 				{% if has_logo %}
-				<div class="site-footer__logo cell-12 cell-md-5 my-4">
+				<a class="site-footer__logo cell-12 cell-md-5 my-4" href="{{ '/' | relative_url }}">
 					<img src="{{ site.params.footer.logo | relative_url }}" alt="{{ site.params.header.title }}" />
-				</div>
+				</a>
 				{% endif %}
 				{% if site.params.footer.has_primary_nav and site.params.footer.primary_nav_links %}
 				<div class="site-footer__menu cell-12 cell-md my-3 my-md-4">
