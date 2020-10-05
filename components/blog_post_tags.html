@@ -1,4 +1,9 @@
 {% set tags = include_dict.tags %}
 {% for tag in tags %}
-  <span class="mr-1">{{ tag }}</span>
+	{% set tag_data = getData(tag) %}
+	{% if tag_data.link %}
+		<a class="mr-1" href="{{ tag_data.link | relative_url }}">{{ tag_data.title }}</a>
+	{% else %}
+		<span class="mr-1">{{ tag_data.title }}</span>
+	{% endif %}
 {% endfor %}

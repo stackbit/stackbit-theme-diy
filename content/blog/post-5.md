@@ -7,8 +7,8 @@ author: data/team/gustav-purpleson.yaml
 categories:
   - data/categories/tutorials.yaml
 tags:
-  - Stackbit
-  - Netlify
+  - data/tags/stackbit.yaml
+  - data/tags/netlify.yaml
 excerpt: >-
   Estne, quaeso, inquam, sitienti in bibendo voluptas? Iam in altera philosophiae parte. Quem Tiberina descensio festo illo die tanto gaudio affecit, quanto.
 thumb_image: images/classic/post-5.png

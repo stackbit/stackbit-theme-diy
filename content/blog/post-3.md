@@ -7,8 +7,8 @@ author: data/team/gustav-purpleson.yaml
 categories:
   - data/categories/general.yaml
 tags:
-  - Stackbit
-  - JAMstack
+  - data/tags/stackbit.yaml
+  - data/tags/jamstack.yaml
 excerpt: >-
   Quis est, qui non oderit libidinosam, protervam adolescentiam? Innumerabilia dici possunt in hanc sententiam, sed non necesse est. Putabam equidem satis, inquit, me dixisse.
 thumb_image: images/classic/post-3.png

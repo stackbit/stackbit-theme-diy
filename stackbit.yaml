@@ -280,6 +280,25 @@ models:
         label: Title
         required: true
         description: The title of the category
+  tag:
+    type: data
+    label: Tag
+    folder: tags
+    fields:
+      - type: string
+        name: id
+        label: ID
+        description: A unique identifier used when filtering posts, e.g. "jamstack"
+        required: true
+      - type: string
+        name: link
+        label: Link
+        description: The link to the tag page, e.g. "blog/tag/jamstack"
+      - type: string
+        name: title
+        label: Title
+        required: true
+        description: The title of the tag
   page:
     type: page
     label: Page
@@ -304,6 +323,7 @@ models:
       - index.md
       - category/**
       - author/**
+      - tag/**
     fields:
       - type: string
         name: title
@@ -336,7 +356,8 @@ models:
         label: Tags
         description: The tags of the post
         items:
-          type: string
+          type: reference
+          models: [tag]
       - type: string
         name: excerpt
         label: Excerpt
@@ -808,7 +829,7 @@ models:
       - type: boolean
         name: show_recent
         label: Show recent posts only
-        description: Show the specified number of recent posts. Should not be used with author and category filters
+        description: Show the specified number of recent posts. Should not be used with author, category and tag filters
         default: false
         required: true
       - type: number
@@ -824,6 +845,11 @@ models:
         label: Category filter
         description: Filter posts by a category
         models: [category]
+      - type: reference
+        name: tag
+        label: Tag filter
+        description: Filter posts by a tag
+        models: [tag]
       - type: boolean
         name: show_date
         label: Show date

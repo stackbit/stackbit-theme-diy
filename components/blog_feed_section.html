@@ -55,6 +55,11 @@
 				{% set section_category = getData(section.category) %}
 			{% endif %}
 
+			{% set section_tag = false %}
+			{% if section.tag %}
+				{% set section_tag = getData(section.tag) %}
+			{% endif %}
+
 			{% set posts_all = getPages("/blog") %}
 			{% set posts_sorted = posts_all | sort(true, true, "date") %}
 
@@ -66,7 +71,7 @@
 				{% set is_post = post.layout == 'post' %}
 				{% if is_post and (show_recent == false or post_count < recent_count) %}
 				{% set post_count = post_count + 1 %}
-				{% set include_dict = {'blog_feed_section': section, 'post_page': post, 'section_author': section_author, 'section_category': section_category} %}
+				{% set include_dict = {'blog_feed_section': section, 'post_page': post, 'section_author': section_author, 'section_category': section_category, 'section_tag': section_tag} %}
 				{% include "blog_feed_item_filter.html" %}
 				{% endif %}
 			{% endfor %}

@@ -36,9 +36,10 @@
 	color: $color-meta;
 	font-size: 0.875em;
 
+	a,
 	span {
 		display: inline-block;
-	
+
 		&:before {
 			content: "\0023";
 		}
