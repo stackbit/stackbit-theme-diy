@@ -24,6 +24,11 @@
 	font-size: 1.16667em;
 }
 
+.post__meta-sep {
+  font-weight: 700;
+  margin: 0 3px;
+}
+
 .post__cat + .post__date {
 	&:before {
 		content: "\00b7\00a0";

@@ -316,6 +316,7 @@ models:
         description: The excerpt of the page displayed in meta data
   post:
     type: page
+    urlPath: "/blog/{slug}"
     label: Post
     layout: post
     folder: blog

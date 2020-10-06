@@ -16,7 +16,12 @@
 }
 
 .site-footer__copyright {
-	font-size: 0.77778em;
+  font-size: 0.77778em;
+
+  & > span,
+  & > a {
+    margin-right: 5px;
+  }
 }
 
 .site-footer__social {

@@ -62,7 +62,9 @@
 				<div {{ classNames('site-footer__copyright', 'cell-12', {
 					'cell-sm': footer_social
 				}) }}>
-					{{ site.params.footer.content | safe }}
+					{% if site.params.footer.content %}
+						<span>{{ site.params.footer.content | safe }}</span>
+					{% endif %}
 					{% for link in site.params.footer.links %}
 						<a href="{{ link.url | relative_url }}" {% if link.new_window %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
 					{% endfor %}

@@ -58,6 +58,9 @@
 					{% if show_categories %}
 						{% set include_dict = {'categories': post.params.categories, 'container_class': 'item__cat'} %}
 						{% include "blog_post_categories.html" %}
+						{% if blog_feed_section.show_date %}
+							<span class="item__meta-sep"> &middot; </span>
+						{% endif %}
 					{% endif %}
 					{% if blog_feed_section.show_date %}
 						<span class="item__date"><time datetime="{{post.date | date_format("%Y-%m-%d %H:%M") }}">{{ post.date | date_format("%B %d, %Y") }}</time></span>
