@@ -51,13 +51,25 @@ window.removeMainNavigationHandlers = function() {
 };
 
 // Handle announcement close button click
+const hasLocalStorage = (function() {
+	try {
+		localStorage.setItem('__test', true);
+		localStorage.removeItem('__test');
+		return true;
+	} catch (exception) {
+		return false;
+	}
+}());
+
 function announcementCloseHandler(e) {
 	e.preventDefault();
 	const anncmnt = document.querySelector('.js-announcement');
 	const anncmntKey = 'hide-announcement-bar';
 	const currentAnncmnt = anncmnt.dataset.anncmntId;
 	anncmnt.classList.add('is-hidden');
-	localStorage.setItem(anncmntKey, currentAnncmnt);
+	if (hasLocalStorage) {
+		localStorage.setItem(anncmntKey, currentAnncmnt);
+	}
 }
 
 window.addAnnouncementHandlers = function() {
@@ -66,8 +78,10 @@ window.addAnnouncementHandlers = function() {
 		const anncmntClose = document.querySelector('.js-announcment-close');
 		const anncmntKey = 'hide-announcement-bar';
 		const currentAnncmnt = anncmnt.dataset.anncmntId;
-		if (localStorage.getItem(anncmntKey) != currentAnncmnt ) {
-			anncmnt.classList.remove('is-hidden');
+		if (hasLocalStorage) {
+			if (localStorage.getItem(anncmntKey) != currentAnncmnt ) {
+				anncmnt.classList.remove('is-hidden');
+			}
 		}
 		anncmntClose.addEventListener('click', announcementCloseHandler, false);
 	}
@@ -79,8 +93,10 @@ window.removeAnnouncementHandlers = function() {
 		const anncmntClose = document.querySelector('.js-announcment-close');
 		const anncmntKey = 'hide-announcement-bar';
 		const currentAnncmnt = anncmnt.dataset.anncmntId;
-		if (localStorage.getItem(anncmntKey) == currentAnncmnt ) {
-			anncmnt.classList.add('is-hidden');
+		if (hasLocalStorage) {
+			if (localStorage.getItem(anncmntKey) == currentAnncmnt ) {
+				anncmnt.classList.add('is-hidden');
+			}
 		}
 		anncmntClose.removeEventListener('click', announcementCloseHandler, false);
 	}
