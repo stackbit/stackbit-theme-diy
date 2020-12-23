@@ -1,6 +1,6 @@
 baseurl: "/"
 title: "Stackbit DIY Theme"
-init_is: "js/init.js"
+init_js: "js/init.js"
 page_load_js: "js/page-load.js"
 page_unload_js: "js/page-unload.js"
 params:
