@@ -4,7 +4,7 @@
 			<a class="sr-only" href="#content">Skip to main content</a>
 			<div class="navbar__branding mr-2">
 				{% if site.params.header.logo %}
-				<a class="navbar__logo m-0" href="{{ '/' | relative_url }}"><img src="{{ site.params.header.logo | relative_url }}" alt="{{ site.params.header.title }}" /></a>
+				<a class="navbar__logo m-0" href="{{ '/' | relative_url }}"><img src="{{ site.params.header.logo | relative_url }}" alt="{{ site.params.header.logo_alt }}" /></a>
 				{% else %}
 				<a class="navbar__title h4 m-0" href='{{ "/" | relative_url }}'>{{ site.params.header.title }}</a>
 				{% endif %}

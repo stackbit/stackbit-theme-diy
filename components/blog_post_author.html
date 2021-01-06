@@ -9,7 +9,7 @@
 		<figure {{ classNames('avatar', 'mr-1', {
 			'avatar--small': avatar_size == 'small'
 		}) }}>
-			<img class="avatar__img" src="{{ author_data.photo | relative_url }}" alt="{{ author_data.first_name }}{% if author_data.last_name %} {{ author_data.last_name }}{% endif %} Photo" />
+			<img class="avatar__img" src="{{ author_data.photo | relative_url }}" alt="{{ author_data.photo_alt }}" />
 		</figure>
 		{% endif %}
 		<span>{{ author_data.first_name }} {{ author_data.last_name }}</span>
@@ -20,7 +20,7 @@
 		<figure {{ classNames('avatar', 'mr-2', {
 			'avatar--small': avatar_size == 'small'
 		}) }}>
-			<img class="avatar__img" src="{{ author_data.photo | relative_url }}" alt="{{ author_data.first_name }}{% if author_data.last_name %} {{ author_data.last_name }}{% endif %} Photo" />
+			<img class="avatar__img" src="{{ author_data.photo | relative_url }}" alt="{{ author_data.photo_alt }}" />
 		</figure>
 		{% endif %}
 		<span>{{ author_data.first_name }} {{ author_data.last_name }}</span>

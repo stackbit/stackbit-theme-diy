@@ -67,7 +67,7 @@
 				{% if section.video_embed_html %}
 					{{ section.video_embed_html | safe }}
 				{% else %}
-					<img src="{{ section.image | relative_url }}" alt="{{ section.title }}" {{ classNames({
+					<img src="{{ section.image | relative_url }}" alt="{{ section.image_alt }}" {{ classNames({
 						'mx-auto': align_x == 'center',
 						'ml-auto': align_x == 'right'
 					}) }} />

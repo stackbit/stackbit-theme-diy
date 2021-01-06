@@ -15,6 +15,7 @@ sections:
         url: /features
         style: secondary
     image: images/classic/hero.png
+    image_alt: Hero section placeholder image
     media_position: left
     media_width: fifty
     align: left
@@ -28,20 +29,28 @@ sections:
     align: center
     grid_items:
       - image: images/logo-1.svg
+        image_alt: Contentful logo
         image_align: center
       - image: images/logo-2.svg
+        image_alt: Netlify logo
         image_align: center
       - image: images/logo-3.svg
+        image_alt: Gatsby logo
         image_align: center
       - image: images/logo-4.svg
+        image_alt: Sanity logo
         image_align: center
       - image: images/logo-5.svg
+        image_alt: DatoCMS logo
         image_align: center
       - image: images/logo-6.svg
+        image_alt: Next.js logo
         image_align: center
       - image: images/logo-7.svg
+        image_alt: Gridsome logo
         image_align: center
       - image: images/logo-8.svg
+        image_alt: Git logo
         image_align: center
     grid_cols: four
     grid_gap_horiz: medium
@@ -63,6 +72,7 @@ sections:
             icon: arrow-right
             icon_position: right
         image: images/classic/feature-1.png
+        image_alt: Feature 1 placeholder image
         media_position: right
         media_width: fifty
       - title: The Big Title For the Feature
@@ -76,6 +86,7 @@ sections:
             icon: arrow-right
             icon_position: right
         image: images/classic/feature-2.png
+        image_alt: Feature 2 placeholder image
         media_position: left
         media_width: fifty
       - title: The Big Title For the Feature
@@ -91,6 +102,7 @@ sections:
             icon: arrow-right
             icon_position: right
         image: images/classic/feature-3.png
+        image_alt: Feature 3 placeholder image
         media_position: right
         media_width: fifty
     feature_padding_vert: large
@@ -103,6 +115,7 @@ sections:
         subtitle: >-
           Brandon Guidelines, Sr. Design Manager at Company
         image: images/brandon-guidelines.png
+        image_alt: Brandon Guidelines
         media_position: right
         media_width: thirty-three
     feature_padding_vert: small
@@ -125,6 +138,7 @@ sections:
             icon_position: center
         actions_align: left
         image: images/classic/icon-1.svg
+        image_alt: Section item 1 icon
         image_position: top
         image_align: left
         image_has_padding: true
@@ -142,6 +156,7 @@ sections:
             icon_position: center
         actions_align: left
         image: images/classic/icon-2.svg
+        image_alt: Section item 2 icon
         image_position: top
         image_align: left
         image_has_padding: true
@@ -159,6 +174,7 @@ sections:
             icon_position: center
         actions_align: left
         image: images/classic/icon-3.svg
+        image_alt: Section item 3 icon
         image_position: top
         image_align: left
         image_has_padding: true
@@ -178,6 +194,7 @@ sections:
 
           **Hanson Deck,** *App Developer, Studio*
         image: images/hanson-deck.png
+        image_alt: Hanson Deck
         image_position: left
         image_width: twenty-five
       - content: >-
@@ -186,6 +203,7 @@ sections:
 
           **Miles Tone,** *CEO, Studio*
         image: images/miles-tone.png
+        image_alt: Miles Tone
         image_position: left
         image_width: twenty-five
       - content: >-
@@ -194,6 +212,7 @@ sections:
 
           **Eleanor Carr,** *CTO, Studio*
         image: images/eleanor-carr.png
+        image_alt: Eleanor Carr
         image_position: left
         image_width: twenty-five
       - content: >-
@@ -202,6 +221,7 @@ sections:
 
           **Gordon Norman,** *Web Designer, Studio*
         image: images/gordon-norman.png
+        image_alt: Gordon Norman
         image_position: left
         image_width: twenty-five
     grid_cols: two

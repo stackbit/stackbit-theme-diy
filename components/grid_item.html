@@ -100,7 +100,7 @@
 					'mr-md-3': image_pos == 'left' and has_text and is_card_no_padding == false,
 					'mt-3': image_pos == 'bottom' and has_text and is_card_no_padding == false
 				}) }}>
-					<img src="{{ item.image | relative_url }}" alt="{{ item.title }}" {{ classNames('', {
+					<img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}" {{ classNames('', {
 						'mx-auto': image_align_x == 'center',
 						'ml-auto': image_align_x == 'right'
 					}) }} />

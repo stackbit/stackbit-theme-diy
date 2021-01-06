@@ -42,7 +42,7 @@
 				'card__media--fill': is_card,
 				'card__media--top': is_card
 			}) }}>
-				<a href="{{ post.url | relative_url }}"><img src="{{ post.params.thumb_image | relative_url }}" alt="{{ post.params.title }}" /></a>
+				<a href="{{ post.url | relative_url }}"><img src="{{ post.params.thumb_image | relative_url }}" alt="{{ post.params.thumb_image_alt }}" /></a>
 			</div>
 			{% endif %}
 			<div {{ classNames('item__body', {

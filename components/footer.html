@@ -20,7 +20,7 @@
 			}) }}>
 				{% if has_logo %}
 				<a class="site-footer__logo cell-12 cell-md-5 my-4" href="{{ '/' | relative_url }}">
-					<img src="{{ site.params.footer.logo | relative_url }}" alt="{{ site.params.header.title }}" />
+					<img src="{{ site.params.footer.logo | relative_url }}" alt="{{ site.params.header.logo_alt }}" />
 				</a>
 				{% endif %}
 				{% if site.params.footer.has_primary_nav and site.params.footer.primary_nav_links %}
@@ -66,7 +66,9 @@
 						<span>{{ site.params.footer.content | safe }}</span>
 					{% endif %}
 					{% for link in site.params.footer.links %}
-						<a href="{{ link.url | relative_url }}" {% if link.new_window %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
+						<a href="{{ link.url | relative_url }}"
+							{% if link.new_window %} target="_blank"{% endif %}
+							{% if link.new_window or link.no_follow %} rel="{% if link.new_window %}noopener {% endif %}{% if link.no_follow %}nofollow{% endif %}"{% endif %}>{{ link.label }}</a>
 					{% endfor %}
 				</div>
 				{% endif %}
@@ -77,11 +79,14 @@
 					{% for link in site.params.footer.social_links %}
 						{% set link_style = link.style | default('link', true) %}
 						{% if link.has_icon and link.icon %}
-						<a {{ classNames('btn', 'btn--icon', {
-							'btn--primary': link_style == 'primary',
-							'btn--secondary': link_style == 'secondary',
-							'btn--clear': link_style == 'link'
-						}) }} href="{{ link.url | relative_url }}" {% if link.new_window %}target="_blank" rel="noopener"{% endif %}>
+						<a href="{{ link.url | relative_url }}"
+							{% if link.new_window %} target="_blank"{% endif %}
+							{% if link.new_window or link.no_follow %} rel="{% if link.new_window %}noopener {% endif %}{% if link.no_follow %}nofollow{% endif %}"{% endif %}
+							{{ classNames('btn', 'btn--icon', {
+								'btn--primary': link_style == 'primary',
+								'btn--secondary': link_style == 'secondary',
+								'btn--clear': link_style == 'link'
+							}) }}>
 							{% set include_dict = {'icon': link.icon} %}
 							{% include "icon.html" %}
 							<span class="sr-only">{{ link.label }}</span>

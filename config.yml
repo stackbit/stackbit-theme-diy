@@ -13,6 +13,7 @@ params:
   header:
     title: DIY
     logo: "images/classic/logo.svg"
+    logo_alt: DIY logo
     has_primary_nav: true
     primary_nav_links:
       - label: Features
@@ -47,6 +48,7 @@ params:
     anncmnt_id: new-features
   footer:
     logo: "images/classic/logo.svg"
+    logo_alt: DIY logo
     has_primary_nav: true
     primary_nav_title: Company
     primary_nav_links:
@@ -100,14 +102,14 @@ params:
         icon: linkedin
         icon_position: center
         new_window: true
-      - label: LinkedIn
+      - label: YouTube
         url: https://www.youtube.com/
         style: link
         has_icon: true
         icon: youtube
         icon_position: center
         new_window: true
-      - label: LinkedIn
+      - label: Vimeo
         url: https://vimeo.com/
         style: link
         has_icon: true

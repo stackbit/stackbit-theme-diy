@@ -47,7 +47,7 @@
 			{% if feature.video_embed_html %}
 				{{ feature.video_embed_html | safe }}
 			{% else %}
-				<img src="{{ feature.image | relative_url }}" alt="{{ feature.title }}" {{ classNames({
+				<img src="{{ feature.image | relative_url }}" alt="{{ feature.image_alt }}" {{ classNames({
 					'mx-auto': align_x == 'center',
 					'ml-auto': align_x == 'right'
 				}) }} />

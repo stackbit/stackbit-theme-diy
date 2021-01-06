@@ -26,6 +26,7 @@ sections:
             icon_position: right
         actions_align: center
         image: images/classic/icon-1.svg
+        image_alt: Partnering and sponsorships icon
         image_position: top
         image_align: center
         image_has_padding: true
@@ -43,6 +44,7 @@ sections:
             icon_position: right
         actions_align: center
         image: images/classic/icon-2.svg
+        image_alt: Help and support icon
         image_position: top
         image_align: center
         image_has_padding: true
@@ -60,6 +62,7 @@ sections:
             icon_position: right
         actions_align: center
         image: images/classic/icon-3.svg
+        image_alt: Other queries icon
         image_position: top
         image_align: center
         image_has_padding: true

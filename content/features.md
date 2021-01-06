@@ -14,6 +14,7 @@ sections:
         content: >-
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
         image: images/about-3.jpg
+        image_alt: Top view of business meeting
         media_position: right
         media_width: fifty
       - title: Section Title Two
@@ -30,6 +31,7 @@ sections:
         content: >-
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ligula, cursus id molestie vel, maximus aliquet risus. Vivamus in nibh fringilla, fringilla.
         image: images/about-1.jpg
+        image_alt: Happy co-workers
         media_position: right
         media_width: fifty
   - type: grid_section
@@ -50,6 +52,7 @@ sections:
             icon_position: center
         actions_align: left
         image: images/classic/icon-1.svg
+        image_alt: Item 1 icon
         image_position: top
         image_align: left
         image_has_padding: true
@@ -67,6 +70,7 @@ sections:
             icon_position: center
         actions_align: left
         image: images/classic/icon-2.svg
+        image_alt: Item 2 icon
         image_position: top
         image_align: left
         image_has_padding: true
@@ -84,6 +88,7 @@ sections:
             icon_position: center
         actions_align: left
         image: images/classic/icon-3.svg
+        image_alt: Item 3 icon
         image_position: top
         image_align: left
         image_has_padding: true
@@ -101,6 +106,7 @@ sections:
             icon_position: center
         actions_align: left
         image: images/classic/icon-3.svg
+        image_alt: Item 4 icon
         image_position: top
         image_align: left
         image_has_padding: true
@@ -120,6 +126,7 @@ sections:
 
           **Eleanor Carr,** *CTO, Studio*
         image: images/eleanor-carr.png
+        image_alt: Eleanor Carr
         image_position: left
         image_width: twenty-five
       - content: >-
@@ -128,6 +135,7 @@ sections:
 
           **Gordon Norman,** *Web Designer, Studio*
         image: images/gordon-norman.png
+        image_alt: Gordon Norman
         image_position: left
         image_width: twenty-five
     grid_cols: two
