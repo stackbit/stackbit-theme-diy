@@ -107,7 +107,7 @@
 				'cell-md-7': is_horiz and has_text and form_width == 'sixty',
 				'order-first': form_pos == 'top' or form_pos == 'left'
 			}) }}>
-				<form name="{{ section.form_id }}" id="{{ section.form_id }}"{% if section.form_action %} action="{{ section.form_action }}"{% endif %} method="POST" data-netlify="true" netlify-honeypot="{{ section.form_id }}-bot-field" {{ classNames({
+				<form name="{{ section.form_id }}" id="{{ section.form_id }}"{% if section.form_action %} action="{{ section.form_action }}"{% endif %} method="POST" data-netlify="true" data-netlify-honeypot="{{ section.form_id }}-bot-field" {{ classNames({
 					'form-inline': form_is_inline,
 					'card': form_is_card,
 					'p-4': form_is_card,
