@@ -15,7 +15,7 @@ logicFields:
   - grid_section.background_image_opacity
   - cta_section.background_image_opacity
   - form_section.background_image_opacity
-metadata: 
+metadata:
   title: DIY
   description: A "do it yourself" Stackbit theme
   author: Stackbit
@@ -42,7 +42,7 @@ models:
         label: Site description
         description: The default site description used in meta data
       - type: enum
-        name: layout
+        name: layout_type
         label: Layout
         options:
           - full-width
