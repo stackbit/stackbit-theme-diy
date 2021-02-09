@@ -56,5 +56,24 @@ sections:
     padding_top: medium
     padding_bottom: medium
     background_color: primary
+seo:
+  title: General Enquiries
+  description: This is the general enquiries page
+  extra:
+    - name: og:type
+      value: website
+      keyName: property
+    - name: og:title
+      value: General Enquiries
+      keyName: property
+    - name: og:description
+      value: This is the general enquiries page
+      keyName: property
+    - name: twitter:card
+      value: summary
+    - name: twitter:title
+      value: General Enquiries
+    - name: twitter:description
+      value: This is the general enquiries page
 layout: advanced
 ---

@@ -42,5 +42,31 @@ sections:
     padding_bottom: medium
     has_border: true
     background_color: secondary
+seo:
+  title: Posts in JAMstack
+  description: This is the author archive page
+  extra:
+    - name: og:type
+      value: website
+      keyName: property
+    - name: og:title
+      value: Posts in JAMstack
+      keyName: property
+    - name: og:description
+      value: This is the author archive page
+      keyName: property
+    - name: og:image
+      value: images/classic/post-5.png
+      keyName: property
+      relativeUrl: true
+    - name: twitter:card
+      value: summary_large_image
+    - name: twitter:title
+      value: Posts in JAMstack
+    - name: twitter:description
+      value: This is the author archive page
+    - name: twitter:image
+      value: images/classic/post-5.png
+      relativeUrl: true
 layout: advanced
 ---

@@ -4,7 +4,6 @@ init_js: "js/init.js"
 page_load_js: "js/page-load.js"
 page_unload_js: "js/page-unload.js"
 params:
-  description: A "do it yourself" theme for Stackbit
   layout_type: boxed
   style: classic
   palette: green

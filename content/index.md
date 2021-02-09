@@ -308,5 +308,31 @@ sections:
     padding_top: large
     padding_bottom: large
     background_color: secondary
+seo:
+  title: Stackbit DIY Theme
+  description: The preview of the DIY theme
+  extra:
+    - name: og:type
+      value: website
+      keyName: property
+    - name: og:title
+      value: Stackbit DIY Theme
+      keyName: property
+    - name: og:description
+      value: The preview of the DIY theme
+      keyName: property
+    - name: og:image
+      value: images/diy-preview.png
+      keyName: property
+      relativeUrl: true
+    - name: twitter:card
+      value: summary_large_image
+    - name: twitter:title
+      value: Stackbit DIY Theme
+    - name: twitter:description
+      value: The preview of the DIY theme
+    - name: twitter:image
+      value: images/diy-preview.png
+      relativeUrl: true
 layout: advanced
 ---

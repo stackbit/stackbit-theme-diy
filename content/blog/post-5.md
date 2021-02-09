@@ -16,6 +16,32 @@ thumb_image_alt: Post 5 placeholder image
 image: images/classic/post-5.png
 image_alt: Post 5 placeholder image
 image_position: right
+seo:
+  title: Amet Nulla Facilisi Morbi Tempus
+  description: Estne, quaeso, inquam, sitienti in bibendo voluptas
+  extra:
+    - name: og:type
+      value: website
+      keyName: property
+    - name: og:title
+      value: Amet Nulla Facilisi Morbi Tempus
+      keyName: property
+    - name: og:description
+      value: Estne, quaeso, inquam, sitienti in bibendo voluptas
+      keyName: property
+    - name: og:image
+      value: images/classic/post-5.png
+      keyName: property
+      relativeUrl: true
+    - name: twitter:card
+      value: summary_large_image
+    - name: twitter:title
+      value: Amet Nulla Facilisi Morbi Tempus
+    - name: twitter:description
+      value: Estne, quaeso, inquam, sitienti in bibendo voluptas
+    - name: twitter:image
+      value: images/classic/post-5.png
+      relativeUrl: true
 layout: post
 ---
 
