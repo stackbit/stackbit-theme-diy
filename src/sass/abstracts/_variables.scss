@@ -1,0 +1,243 @@
+// Variables
+
+// Theme font and color variations
+$theme-styles: (
+	classic: (
+		fonts: (
+			serif: ('Lora', 'Lucida Bright', 'Lucidabright', 'Lucida Serif', Lucida, Georgia, serif),
+			sans-serif: ('Open Sans', Lato, sans-serif)
+		),
+		colors: (
+			blue:  #7076f0,
+			green: #29cf7f,
+			red:   #f36763
+		)
+	),
+	bold: (
+		fonts: (
+			serif: ('Arvo', 'Rockwell', Georgia, Times, 'Times New Roman', serif),
+			sans-serif: ('Poppins', 'Helvetica Neue', Helvetica, 'Roboto', sans-serif)
+		),
+		colors: (
+			blue:  #2859da,
+			green: #01be54,
+			red:   #ec5033
+		)
+	),
+	minimal: (
+		fonts: (
+			serif: ('IBM Plex Serif', Georgia, Times, 'Times New Roman', serif),
+			sans-serif: ('IBM Plex Sans','Helvetica Neue', Helvetica, 'Roboto', sans-serif)
+		),
+		colors: (
+			blue:   #0084ff,
+			green:  #00cc88,
+			red:    #ff3366
+		)
+	)
+);
+
+// Monospace font
+$font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace !default;
+
+
+// Colors
+
+// Primary color for the gray palette
+$color-primary:                        #45515e !default;
+
+// Base
+$color-body-text:                      #2c343c !default;
+$color-meta:                           #8696a6 !default;
+$color-body-bg:                        #fff !default;
+
+// Highlight
+$color-highlight-text:                 #2c343c !default;
+$color-highlight-bg:                   #fff7c5 !default;
+
+// Code blocks
+$color-code-border:                    #eceef1 !default;
+$color-code-bg:                        #f7f8f9 !default;
+$color-bold-code-bg:                   #eceef1 !default;
+
+// Tables
+$color-table-border:                   #eceef1 !default;
+$color-table-bg:                       #f7f8f9 !default;
+$color-bold-table-bg:                  #eceef1 !default;
+
+// HR
+$color-hr-border:                      #eceef1 !default;
+
+// Buttons
+$color-btn-text:                       #fff !default;
+$color-btn-bg:                         $color-primary !default;
+$color-btn-alt-text:                   #fff !default;
+$color-btn-alt-bg:                     #2c343c !default;
+$color-bold-btn-shadow:                #bfc7d0 !default;
+$color-gray-btn-alt-bg:                #8696a6 !default;
+
+// Forms
+$color-input-text:                     #2c343c !default;
+$color-input-bg:                       #fff !default;
+$color-input-border:                   #eceef1 !default;
+$color-classic-input-bg:               #f7f8f9 !default;
+$color-bold-input-bg:                  #eceef1 !default;
+
+// Cards
+$color-card-text:                      #2c343c !default;
+$color-card-bg:                        #fff !default;
+$color-card-border:                    #eceef1 !default;
+$color-classic-card-shadow:            rgba(44,52,60,.1) !default;
+$color-bold-card-border:               #2c343c !default;
+
+// Main nav
+$color-nav-link-text:                  #2c343c !default;
+$color-nav-link-border:                $color-primary !default;
+$color-nav-mobile-bg:                  #fff !default;
+$color-nav-mobile-border:              #eceef1 !default;
+$color-nav-mobile-overlay:             rgba(236,238,241,.8) !default;
+$color-bold-nav-mobile-border:         #2c343c !default;
+$color-bold-nav-mobile-overlay:        rgba(44,52,60,.8) !default;
+
+// Header
+$color-header-border:                  #eceef1 !default;
+$color-bold-header-border:             #2c343c !default;
+
+// Footer
+$color-footer-border:                  #eceef1 !default;
+$color-bold-footer-border:             #2c343c !default;
+
+// Announcement
+$color-anncmnt-bg:                     #eceef1 !default;
+$color-bold-anncmnt-bg:                #2c343c !default;
+$color-bold-anncmnt-text:              #fff !default;
+
+// Sections
+$color-sect-border:                    #eceef1 !default;
+$color-bold-sect-border:               #2c343c !default;
+$color-classic-sect-underline:         $color-primary !default;
+$color-sect-input-bg:                  #fff !default;
+$color-primary-sect-bg:                $color-primary !default;
+$color-primary-sect-text:              #fff !default;
+$color-primary-sect-btn-text:          #2c343c !default;
+$color-primary-sect-btn-bg:            #fff !default;
+$color-secondary-sect-bg:              #eceef1 !default;
+$color-secondary-sect-code-border:     #fff !default;
+$color-secondary-sect-code-bg:         #fff !default;
+$color-secondary-sect-table-border:    #fff !default;
+$color-secondary-sect-table-bg:        #fff !default;
+$color-secondary-sect-hr-border:       #fff !default;
+
+// Boxed layout
+$color-boxed-bg:                       #f7f8f9 !default;
+$color-boxed-border:                   #eceef1 !default;
+$color-bold-boxed-border:              #2c343c !default;
+
+
+// Dark mode
+// Base
+$color-dark-body-text:                 #fff !default;
+$color-dark-body-bg:                   #13171a !default;
+
+// Highlight
+$color-dark-highlight-text:            #2c343c !default;
+$color-dark-highlight-bg:              #fff7c5 !default;
+
+// Code blocks
+$color-dark-code-border:               #2c343c !default;
+$color-dark-code-bg:                   #242a31 !default;
+$color-dark-bold-code-bg:              #2c343c !default;
+
+// Tables
+$color-dark-table-border:              #2c343c !default;
+$color-dark-table-bg:                  #242a31 !default;
+$color-dark-bold-table-bg:             #2c343c !default;
+
+// HR
+$color-dark-hr-border:                 #2c343c !default;
+
+// Buttons
+$color-dark-btn-alt-text:              #fff !default;
+$color-dark-btn-alt-bg:                #2c343c !default;
+$color-dark-bold-btn-shadow:           #343e47 !default;
+
+// Forms
+$color-dark-input-text:                #2c343c !default;
+$color-dark-input-bg:                  #fff !default;
+
+// Cards
+$color-dark-card-bg:                   #1b2025 !default;
+$color-dark-card-border:               #2c343c !default;
+
+// Main nav
+$color-dark-nav-link-text:             #fff !default;
+$color-dark-nav-mobile-bg:             #13171a !default;
+$color-dark-nav-mobile-border:         #2c343c !default;
+$color-dark-nav-mobile-overlay:        rgba(36,42,49,.8) !default;
+
+// Header
+$color-dark-header-border:             #2c343c !default;
+
+// Footer
+$color-dark-footer-border:             #2c343c !default;
+
+// Announcement
+$color-dark-anncmnt-bg:                #242a31 !default;
+
+// Sections
+$color-dark-sect-border:                #2c343c !default;
+$color-dark-primary-sect-btn-text:      #2c343c !default;
+$color-dark-primary-sect-btn-bg:        #fff !default;
+$color-dark-primary-sect-btn-alt-bg:    #242a31 !default;
+$color-dark-secondary-sect-bg:          #242a31 !default;
+
+// Boxed layout
+$color-dark-boxed-bg:                  #1b2025 !default;
+$color-dark-boxed-border:              #2c343c !default;
+
+
+// Media breakpoints
+$media-breakpoints: (
+	xs: 480px,
+	sm: 640px,
+	md: 800px,
+	lg: 960px,
+	xl: 1200px
+) !default;
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: (
+	0: 0,
+	1: ($spacer * .55556),
+	2: ($spacer * .83333),
+	3: ($spacer * 1.11111),
+	4: ($spacer * 1.66667),
+	5: ($spacer * 2.22222),
+	6: ($spacer * 3.33333),
+	7: ($spacer * 5)
+) !default;
+
+// Sizing
+$sizes: (
+	0: 0,
+	25: 25%,
+	33: 33%,
+	50: 50%,
+	100: 100%,
+	auto: auto
+) !default;
+
+// Container max widths
+$container-sizes: (
+	small: 570px,
+	medium: 770px,
+	large: 1170px,
+	xlarge: 1400px
+) !default;
+
+// Grid
+$grid-cells: 12 !default;
+$grid-gap: 1.66667rem !default;
+$grid-gap-small: 1.11111rem !default;
+$grid-gap-large: 2.22222rem !default;

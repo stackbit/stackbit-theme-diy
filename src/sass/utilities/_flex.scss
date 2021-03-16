@@ -1,0 +1,126 @@
+/**
+ * Flex
+ */
+.flex {
+	display: flex;
+}
+
+// Flex wrap
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+// Flex direction
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+// Flex items
+.flex-grow {
+	flex-grow: 1;
+}
+
+.flex-auto {
+	flex: 1 1 auto;
+}
+
+// Justify content
+.justify-center {
+	justify-content: center;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+// Align items
+.items-center {
+	align-items: center;
+}
+
+.items-start {
+	align-items: flex-start;
+}
+
+.items-end {
+	align-items: flex-end;
+}
+
+// Order
+.order-first {
+	order: -1;
+}
+
+@each $breakpoint in map-keys($media-breakpoints) {
+	$infix: "#{$breakpoint}";
+
+	@include media-breakpoint-up($breakpoint, $media-breakpoints) {
+		.flex-#{$infix} {
+			display: flex;
+		}
+
+		.flex-#{$infix}-wrap {
+			flex-wrap: wrap;
+		}
+
+		.flex-#{$infix}-column {
+			flex-direction: column;
+		}
+
+		.flex-#{$infix}-row {
+			flex-direction: row;
+		}
+
+		.flex-#{$infix}-grow {
+			flex-grow: 1;
+		}
+		
+		.flex-#{$infix}-auto {
+			flex: 1 1 auto;
+		}
+
+		.justify-#{$infix}-center {
+			justify-content: center;
+		}
+		
+		.justify-#{$infix}-start {
+			justify-content: start;
+		}
+		
+		.justify-#{$infix}-end {
+			justify-content: end;
+		}
+
+		.justify-#{$infix}-between {
+			justify-content: space-between;
+		}
+
+		.items-#{$infix}-center {
+			align-items: center;
+		}
+		
+		.items-#{$infix}-start {
+			align-items: flex-start;
+		}
+		
+		.items-#{$infix}-end {
+			align-items: flex-end;
+		}
+		
+		.order-#{$infix}-first {
+			order: -1;
+		}
+	}
+}

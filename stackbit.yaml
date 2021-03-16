@@ -1,0 +1,1694 @@
+stackbitVersion: ~0.3.0
+ssgName: nextjs
+buildCommand: npm run build
+publishDir: out
+assets:
+  referenceType: static
+  staticDir: public
+  uploadDir: images
+  publicPath: /
+dataDir: content/data
+pagesDir: content/pages
+pageLayoutKey: layout
+logicFields:
+  - blog_feed_section.recent_count
+  - blog_feed_section.background_image_opacity
+  - features_section.background_image_opacity
+  - hero_section.background_image_opacity
+  - grid_section.background_image_opacity
+  - cta_section.background_image_opacity
+  - form_section.background_image_opacity
+models:
+  config:
+    type: data
+    label: Site configuration
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: Site title
+        required: true
+      - type: string
+        name: path_prefix
+        label: Base URL
+        description: >-
+          The base URL of this site. Useful for sites hosted under specific
+          path, e.g.: https://www.example.com/my-site/
+        required: true
+        hidden: true
+      - type: string
+        name: domain
+        label: Domain
+        description: >-
+          The domain of your site, including the protocol, e.g.
+          https://www.example.com/
+      - type: image
+        name: favicon
+        label: Favicon
+        description: A square icon that represents your website
+      - type: enum
+        name: layout_type
+        label: Layout
+        options:
+          - full-width
+          - boxed
+        default: full-width
+        description: The layout of the site
+        required: true
+      - type: enum
+        name: style
+        label: Style
+        options:
+          - minimal
+          - classic
+          - bold
+        default: classic
+        description: The style of the site
+        required: true
+      - type: enum
+        name: palette
+        label: Palette
+        options:
+          - blue
+          - green
+          - red
+          - gray
+        default: blue
+        description: The palette of the site
+        required: true
+      - type: enum
+        name: mode
+        label: Mode
+        options:
+          - light
+          - dark
+        default: light
+        description: The color scheme of the site
+        required: true
+      - type: enum
+        name: base_font
+        label: Font
+        options:
+          - sans-serif
+          - serif
+        default: sans-serif
+        required: true
+      - type: model
+        name: header
+        label: Header configuration
+        models:
+          - header
+      - type: model
+        name: footer
+        label: Footer configuration
+        models:
+          - footer
+    file: config.json
+  header:
+    type: object
+    label: Header configuration
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Header title
+        description: The title displayed in the header if logo image not specified
+      - type: image
+        name: logo
+        label: Logo
+        description: The logo image displayed on the left side
+      - type: string
+        name: logo_alt
+        label: Logo alt text
+        description: The alt text of the logo image
+      - type: boolean
+        name: has_primary_nav
+        label: Enable primary navigation menu
+        description: >-
+          Display the navigation menu on the left side, next to the site
+          title/logo
+        default: true
+      - type: list
+        name: primary_nav_links
+        label: Primary navigation menu links
+        description: List of navigation links
+        items:
+          type: model
+          models:
+            - action
+      - type: boolean
+        name: has_secondary_nav
+        label: Enable secondary navigation menu
+        description: Display the navigation menu on the right side
+        default: true
+      - type: list
+        name: secondary_nav_links
+        label: Secondary navigation menu links
+        description: List of navigation links
+        items:
+          type: model
+          models:
+            - action
+      - type: boolean
+        name: has_anncmnt
+        label: Enable announcement
+        description: Display the announcement above the site header
+        default: false
+      - type: markdown
+        name: anncmnt_content
+        label: Announcement content
+        description: The text content of the announcement
+      - type: enum
+        name: anncmnt_align
+        label: Announcement horizontal alignment
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the announcement content
+      - type: boolean
+        name: anncmnt_is_home_only
+        label: Show on home page
+        description: Display the announcement on the home page only.
+        default: false
+      - type: boolean
+        name: anncmnt_has_close
+        label: Enable announcement close
+        description: Display the announcement close button
+        default: false
+      - type: string
+        name: anncmnt_id
+        label: Announcement ID
+        description: >-
+          A unique identifier, required if close button is enabled. Must be
+          updated each time the announcement content changes
+  footer:
+    type: object
+    label: Footer configuration
+    labelField: content
+    fields:
+      - type: image
+        name: logo
+        label: Logo
+        description: The logo image displayed on the left side
+      - type: string
+        name: logo_alt
+        label: Logo alt text
+        description: The alt text of the logo image
+      - type: boolean
+        name: has_primary_nav
+        label: Enable primary navigation menu
+        description: Display the primary navigation menu
+        default: true
+      - type: string
+        name: primary_nav_title
+        label: Primary navigation title
+        description: The title of the primary navigation menu
+      - type: list
+        name: primary_nav_links
+        label: Primary navigation menu links
+        description: List of primary navigation links
+        items:
+          type: model
+          models:
+            - action
+      - type: boolean
+        name: has_secondary_nav
+        label: Enable secondary navigation menu
+        description: Display the secondary navigation menu
+        default: true
+      - type: string
+        name: secondary_nav_title
+        label: Secondary navigation title
+        description: The title of the secondary navigation menu
+      - type: list
+        name: secondary_nav_links
+        label: Secondary navigation menu links
+        description: List of secondary navigation links
+        items:
+          type: model
+          models:
+            - action
+      - type: boolean
+        name: has_tertiary_nav
+        label: Enable tertiary navigation menu
+        description: Display the tertiary navigation menu
+        default: true
+      - type: string
+        name: tertiary_nav_title
+        label: Tertiary navigation title
+        description: The title of the tertiary navigation menu
+      - type: list
+        name: tertiary_nav_links
+        label: Tertiary navigation menu links
+        description: List of tertiary navigation links
+        items:
+          type: model
+          models:
+            - action
+      - type: boolean
+        name: has_social
+        label: Enable social links
+        description: Display the social links
+        default: true
+      - type: list
+        name: social_links
+        label: Social links
+        description: List of social links
+        items:
+          type: model
+          models:
+            - action
+      - type: string
+        name: content
+        label: Footer content
+        description: The copyright text
+      - type: list
+        name: links
+        label: Links
+        description: A list of links displayed next to the copyright text
+        items:
+          type: model
+          models:
+            - action
+  person:
+    type: data
+    label: Person
+    folder: team
+    fields:
+      - type: string
+        name: id
+        label: ID
+        description: 'A unique identifier used when filtering posts, e.g. "john-doe"'
+        required: true
+      - type: string
+        name: link
+        label: Link
+        description: 'The link to the author page, e.g. "blog/author/john-doe"'
+      - type: string
+        name: first_name
+        label: First name
+        required: true
+      - type: string
+        name: last_name
+        label: Last name
+      - type: image
+        name: photo
+        label: Image
+      - type: string
+        name: photo_alt
+        label: Image alt text
+  category:
+    type: data
+    label: Category
+    folder: categories
+    fields:
+      - type: string
+        name: id
+        label: ID
+        description: 'A unique identifier used when filtering posts, e.g. "news"'
+        required: true
+      - type: string
+        name: link
+        label: Link
+        description: 'The link to the category page, e.g. "blog/category/news"'
+      - type: string
+        name: title
+        label: Title
+        required: true
+        description: The title of the category
+  tag:
+    type: data
+    label: Tag
+    folder: tags
+    fields:
+      - type: string
+        name: id
+        label: ID
+        description: 'A unique identifier used when filtering posts, e.g. "jamstack"'
+        required: true
+      - type: string
+        name: link
+        label: Link
+        description: 'The link to the tag page, e.g. "blog/tag/jamstack"'
+      - type: string
+        name: title
+        label: Title
+        required: true
+        description: The title of the tag
+  page:
+    type: page
+    label: Page
+    layout: page
+    exclude: blog/**/*
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the page
+        required: true
+      - type: model
+        name: seo
+        models:
+          - stackbit_page_meta
+  post:
+    type: page
+    urlPath: '/blog/{slug}'
+    label: Post
+    layout: post
+    folder: blog
+    exclude:
+      - index.md
+      - category/**
+      - author/**
+      - tag/**
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the post
+        required: true
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The subtitle of the post
+      - type: date
+        name: date
+        label: Date
+        description: The publish date of the post
+        required: true
+      - type: reference
+        name: author
+        label: Author
+        description: The author of the post
+        models:
+          - person
+      - type: list
+        name: categories
+        label: Categories
+        description: The categories of the post
+        items:
+          type: reference
+          models:
+            - category
+      - type: list
+        name: tags
+        label: Tags
+        description: The tags of the post
+        items:
+          type: reference
+          models:
+            - tag
+      - type: string
+        name: excerpt
+        label: Excerpt
+        description: The excerpt of the post displayed in the blog feed
+      - type: image
+        name: thumb_image
+        label: Image (blog feed)
+        description: The image displayed in the blog feed
+      - type: string
+        name: thumb_image_alt
+        label: Image alt text (blog feed)
+        description: The alt text of the blog feed image
+      - type: image
+        name: image
+        label: Image (single post)
+        description: The image displayed in the single post
+      - type: string
+        name: image_alt
+        label: Image alt text (single post)
+        description: The alt text of the single post image
+      - type: enum
+        name: image_position
+        label: Image position (single post)
+        options:
+          - left
+          - right
+          - top
+        default: top
+        description: >-
+          The featured image position in the blog post relative to the post
+          header content
+      - type: model
+        name: seo
+        models:
+          - stackbit_page_meta
+  advanced:
+    type: page
+    label: Advanced page
+    layout: advanced
+    hideContent: true
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the page
+        required: true
+      - type: list
+        name: sections
+        label: Sections
+        description: Page sections
+        items:
+          type: model
+          labelField: title
+          models:
+            - hero_section
+            - features_section
+            - grid_section
+            - blog_feed_section
+            - cta_section
+            - form_section
+      - type: model
+        name: seo
+        models:
+          - stackbit_page_meta
+  hero_section:
+    type: object
+    label: Hero section
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The subtitle of the section displayed below the title
+      - type: markdown
+        name: content
+        label: Content
+        description: The text content of the section
+      - type: list
+        name: actions
+        label: Action buttons
+        items:
+          type: model
+          models:
+            - action
+      - type: image
+        name: image
+        label: Image
+        description: The image of the section
+      - type: string
+        name: image_alt
+        label: Image alt text
+        description: The alt text of the section image
+      - type: text
+        name: video_embed_html
+        label: Video Embed Code
+        description: The HTML embed code for your video
+      - type: enum
+        name: media_position
+        label: Image or video position
+        options:
+          - left
+          - right
+          - top
+          - bottom
+        default: top
+        description: The position of the image or video relative to the text content
+      - type: enum
+        name: media_width
+        label: Image or video width
+        options:
+          - fourty
+          - fifty
+          - sixty
+        default: fifty
+        description: >-
+          The image or video container width as a percentage of the section
+          width. Used only when the image or video position is set to "left" or
+          "right"
+      - type: enum
+        name: align
+        label: Section alignment
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the section content
+      - type: enum
+        name: padding_top
+        label: Section top padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the top of the section
+      - type: enum
+        name: padding_bottom
+        label: Section bottom padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the bottom of the section
+      - type: boolean
+        name: has_border
+        label: Section border
+        default: false
+        description: Add section bottom border
+      - type: enum
+        name: background_color
+        label: Background color
+        options:
+          - none
+          - primary
+          - secondary
+        default: none
+        description: The background color of the section
+      - type: image
+        name: background_image
+        label: Background image
+        description: The image displayed in the background of the section
+      - type: number
+        name: background_image_opacity
+        label: Background image opacity
+        description: >-
+          An integer between 0 and 100. A lower value makes the image more
+          transparent
+      - type: enum
+        name: background_image_size
+        label: Background image size
+        options:
+          - auto
+          - contain
+          - cover
+        default: cover
+        description: The size of the background image
+      - type: enum
+        name: background_image_position
+        label: Background image position
+        options:
+          - left top
+          - left center
+          - left bottom
+          - center top
+          - center center
+          - center bottom
+          - right top
+          - right center
+          - right bottom
+        default: center center
+        description: >-
+          The starting position of a background image. The first value is the
+          horizontal position, and the second value is the vertical
+      - type: enum
+        name: background_image_repeat
+        label: Background image repeat
+        options:
+          - repeat
+          - no-repeat
+        default: no-repeat
+        description: Repeat the image to cover the whole area
+  features_section:
+    type: object
+    label: Features section
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The subtitle of the section displayed above the title
+      - type: list
+        name: features
+        label: Features
+        items:
+          type: model
+          models:
+            - feature
+      - type: enum
+        name: feature_padding_vert
+        label: Feature padding vertical
+        options:
+          - small
+          - medium
+          - large
+        default: medium
+        description: The vertical spacing between section features
+      - type: enum
+        name: align
+        label: Section alignment
+        options:
+          - left
+          - right
+          - center
+        default: center
+        description: 'The horizontal alignment of the section content (title, subtitle)'
+      - type: enum
+        name: padding_top
+        label: Section top padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the top of the section
+      - type: enum
+        name: padding_bottom
+        label: Section bottom padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the bottom of the section
+      - type: boolean
+        name: has_border
+        label: Section border
+        default: false
+        description: Add section bottom border
+      - type: enum
+        name: background_color
+        label: Background color
+        options:
+          - none
+          - primary
+          - secondary
+        default: none
+        description: The background color of the section
+      - type: image
+        name: background_image
+        label: Background image
+        description: The image displayed in the background of the section
+      - type: number
+        name: background_image_opacity
+        label: Background image opacity
+        description: >-
+          An integer between 0 and 100. A lower value makes the image more
+          transparent
+      - type: enum
+        name: background_image_size
+        label: Background image size
+        options:
+          - auto
+          - contain
+          - cover
+        default: cover
+        description: The size of the background image
+      - type: enum
+        name: background_image_position
+        label: Background image position
+        options:
+          - left top
+          - left center
+          - left bottom
+          - center top
+          - center center
+          - center bottom
+          - right top
+          - right center
+          - right bottom
+        default: center center
+        description: >-
+          The starting position of a background image. The first value is the
+          horizontal position, and the second value is the vertical
+      - type: enum
+        name: background_image_repeat
+        label: Background image repeat
+        options:
+          - repeat
+          - no-repeat
+        default: no-repeat
+        description: Repeat the image to cover the whole area
+  grid_section:
+    type: object
+    label: Grid section
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The subtitle of the section displayed above the title
+      - type: list
+        name: actions
+        label: Action buttons
+        items:
+          type: model
+          models:
+            - action
+        description: Action buttons displayed below section items
+      - type: list
+        name: grid_items
+        label: Grid items
+        items:
+          type: model
+          models:
+            - grid_item
+      - type: enum
+        name: grid_cols
+        label: Grid columns
+        options:
+          - two
+          - three
+          - four
+        default: three
+        description: Show the specified number of items in a grid row
+      - type: enum
+        name: grid_gap_vert
+        label: Grid gap vertical
+        options:
+          - small
+          - medium
+          - large
+        default: small
+        description: The vertical spacing between grid items
+      - type: enum
+        name: grid_gap_horiz
+        label: Grid gap horizontal
+        options:
+          - small
+          - medium
+          - large
+        default: small
+        description: The horizontal spacing between grid items
+      - type: boolean
+        name: enable_cards
+        label: Enable cards
+        description: >-
+          Display items as cards, i.e. add border, background and some padding
+          around the item content
+        default: false
+      - type: enum
+        name: align
+        label: Section alignment
+        options:
+          - left
+          - right
+          - center
+        default: center
+        description: >-
+          The horizontal alignment of the section content (title, subtitle,
+          action buttons)
+      - type: enum
+        name: padding_top
+        label: Section top padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the top of the section
+      - type: enum
+        name: padding_bottom
+        label: Section bottom padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the bottom of the section
+      - type: boolean
+        name: has_border
+        label: Section border
+        default: false
+        description: Add section bottom border
+      - type: enum
+        name: background_color
+        label: Background color
+        options:
+          - none
+          - primary
+          - secondary
+        default: none
+        description: The background color of the section
+      - type: image
+        name: background_image
+        label: Background image
+        description: The image displayed in the background of the section
+      - type: number
+        name: background_image_opacity
+        label: Background image opacity
+        description: >-
+          An integer between 0 and 100. A lower value makes the image more
+          transparent
+      - type: enum
+        name: background_image_size
+        label: Background image size
+        options:
+          - auto
+          - contain
+          - cover
+        default: cover
+        description: The size of the background image
+      - type: enum
+        name: background_image_position
+        label: Background image position
+        options:
+          - left top
+          - left center
+          - left bottom
+          - center top
+          - center center
+          - center bottom
+          - right top
+          - right center
+          - right bottom
+        default: center center
+        description: >-
+          The starting position of a background image. The first value is the
+          horizontal position, and the second value is the vertical
+      - type: enum
+        name: background_image_repeat
+        label: Background image repeat
+        options:
+          - repeat
+          - no-repeat
+        default: no-repeat
+        description: Repeat the image to cover the whole area
+  blog_feed_section:
+    type: object
+    label: Blog feed section
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The subtitle of the section displayed above the title
+      - type: list
+        name: actions
+        label: Action buttons
+        items:
+          type: model
+          models:
+            - action
+        description: Action buttons displayed below blog posts
+      - type: enum
+        name: blog_feed_cols
+        label: Blog feed columns
+        options:
+          - two
+          - three
+        default: three
+        description: Show the specified number of posts in a blog feed grid row
+      - type: boolean
+        name: enable_cards
+        label: Enable cards
+        description: >-
+          Display posts as cards, i.e. add border, background and some padding
+          around post content
+        default: false
+      - type: boolean
+        name: show_recent
+        label: Show recent posts only
+        description: >-
+          Show the specified number of recent posts. Should not be used with
+          author, category and tag filters
+        default: false
+        required: true
+      - type: number
+        name: recent_count
+        label: Number of recent posts to show
+      - type: reference
+        name: author
+        label: Author filter
+        description: Filter posts by an author
+        models:
+          - person
+      - type: reference
+        name: category
+        label: Category filter
+        description: Filter posts by a category
+        models:
+          - category
+      - type: reference
+        name: tag
+        label: Tag filter
+        description: Filter posts by a tag
+        models:
+          - tag
+      - type: boolean
+        name: show_date
+        label: Show date
+        description: Show the publish date of the post
+        default: true
+      - type: boolean
+        name: show_categories
+        label: Show categories
+        description: Show the categories of the post
+        default: false
+      - type: boolean
+        name: show_author
+        label: Show author
+        description: Show the author of the post
+        default: false
+      - type: boolean
+        name: show_excerpt
+        label: Show excerpt
+        description: Show the excerpt of the post
+        default: false
+      - type: boolean
+        name: show_image
+        label: Show image
+        description: Show the post image thumbnail
+        default: true
+      - type: enum
+        name: align
+        label: Section alignment
+        options:
+          - left
+          - right
+          - center
+        default: center
+        description: >-
+          The horizontal alignment of the section content (title, subtitle,
+          action buttons)
+      - type: enum
+        name: padding_top
+        label: Section top padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the top of the section
+      - type: enum
+        name: padding_bottom
+        label: Section bottom padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the bottom of the section
+      - type: boolean
+        name: has_border
+        label: Section border
+        default: false
+        description: Add section bottom border
+      - type: enum
+        name: background_color
+        label: Background color
+        options:
+          - none
+          - primary
+          - secondary
+        default: none
+        description: The background color of the section
+      - type: image
+        name: background_image
+        label: Background image
+        description: The image displayed in the background of the section
+      - type: number
+        name: background_image_opacity
+        label: Background image opacity
+        description: >-
+          An integer between 0 and 100. A lower value makes the image more
+          transparent
+      - type: enum
+        name: background_image_size
+        label: Background image size
+        options:
+          - auto
+          - contain
+          - cover
+        default: cover
+        description: The size of the background image
+      - type: enum
+        name: background_image_position
+        label: Background image position
+        options:
+          - left top
+          - left center
+          - left bottom
+          - center top
+          - center center
+          - center bottom
+          - right top
+          - right center
+          - right bottom
+        default: center center
+        description: >-
+          The starting position of a background image. The first value is the
+          horizontal position, and the second value is the vertical
+      - type: enum
+        name: background_image_repeat
+        label: Background image repeat
+        options:
+          - repeat
+          - no-repeat
+        default: no-repeat
+        description: Repeat the image to cover the whole area
+  cta_section:
+    type: object
+    label: CTA section
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
+      - type: markdown
+        name: content
+        label: Content
+        description: The text content of the section
+      - type: list
+        name: actions
+        label: Action buttons
+        items:
+          type: model
+          models:
+            - action
+      - type: enum
+        name: actions_position
+        label: Action buttons position
+        options:
+          - top
+          - bottom
+          - left
+          - right
+        default: bottom
+        description: The position of action buttons relative to the text content
+      - type: enum
+        name: actions_width
+        label: Action buttons width
+        options:
+          - fourty
+          - fifty
+          - sixty
+        default: fourty
+        description: >-
+          The action buttons container width as a percentage of the section
+          width. Used only when the action buttons position is set to "left" or
+          "right"
+      - type: enum
+        name: align
+        label: Section alignment
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the section content
+      - type: enum
+        name: padding_top
+        label: Section top padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the top of the section
+      - type: enum
+        name: padding_bottom
+        label: Section bottom padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the bottom of the section
+      - type: boolean
+        name: has_border
+        label: Section border
+        default: false
+        description: Add section bottom border
+      - type: enum
+        name: background_color
+        label: Background color
+        options:
+          - none
+          - primary
+          - secondary
+        default: none
+        description: The background color of the section
+      - type: image
+        name: background_image
+        label: Background image
+        description: The image displayed in the background of the section
+      - type: number
+        name: background_image_opacity
+        label: Background image opacity
+        description: >-
+          An integer between 0 and 100. A lower value makes the image more
+          transparent
+      - type: enum
+        name: background_image_size
+        label: Background image size
+        options:
+          - auto
+          - contain
+          - cover
+        default: cover
+        description: The size of the background image
+      - type: enum
+        name: background_image_position
+        label: Background image position
+        options:
+          - left top
+          - left center
+          - left bottom
+          - center top
+          - center center
+          - center bottom
+          - right top
+          - right center
+          - right bottom
+        default: center center
+        description: >-
+          The starting position of a background image. The first value is the
+          horizontal position, and the second value is the vertical
+      - type: enum
+        name: background_image_repeat
+        label: Background image repeat
+        options:
+          - repeat
+          - no-repeat
+        default: no-repeat
+        description: Repeat the image to cover the whole area
+  form_section:
+    type: object
+    label: Form section
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The subtitle of the section displayed below the title
+      - type: enum
+        name: title_align
+        label: 'Title, subtitle alignment'
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the section title and subtitle
+      - type: markdown
+        name: content
+        label: Content
+        description: The text content of the section
+      - type: enum
+        name: content_align
+        label: Content alignment
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the section text content
+      - type: enum
+        name: form_position
+        label: Form position
+        options:
+          - left
+          - right
+          - top
+          - bottom
+        default: bottom
+        description: The position of the form relative to the text content of the section
+      - type: enum
+        name: form_width
+        label: Form width
+        options:
+          - fourty
+          - fifty
+          - sixty
+        default: fifty
+        description: >-
+          The form container width as a percentage of the section width. Used
+          only when the form position is set to "left" or "right"
+      - type: enum
+        name: form_layout
+        label: Form layout
+        options:
+          - stacked
+          - inline
+        default: stacked
+        description: >-
+          The layout of the form. "Inline" layout can only be used if the form
+          has one input field
+      - type: boolean
+        name: enable_card
+        label: Display form in a box
+        default: false
+        description: >-
+          Display form inside a box, i.e. add border and background to the form
+          container
+      - type: string
+        name: form_id
+        label: Form ID
+        description: A unique identifier of the form. Must not contain whitespace
+        required: true
+      - type: string
+        name: form_action
+        label: Form action
+        description: >-
+          The path of your custom "success" page, if you want to replace the
+          default success message.
+      - type: list
+        name: form_fields
+        label: Form fields
+        items:
+          type: model
+          models:
+            - form_field
+      - type: string
+        name: submit_label
+        label: Submit button label
+        required: true
+      - type: enum
+        name: align_vert
+        label: Section vertical alignment
+        options:
+          - top
+          - middle
+          - bottom
+        default: top
+        description: >-
+          The vertical alignment of the section text content and form. Used only
+          when the form position is set to "left" or "right"
+      - type: enum
+        name: padding_top
+        label: Section top padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the top of the section
+      - type: enum
+        name: padding_bottom
+        label: Section bottom padding
+        options:
+          - none
+          - small
+          - medium
+          - large
+        default: medium
+        description: The padding area (space) on the bottom of the section
+      - type: boolean
+        name: has_border
+        label: Section border
+        default: false
+        description: Add section bottom border
+      - type: enum
+        name: background_color
+        label: Background color
+        options:
+          - none
+          - primary
+          - secondary
+        default: none
+        description: The background color of the section
+      - type: image
+        name: background_image
+        label: Background image
+        description: The image displayed in the background of the section
+      - type: number
+        name: background_image_opacity
+        label: Background image opacity
+        description: >-
+          An integer between 0 and 100. A lower value makes the image more
+          transparent
+      - type: enum
+        name: background_image_size
+        label: Background image size
+        options:
+          - auto
+          - contain
+          - cover
+        default: cover
+        description: The size of the background image
+      - type: enum
+        name: background_image_position
+        label: Background image position
+        options:
+          - left top
+          - left center
+          - left bottom
+          - center top
+          - center center
+          - center bottom
+          - right top
+          - right center
+          - right bottom
+        default: center center
+        description: >-
+          The starting position of a background image. The first value is the
+          horizontal position, and the second value is the vertical
+      - type: enum
+        name: background_image_repeat
+        label: Background image repeat
+        options:
+          - repeat
+          - no-repeat
+        default: no-repeat
+        description: Repeat the image to cover the whole area
+  feature:
+    type: object
+    label: Feature
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the feature
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The subtitle of the feature displayed below the title
+      - type: markdown
+        name: content
+        label: Content
+        description: The text content of the feature
+      - type: list
+        name: actions
+        label: Action buttons
+        items:
+          type: model
+          models:
+            - action
+      - type: image
+        name: image
+        label: Image
+        description: The image of the feature
+      - type: string
+        name: image_alt
+        label: Image alt text
+        description: The alt text of the feature image
+      - type: text
+        name: video_embed_html
+        label: Video Embed Code
+        description: The HTML embed code for your video
+      - type: enum
+        name: media_position
+        label: Image or video position
+        options:
+          - left
+          - right
+          - top
+          - bottom
+        default: top
+        description: The position of the image or video relative to the text content
+      - type: enum
+        name: media_width
+        label: Image or video width
+        options:
+          - thirty-three
+          - fourty
+          - fifty
+          - sixty
+        default: fifty
+        description: >-
+          The image or video container width as a percentage of the feature
+          width. Used only when the image or video position is set to "left" or
+          "right"
+      - type: enum
+        name: align
+        label: Feature alignment
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the feature content
+  grid_item:
+    type: object
+    label: Item
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the item
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The subtitle of the item displayed below the title
+      - type: enum
+        name: title_align
+        label: 'Title, subtitle alignment'
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the item title and subtitle
+      - type: markdown
+        name: content
+        label: Content
+        description: The text content of the item
+      - type: enum
+        name: content_align
+        label: Content alignment
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the item text content
+      - type: list
+        name: actions
+        label: Action buttons
+        items:
+          type: model
+          models:
+            - action
+      - type: enum
+        name: actions_align
+        label: Action buttons alignment
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the item action buttons
+      - type: enum
+        name: actions_width
+        label: Action buttons width
+        options:
+          - auto
+          - full-width
+        default: auto
+        description: The width of action button
+      - type: image
+        name: image
+        label: Image
+        description: The image of the item
+      - type: string
+        name: image_alt
+        label: Image alt text
+        description: The alt text of the item image
+      - type: enum
+        name: image_position
+        label: Image position
+        options:
+          - left
+          - right
+          - top
+          - bottom
+        default: top
+        description: The position of the image relative to the text content
+      - type: enum
+        name: image_width
+        label: Image container width
+        options:
+          - twenty-five
+          - thirty-three
+          - fourty
+          - fifty
+          - sixty
+        default: fifty
+        description: >-
+          The image container width as a percentage of the item width. Used only
+          when the image position is set to "left" or "right"
+      - type: enum
+        name: image_align
+        label: Image alignment
+        options:
+          - left
+          - right
+          - center
+        default: left
+        description: The horizontal alignment of the image
+      - type: boolean
+        name: image_has_padding
+        label: Image padding
+        default: false
+        description: >-
+          Add padding (space) around the image. Used only when "Enable cards" is
+          set to true
+  form_field:
+    type: object
+    label: Form field
+    labelField: name
+    fields:
+      - type: enum
+        name: input_type
+        label: Type
+        options:
+          - text
+          - email
+          - tel
+          - number
+          - checkbox
+          - select
+          - textarea
+        description: Type of the form field
+        required: true
+      - type: string
+        name: name
+        label: Name
+        description: 'The name of the field, submitted with the form'
+        required: true
+      - type: string
+        name: label
+        label: Label
+        description: 'The caption of the field, shown above the field input'
+      - type: string
+        name: default_value
+        label: Placeholder text or default value
+        description: >-
+          The placeholder for textual field types or default option for select
+          field
+      - type: list
+        name: options
+        description: 'The list of options, used only when the field type is "select"'
+      - type: boolean
+        name: is_required
+        label: Is the field required?
+        default: false
+  action:
+    type: object
+    label: Action
+    labelField: label
+    fields:
+      - type: string
+        name: label
+        label: Label
+        required: true
+      - type: string
+        name: url
+        label: URL
+        required: true
+        widget: url
+        default: '#'
+      - type: enum
+        name: style
+        label: Style
+        options:
+          - link
+          - primary
+          - secondary
+        default: link
+        required: true
+      - type: boolean
+        name: has_icon
+        label: Show icon
+        default: false
+      - type: enum
+        name: icon
+        label: Icon
+        options:
+          - arrow-left
+          - arrow-right
+          - facebook
+          - github
+          - instagram
+          - linkedin
+          - twitter
+          - vimeo
+          - youtube
+      - type: enum
+        name: icon_position
+        label: Icon position
+        options:
+          - left
+          - right
+          - center
+        default: right
+        description: Select "center" to display icon only and hide the label
+      - type: boolean
+        name: new_window
+        label: Open in new tab/window
+        default: false
+      - type: boolean
+        name: no_follow
+        label: No follow
+        default: false
+        description: Add rel="nofollow" attribute to the link
+  stackbit_page_meta:
+    type: object
+    label: Page meta data
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The page title that goes into the <title> tag
+        default: ''
+      - type: string
+        name: description
+        label: Description
+        description: The page description that goes into the <meta name="description"> tag
+        default: ''
+      - type: list
+        name: robots
+        label: Robots
+        description: The items that go into the <meta name="robots"> tag
+        items:
+          type: enum
+          options:
+            - all
+            - index
+            - follow
+            - noindex
+            - nofollow
+            - noimageindex
+            - notranslate
+            - none
+          default: all
+      - type: list
+        name: extra
+        label: Extra
+        description: >-
+          Additional definition for specific meta tags such as open-graph,
+          twitter, etc.
+        items:
+          type: object
+          labelField: name
+          fields:
+            - type: string
+              name: name
+              default: ''
+            - type: string
+              name: value
+              default: ''
+            - type: string
+              name: keyName
+              default: name
+            - type: boolean
+              name: relativeUrl

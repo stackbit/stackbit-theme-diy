@@ -1,0 +1,93 @@
+// Font rendering
+@mixin font-smooth {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Clearing floats
+@mixin clearfix() {
+	&:after {
+		clear: both;
+	}
+
+	&:before,
+	&:after {
+	content: "";
+		display: table;
+	}
+}
+
+// Screen reader text
+@mixin sr-only {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+// Breakpoints
+@mixin media-breakpoint-up($name, $breakpoints: $media-breakpoints) {
+	$min: map-get($breakpoints, $name);
+	@if $min {
+		@media (min-width: $min + 1) {
+			@content;
+		}
+	}
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $media-breakpoints) {
+	$max: map-get($breakpoints, $name);
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	}
+}
+
+// Grid
+@mixin make-grid($size: $grid-gap) {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -$size / 2;
+	margin-right: -$size / 2;
+}
+
+@mixin make-grid-gap($size) {
+	margin-left: -$size / 2;
+	margin-right: -$size / 2;
+
+	> .cell,
+	> [class*="cell-"] {
+		padding-left: $size / 2;
+		padding-right: $size / 2;
+	}
+}
+
+@mixin make-cell-default($size: $grid-gap) {
+	box-sizing: border-box;
+	padding-left: $size / 2;
+	padding-right: $size / 2;
+	position: relative;
+	width: 100%;
+}
+
+@mixin make-cell-auto() {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%;
+}
+
+@mixin make-cell() {
+	flex-basis: 0;
+	flex-grow: 1;
+	min-width: 0;
+	max-width: 100%;
+}
+
+@mixin make-cell-size($size, $cells: $grid-cells) {
+	flex: 0 0 round(percentage($size / $cells) * 100000)/100000;
+	max-width: round(percentage($size / $cells) * 100000)/100000;
+}

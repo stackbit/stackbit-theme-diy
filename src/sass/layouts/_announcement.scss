@@ -1,0 +1,56 @@
+/**
+ * Announcement
+ */
+.announcement-bar {
+	background: $color-anncmnt-bg;
+	position: relative;
+}
+
+.announcement-bar__copy {
+	font-size: 0.875rem;
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.js-announcement {
+	&.is-hidden {
+		display: none;
+	}
+
+	.announcement-bar__copy {
+		padding-right: 1.875rem;
+
+		&.text-center {
+			padding-left: 1.875rem;
+		}
+	}
+}
+
+.js-announcment-close {
+	font-size: 0.875rem;
+	height: 1.5rem;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 1.5rem;
+}
+
+.layout-boxed {
+	.announcement-bar__content {
+		position: relative;
+	}
+}
+
+.layout-full-width {
+	.js-announcment-close {
+		right: 1.875rem;
+
+		@include media-breakpoint-down(sm) {
+			right: 0.9375rem;
+		}
+	}
+}

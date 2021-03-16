@@ -1,0 +1,14 @@
+/**
+ * Sizing
+ */
+@each $key, $size in $container-sizes {
+	.maxw-#{$key} {
+		max-width: #{$size};
+	}
+}
+
+@each $key, $size in $sizes {
+	.maxw-#{$key} {
+		max-width: #{$size};
+	}
+}

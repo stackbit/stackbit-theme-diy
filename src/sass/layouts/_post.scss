@@ -1,0 +1,58 @@
+/**
+ * Posts
+ */
+.post__meta,
+.post__byline {
+	color: $color-meta;
+	font-size: 0.88889em;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.post__byline {
+	margin-top: 1.66667em;
+}
+
+.post__subtitle {
+	font-size: 1.16667em;
+}
+
+.post__meta-sep {
+  font-weight: 700;
+  margin: 0 3px;
+}
+
+.post__cat + .post__date {
+	&:before {
+		content: "\00b7\00a0";
+		font-weight: 700;
+		margin: 0 3px;
+	}
+}
+
+.post__footer {
+	color: $color-meta;
+	font-size: 0.875em;
+
+	a,
+	span {
+		display: inline-block;
+
+		&:before {
+			content: "\0023";
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.post__hero {
+		max-width: container-max-width(medium);
+	}
+}

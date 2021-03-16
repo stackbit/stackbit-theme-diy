@@ -1,0 +1,154 @@
+/**
+ * Button Styles
+ */
+.btn {
+	align-items: center;
+	background-color: $color-btn-bg;
+	border: 0;
+	border-radius: 0;
+	box-sizing: border-box;
+	color: $color-btn-text;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 0.88889em;
+	font-weight: 700;
+	justify-content: center;
+	line-height: 1.25;
+	min-width: 10em;
+	padding: 0.75em 1.875em;
+	text-decoration: none;
+	transition: .25s ease;
+	white-space: nowrap;
+
+	&:hover,
+	&:focus,
+	&:active {
+		opacity: .85;
+		outline: 0;
+	}
+
+	.icon + :not(.sr-only) {
+		margin-left: 5px;
+
+		&.order-first {
+			margin-left: 0;
+			margin-right: 5px;
+		}
+	}
+}
+
+.btn--secondary {
+	background-color: $color-btn-alt-bg;
+	color: $color-btn-alt-text;
+}
+
+#site-wrap {
+	.btn--clear {
+		background: 0;
+		border: 0;
+		border-radius: 0;
+		color: inherit;
+		min-width: 0;
+		padding: 0;
+	}
+}
+
+.btn--icon {
+	font-size: 1rem;
+	height: 1.66667em;
+	min-width: 0;
+	padding: 0;
+	position: relative;
+	width: 1.66667em;
+}
+
+.btn-group {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+
+	a:not(.btn) {
+		font-size: 0.88889em;
+	}
+
+	a,
+	.btn {
+		margin: 0 1em 1em 0;
+	}
+
+	&.justify-center {
+		a,
+		.btn {
+			margin-left: 0.5em;
+			margin-right: 0.5em;
+		}
+	}
+
+	&.justify-end {
+		a,
+		.btn {
+			margin-left: 1em;
+			margin-right: 0;
+		}
+	}
+
+	&.btn-group--fill {
+		.btn {
+			max-width: 22.5em;
+			width: 100%;
+		}
+	}
+}
+
+.style-classic {
+	.btn {
+		border-radius: 1.875em;
+	}
+}
+
+.style-minimal {
+	.btn {
+		border-radius: 2px;
+	}
+}
+
+.style-bold {
+	.btn--primary,
+	.btn--secondary {
+		box-shadow: 0.375em 0.375em 0 0 $color-bold-btn-shadow;
+		opacity: 1;
+		position: relative;
+		-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+
+		&:hover,
+		&:focus,
+		&:active {
+			box-shadow: 0 0 0 0 $color-bold-btn-shadow;
+			-webkit-transform: translate(0.375em,0.375em);
+			transform: translate(0.375em,0.375em);
+		}
+	}
+}
+
+.palette-gray {
+	.btn--secondary {
+		background-color: $color-gray-btn-alt-bg;
+	}
+}
+
+@each $style in map-keys($theme-styles) {
+	$style-suffix: "#{$style}";
+	$colors: map-deep-get($theme-styles, $style, "colors");
+	@each $color, $value in $colors {
+		$color-suffix: "#{$color}";
+	
+		.style-#{$style-suffix} {
+			&.palette-#{$color-suffix} {
+				.btn--primary {
+					background-color: $value;
+				}
+			}
+		}
+	}
+}

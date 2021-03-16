@@ -1,0 +1,25 @@
+/**
+ * Avatars
+ */
+.avatar {
+	border-radius: 100%;
+	height: 60px;
+	margin-bottom: 0;
+	overflow: hidden;
+	position: relative;
+	width: 60px;
+}
+
+.avatar--small {
+	height: 40px;
+	width: 40px;
+}
+
+.avatar__img {
+	height: 100%;
+	left: 0;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}

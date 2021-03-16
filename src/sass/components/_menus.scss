@@ -1,0 +1,29 @@
+/**
+ * Menus
+ */
+.menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu__item {
+	color: $color-nav-link-text;
+	line-height: 1.25;
+
+	a {
+		font-size: 0.88889em;
+	}
+
+	a:not(.btn) {
+		color: inherit;
+		display: inline-block;
+		position: relative;
+		text-decoration: none;
+	}
+
+	a:not(.btn):hover,
+	&.is-active a {
+		text-decoration: underline;
+	}
+}
