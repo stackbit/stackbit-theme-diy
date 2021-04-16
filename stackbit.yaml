@@ -472,15 +472,25 @@ models:
         name: seo
         models:
           - stackbit_page_meta
-  hero_section:
+  section:
     type: object
-    label: Hero section
+    label: Section
     labelField: title
     fields:
+      - type: string
+        name: section_id
+        label: Section ID
+        description: A unique identifier of the section, must not contain whitespace
       - type: string
         name: title
         label: Title
         description: The title of the section
+  hero_section:
+    type: object
+    label: Hero section
+    extends:
+      - section
+    fields:
       - type: string
         name: subtitle
         label: Subtitle
@@ -620,12 +630,9 @@ models:
   features_section:
     type: object
     label: Features section
-    labelField: title
+    extends:
+      - section
     fields:
-      - type: string
-        name: title
-        label: Title
-        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -736,12 +743,9 @@ models:
   grid_section:
     type: object
     label: Grid section
-    labelField: title
+    extends:
+      - section
     fields:
-      - type: string
-        name: title
-        label: Title
-        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -887,12 +891,9 @@ models:
   blog_feed_section:
     type: object
     label: Blog feed section
-    labelField: title
+    extends:
+      - section
     fields:
-      - type: string
-        name: title
-        label: Title
-        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -1066,12 +1067,9 @@ models:
   cta_section:
     type: object
     label: CTA section
-    labelField: title
+    extends:
+      - section
     fields:
-      - type: string
-        name: title
-        label: Title
-        description: The title of the section
       - type: markdown
         name: content
         label: Content
@@ -1195,12 +1193,9 @@ models:
   form_section:
     type: object
     label: Form section
-    labelField: title
+    extends:
+      - section
     fields:
-      - type: string
-        name: title
-        label: Title
-        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle

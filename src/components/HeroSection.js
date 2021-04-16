@@ -7,6 +7,7 @@ import SectionActions from './SectionActions';
 export default class HeroSection extends React.Component {
     render() {
         const section = _.get(this.props, 'section');
+        const sectionId = _.get(section, 'section_id');
         const title = _.get(section, 'title');
         const subtitle = _.get(section, 'subtitle');
         const content = _.get(section, 'content');
@@ -28,6 +29,7 @@ export default class HeroSection extends React.Component {
 
         return (
             <section
+                id={sectionId}
                 className={classNames('section', 'hero', {
                     'has-border': hasBorder,
                     'has-cover': backgroundImage,

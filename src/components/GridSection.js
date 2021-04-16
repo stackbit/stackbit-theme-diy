@@ -8,6 +8,7 @@ import SectionActions from './SectionActions';
 export default class GridSection extends React.Component {
     render() {
         const section = _.get(this.props, 'section');
+        const sectionId = _.get(section, 'section_id');
         const title = _.get(section, 'title');
         const subtitle = _.get(section, 'subtitle');
         const actions = _.get(section, 'actions');
@@ -23,6 +24,7 @@ export default class GridSection extends React.Component {
 
         return (
             <section
+                id={sectionId}
                 className={classNames('section', {
                     'has-border': hasBorder,
                     'has-cover': backgroundImage,

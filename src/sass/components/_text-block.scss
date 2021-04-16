@@ -5,8 +5,13 @@
 	p,
 	ul,
 	ol,
-	figure,
-	.js-reframe {
+	figure {
+		margin-bottom: 1.66667em;
+	}
+
+	iframe[src*="vimeo.com"],
+	iframe[src*="youtube.com"] {
+		display: block;
 		margin-bottom: 1.66667em;
 	}
 

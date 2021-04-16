@@ -7,6 +7,7 @@ import SectionActions from './SectionActions';
 export default class CtaSection extends React.Component {
     render() {
         const section = _.get(this.props, 'section');
+        const sectionId = _.get(section, 'section_id');
         const title = _.get(section, 'title');
         const content = _.get(section, 'content');
         const actions = _.get(section, 'actions');
@@ -23,6 +24,7 @@ export default class CtaSection extends React.Component {
 
         return (
             <section
+                id={sectionId}
                 className={classNames('section', 'cta', {
                     'has-border': hasBorder,
                     'has-cover': backgroundImage,

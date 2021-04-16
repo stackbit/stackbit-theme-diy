@@ -145,6 +145,7 @@ export default class BlogFeedSection extends React.Component {
     render() {
         const data = _.get(this.props, 'data');
         const section = _.get(this.props, 'section');
+        const sectionId = _.get(section, 'section_id');
         const title = _.get(section, 'title');
         const subtitle = _.get(section, 'subtitle');
         const actions = _.get(section, 'actions');
@@ -163,6 +164,7 @@ export default class BlogFeedSection extends React.Component {
 
         return (
             <section
+                id={sectionId}
                 className={classNames('section', 'blog-feed', {
                     'has-border': hasBorder,
                     'has-cover': backgroundImage,
