@@ -7,6 +7,39 @@ import Action from './Action';
 import Icon from './Icon';
 
 export default class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleWindowResize = this.handleWindowResize.bind(this);
+        this.handleRouteChange = this.handleRouteChange.bind(this);
+        this.menuOpenRef = React.createRef();
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowResize, true);
+        Router.events.on('routeChangeStart', this.handleRouteChange);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowResize, true);
+        Router.events.off('routeChangeStart', this.handleRouteChange);
+    }
+
+    handleWindowResize() {
+        const menuOpenElm = _.get(this.menuOpenRef, 'current.offsetParent');
+        if (menuOpenElm === null) {
+            document.body.classList.remove('js-nav-open');
+        }
+    }
+
+    handleRouteChange() {
+        document.body.classList.remove('js-nav-open');
+    }
+
+    handleMenuToggle(event) {
+        event.preventDefault();
+        document.body.classList.toggle('js-nav-open');
+    }
+
     renderNavLinks(navLinks, pageUrl) {
         return (
             <ul className="menu flex-md items-md-center">
@@ -56,7 +89,7 @@ export default class Header extends React.Component {
                                 <div className="navbar__container flex-md-auto">
                                     <div className="navbar__scroller">
                                         <div className="navbar__inner">
-                                            <button aria-label="Close" className="btn btn--icon btn--clear navbar__close-btn js-nav-toggle">
+                                            <button aria-label="Close" className="btn btn--icon btn--clear navbar__close-btn" onClick={this.handleMenuToggle.bind(this)}>
                                                 <Icon icon={'close'} />
                                                 <span className="sr-only">Close</span>
                                             </button>
@@ -67,7 +100,7 @@ export default class Header extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <button aria-label="Menu" className="btn btn--icon btn--clear navbar__menu-btn js-nav-toggle ml-auto">
+                                <button aria-label="Menu" className="btn btn--icon btn--clear navbar__menu-btn ml-auto" ref={this.menuOpenRef} onClick={this.handleMenuToggle.bind(this)}>
                                     <Icon icon={'menu'} />
                                     <span className="sr-only">Menu</span>
                                 </button>

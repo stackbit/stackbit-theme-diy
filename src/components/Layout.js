@@ -3,11 +3,30 @@ import { Helmet } from 'react-helmet';
 import _ from 'lodash';
 
 import { withPrefix, classNames } from '../utils';
-import Announcement from './Announcement';
 import Header from './Header';
 import Footer from './Footer';
+import Announcement from './Announcement';
+import NavOverlay from './NavOverlay';
 
 export default class Body extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleVideoEmbeds = this.handleVideoEmbeds.bind(this);
+    }
+
+    componentDidMount() {
+        this.handleVideoEmbeds();
+    }
+
+    componentDidUpdate() {
+        this.handleVideoEmbeds();
+    }
+
+    handleVideoEmbeds() {
+        const videoEmbeds = ['iframe[src*="youtube.com"]', 'iframe[src*="vimeo.com"]'];
+        noframe(videoEmbeds.join(','));
+    }
+
     renderFontUrl(style, font) {
         if (style === 'bold') {
             return (
@@ -32,6 +51,9 @@ export default class Body extends React.Component {
         const pageTitle = _.get(page, 'title');
         const config = _.get(this.props, 'config');
         const configTitle = _.get(config, 'title');
+        const anncmnt = _.get(config, 'announcement');
+        const hasAnncmnt = _.get(anncmnt, 'has_anncmnt');
+        const anncmntContent = _.get(anncmnt, 'anncmnt_content');
         const style = _.get(config, 'style', 'classic');
         const layoutType = _.get(config, 'layout_type', 'full-width');
         const font = _.get(config, 'base_font', 'sans-serif');
@@ -68,7 +90,7 @@ export default class Body extends React.Component {
         return (
             <React.Fragment>
                 <Helmet>
-                <title>{title}</title>
+                    <title>{title}</title>
                     <meta charSet="utf-8" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta name="google" content="notranslate" />
@@ -80,23 +102,14 @@ export default class Body extends React.Component {
                     <body className={classNames(`layout-${layoutType}`, `style-${style}`, `palette-${palette}`, `mode-${mode}`, `font-${font}`)} />
                 </Helmet>
                 <div id="site-wrap" className="site">
-                    {(_.get(this.props, 'data.config.header.has_anncmnt', null) && _.get(this.props, 'data.config.header.anncmnt_content', null)) && (
-                        _.get(this.props, 'data.config.header.anncmnt_is_home_only', null) ? (
-                            (_.get(this.props, 'page.__metadata.urlPath', null) === '/') && (
-                                <Announcement {...this.props} site={this.props} />
-                            )
-                        ) :
-                            <Announcement {...this.props} site={this.props} />
-                    )}
+                    {hasAnncmnt && anncmntContent && <Announcement page={page} anncmnt={anncmnt} />}
                     <Header page={page} config={config} />
                     <main id="content" className="site-content">
                         {this.props.children}
                     </main>
                     <Footer config={config} />
                 </div>
-                {(_.get(this.props, 'data.config.header.has_primary_nav', null) || _.get(this.props, 'data.config.header.has_secondary_nav', null)) && (
-                    <div className="nav-overlay js-nav-toggle" />
-                )}
+                <NavOverlay config={config} />
             </React.Fragment>
         );
     }

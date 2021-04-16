@@ -16,6 +16,7 @@ import GridSection from './GridSection';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import Layout from './Layout';
+import NavOverlay from './NavOverlay';
 import Icon from './Icon';
 import SectionActions from './SectionActions';
 import SectionBackground from './SectionBackground';
@@ -39,6 +40,7 @@ export {
     Header,
     HeroSection,
     Layout,
+    NavOverlay,
     Icon,
     SectionActions,
     SectionBackground
@@ -63,6 +65,7 @@ export default {
     Header,
     HeroSection,
     Layout,
+    NavOverlay,
     Icon,
     SectionActions,
     SectionBackground
