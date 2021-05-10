@@ -32,7 +32,7 @@ export default class BlogFeedSection extends React.Component {
             }
         } else if (sectionTagRef) {
             const sectionTag = getData(data, sectionTagRef);
-            const postTagRefs = _.get(post, 'categories');
+            const postTagRefs = _.get(post, 'tags');
             const postTags = _.map(postTagRefs, (postTagRef) => {
                 return getData(data, postTagRef);
             });
