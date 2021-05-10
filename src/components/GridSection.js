@@ -1,9 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
 
-import { classNames, withPrefix } from '../utils';
+import { classNames } from '../utils';
 import GridItem from './GridItem';
 import SectionActions from './SectionActions';
+import SectionBackground from './SectionBackground';
 
 export default class GridSection extends React.Component {
     render() {

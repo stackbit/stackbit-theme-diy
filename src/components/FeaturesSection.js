@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import { classNames, withPrefix, htmlToReact, markdownify } from '../utils';
 import SectionActions from './SectionActions';
+import SectionBackground from './SectionBackground';
 
 export default class FeaturesSection extends React.Component {
     renderFeature(feature, index, section) {

@@ -1,8 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
 
-import { classNames, withPrefix, markdownify } from '../utils';
+import { classNames, markdownify } from '../utils';
 import SectionActions from './SectionActions';
+import SectionBackground from './SectionBackground';
 
 export default class CtaSection extends React.Component {
     render() {

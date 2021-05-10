@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 
 import { classNames, markdownify } from '../utils';
+import SectionBackground from './SectionBackground';
 import FormField from './FormField';
 
 export default class FormSection extends React.Component {
