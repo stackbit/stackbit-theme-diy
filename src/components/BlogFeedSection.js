@@ -62,7 +62,7 @@ export default class BlogFeedSection extends React.Component {
         const isCard = _.get(section, 'enable_cards');
         const showImage = _.get(section, 'show_image');
         const showDate = _.get(section, 'show_date');
-        const showCategories = _.get(section, 'show_image');
+        const showCategories = _.get(section, 'show_categories');
         const showAuthor = _.get(section, 'show_author');
         const showExcerpt = _.get(section, 'show_excerpt');
 
