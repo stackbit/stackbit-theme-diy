@@ -33,6 +33,7 @@ export default class FeaturesSection extends React.Component {
                     'py-1': paddingY !== 'small',
                     'py-sm-3': paddingY === 'large'
                 })}
+                data-sb-field-path={`.${index}`}
             >
                 <div className="item__content grid items-center">
                     {hasMedia && (
@@ -52,6 +53,7 @@ export default class FeaturesSection extends React.Component {
                                         'mx-auto': alignX === 'center',
                                         'ml-auto': alignX === 'right'
                                     })}
+                                    data-sb-field-path=".image.url#@src .image_alt#@alt"
                                 />}
                         </div>
                     )}
@@ -69,17 +71,18 @@ export default class FeaturesSection extends React.Component {
                             })}
                         >
                             {title && (
-                                sectionTitle ? <h3 className="feature__title h2">{title}</h3>
-                                    : <h2 className="feature__title h2">{title}</h2>
+                                sectionTitle ? <h3 className="feature__title h2" data-sb-field-path=".title">{title}</h3>
+                                    : <h2 className="feature__title h2" data-sb-field-path=".title">{title}</h2>
                             )}
-                            {subtitle && <p className="feature__subtitle">{subtitle}</p>}
-                            {content && <div className="feature__copy">{markdownify(content)}</div>}
+                            {subtitle && <p className="feature__subtitle" data-sb-field-path=".subtitle">{subtitle}</p>}
+                            {content && <div className="feature__copy" data-sb-field-path=".content">{markdownify(content)}</div>}
                             {!_.isEmpty(actions) && (
                                 <div
                                     className={classNames('feature__actions', 'btn-group', {
                                         'justify-center': alignX === 'center',
                                         'justify-end': alignX === 'right'
                                     })}
+                                    data-sb-field-path=".actions"
                                 >
                                     <SectionActions actions={actions} />
                                 </div>
@@ -121,6 +124,7 @@ export default class FeaturesSection extends React.Component {
                     'pb-6': paddingBottom === 'medium' || paddingBottom === 'large',
                     'pb-md-7': paddingBottom === 'large'
                 })}
+                data-sb-field-path={this.props.annotationPrefix}
             >
                 {backgroundImage && <SectionBackground section={section} />}
                 {(title || subtitle) && (
@@ -132,12 +136,12 @@ export default class FeaturesSection extends React.Component {
                             'text-right': alignX === 'right'
                         })}
                     >
-                        {subtitle && <div className="section__subtitle">{subtitle}</div>}
-                        {title && <h2 className="section__title mt-0">{title}</h2>}
+                        {subtitle && <div className="section__subtitle" data-sb-field-path=".subtitle">{subtitle}</div>}
+                        {title && <h2 className="section__title mt-0" data-sb-field-path=".title">{title}</h2>}
                     </div>
                 )}
                 {!_.isEmpty(features) && (
-                    <div className="container">
+                    <div className="container" data-sb-field-path=".features">
                         {_.map(features, (feature, index) => this.renderFeature(feature, index, section))}
                     </div>
                 )}

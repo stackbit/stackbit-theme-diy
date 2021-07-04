@@ -59,6 +59,7 @@ export default class Announcement extends React.Component {
                 })}
                 {...(anncmntHasClose ? ({ "data-anncmnt-id": anncmntId }) : null)}
                 ref={this.anncmntRef}
+                data-sb-field-path={this.props.annotationPrefix}
             >
                 <div className="container">
                     <div className="announcement-bar__content">
@@ -67,6 +68,7 @@ export default class Announcement extends React.Component {
                                 'text-center': anncmntAlignX === 'center',
                                 'text-right': anncmntAlignX === 'right'
                             })}
+                            data-sb-field-path=".anncmnt_content"
                         >
                             {markdownify(anncmntContent)}
                         </div>
@@ -75,6 +77,7 @@ export default class Announcement extends React.Component {
                                 aria-label="Close"
                                 className="btn btn--icon btn--clear js-announcment-close"
                                 onClick={this.handleAnncmntClose.bind(this)}
+                                data-sb-field-path=".anncmnt_has_close"
                             >
                                 <Icon icon={'close'} />
                                 <span className="sr-only">Close</span>

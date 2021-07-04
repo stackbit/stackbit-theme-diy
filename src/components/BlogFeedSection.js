@@ -9,7 +9,7 @@ import BlogPostCategories from './BlogPostCategories';
 import BlogPostAuthor from './BlogPostAuthor';
 
 export default class BlogFeedSection extends React.Component {
-    renderBlogFeedItemFilter(post, data, section) {
+    renderBlogFeedItemFilter(post, data, section, index) {
         const sectionAuthorRef = _.get(section, 'author');
         const sectionCategoryRef = _.get(section, 'category');
         const sectionTagRef = _.get(section, 'tag');
@@ -27,7 +27,7 @@ export default class BlogFeedSection extends React.Component {
                 return null;
             }
             if (postAuthor.id === sectionAuthor.id) {
-                return this.renderBlogFeedItem(post, data, section);
+                return this.renderBlogFeedItem(post, data, section, index);
             }
         } else if (sectionCategoryRef) {
             const sectionCategory = getData(data, sectionCategoryRef);
@@ -40,7 +40,7 @@ export default class BlogFeedSection extends React.Component {
             });
             const category = _.find(postCategories, { id: sectionCategory.id });
             if (category) {
-                return this.renderBlogFeedItem(post, data, section);
+                return this.renderBlogFeedItem(post, data, section, index);
             }
         } else if (sectionTagRef) {
             const sectionTag = getData(data, sectionTagRef);
@@ -53,15 +53,15 @@ export default class BlogFeedSection extends React.Component {
             });
             const tag = _.find(postTags, { id: sectionTag.id });
             if (tag) {
-                return this.renderBlogFeedItem(post, data, section);
+                return this.renderBlogFeedItem(post, data, section, index);
             }
         } else {
-            return this.renderBlogFeedItem(post, data, section);
+            return this.renderBlogFeedItem(post, data, section, index);
         }
         return null;
     }
 
-    renderBlogFeedItem(post, data, section) {
+    renderBlogFeedItem(post, data, section, index) {
         const postUrl = getPageUrl(post, { withPrefix: true });
         const title = _.get(post, 'title');
         const image = _.get(post, 'thumb_image');
@@ -86,6 +86,7 @@ export default class BlogFeedSection extends React.Component {
                 className={classNames('cell-12', 'cell-md-6', 'my-2', {
                     'cell-lg-4': sectionColumns === 'three'
                 })}
+                data-sb-object-id={post.__metadata.id}
             >
                 <div
                     className={classNames('item', {
@@ -103,7 +104,7 @@ export default class BlogFeedSection extends React.Component {
                                     'card__media--top': isCard
                                 })}
                             >
-                                <Link href={postUrl}><img src={withPrefix(image)} alt={imageAlt} /></Link>
+                                <Link href={postUrl}><img src={withPrefix(image)} alt={imageAlt} data-sb-field-path="thumb_image.url#@src"/></Link>
                             </div>
                         )}
                         <div
@@ -117,14 +118,14 @@ export default class BlogFeedSection extends React.Component {
                             })}
                         >
                             {(showDate || (!_.isEmpty(categories) && showCategories)) && (
-                                <div className="item__meta mb-1">
+                                <div className="item__meta mb-1" data-sb-field-path="show_date show_categories">
                                     {!_.isEmpty(categories) && showCategories && (
                                         <React.Fragment>
-                                            <BlogPostCategories categories={categories} data={data} containerClass={'item__cat'} />
+                                            <BlogPostCategories categories={categories} data={data} containerClass={'item__cat'} annotationPrefix="categories" />
                                             {showDate && <span className="item__meta-sep"> &middot; </span>}
                                         </React.Fragment>
                                     )}
-                                    {showDate && <span className="item__date"><time dateTime={dateTimeAttr}>{formattedDate}</time></span>}
+                                    {showDate && <span className="item__date"><time dateTime={dateTimeAttr} data-sb-field-path="date">{formattedDate}</time></span>}
                                 </div>
                             )}
                             {sectionTitle ? (
@@ -134,7 +135,7 @@ export default class BlogFeedSection extends React.Component {
                                         'h4': sectionColumns === 'three'
                                     })}
                                 >
-                                    <Link href={postUrl}>{title}</Link>
+                                    <Link href={postUrl} data-sb-field-path="title">{title}</Link>
                                 </h3>
                             ) : (
                                 <h2
@@ -143,12 +144,12 @@ export default class BlogFeedSection extends React.Component {
                                         'h4': sectionColumns === 'three'
                                     })}
                                 >
-                                    <Link href={postUrl}>{title}</Link>
+                                    <Link href={postUrl} data-sb-field-path="title">{title}</Link>
                                 </h2>
                             )}
-                            {excerpt && showExcerpt && <div className="item__copy"><p>{excerpt}</p></div>}
+                            {excerpt && showExcerpt && <div className="item__copy"><p data-sb-field-path="excerpt">{excerpt}</p></div>}
                             {author && showAuthor && (
-                                <BlogPostAuthor author={author} data={data} containerClass={'item__byline'} avatarSize={'small'} />
+                                <BlogPostAuthor author={author} data={data} containerClass={'item__byline'} avatarSize={'small'} annotationPrefix="author" />
                             )}
                         </div>
                     </div>
@@ -193,6 +194,7 @@ export default class BlogFeedSection extends React.Component {
                     'pb-6': paddingBottom === 'medium' || paddingBottom === 'large',
                     'pb-md-7': paddingBottom === 'large'
                 })}
+                data-sb-field-path={this.props.annotationPrefix}
             >
                 {backgroundImage && <SectionBackground section={section} />}
                 {(title || subtitle) && (
@@ -202,14 +204,14 @@ export default class BlogFeedSection extends React.Component {
                             'text-right': alignX === 'right'
                         })}
                     >
-                        {subtitle && <div className="section__subtitle">{subtitle}</div>}
-                        {title && <h2 className="section__title mt-0">{title}</h2>}
+                        {subtitle && <div className="section__subtitle" data-sb-field-path=".subtitle">{subtitle}</div>}
+                        {title && <h2 className="section__title mt-0" data-sb-field-path=".title">{title}</h2>}
                     </div>
                 )}
                 <div className="container">
                     <div className="grid">
                         {_.map(posts, (post, index) => {
-                            return <React.Fragment key={index}>{this.renderBlogFeedItemFilter(post, data, section)}</React.Fragment>;
+                            return <React.Fragment key={index}>{this.renderBlogFeedItemFilter(post, data, section, index)}</React.Fragment>;
                         })}
                     </div>
                 </div>
@@ -220,6 +222,7 @@ export default class BlogFeedSection extends React.Component {
                                 'justify-center': alignX === 'center',
                                 'justify-end': alignX === 'right'
                             })}
+                            data-sb-field-path=".actions"
                         >
                             <SectionActions actions={actions} />
                         </div>

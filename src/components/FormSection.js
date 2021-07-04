@@ -52,6 +52,7 @@ export default class FormSection extends React.Component {
                     'pb-6': paddingBottom === 'medium' || paddingBottom === 'large',
                     'pb-md-7': paddingBottom === 'large'
                 })}
+                data-sb-field-path={this.props.annotationPrefix}
             >
                 {backgroundImage && <SectionBackground section={section} />}
                 {(title || subtitle) && (
@@ -61,8 +62,8 @@ export default class FormSection extends React.Component {
                             'text-right': titleAlignX === 'right'
                         })}
                     >
-                        {subtitle && <div className="section__subtitle">{subtitle}</div>}
-                        {title && <h2 className="section__title mt-0">{title}</h2>}
+                        {subtitle && <div className="section__subtitle" data-sb-field-path=".subtitle">{subtitle}</div>}
+                        {title && <h2 className="section__title mt-0" data-sb-field-path=".title">{title}</h2>}
                     </div>
                 )}
                 <div
@@ -85,6 +86,7 @@ export default class FormSection extends React.Component {
                                     'text-center': contentAlignX === 'center',
                                     'text-right': contentAlignX === 'right'
                                 })}
+                                data-sb-field-path=".content"
                             >
                                 {markdownify(content)}
                             </div>
@@ -110,6 +112,7 @@ export default class FormSection extends React.Component {
                                     'p-4': isCard,
                                     'p-sm-5': isCard
                                 })}
+                                data-sb-field-path=".form_id#@name .form_layout#@class .enable_card#@class"
                             >
                                 <div className="sr-only">
                                     <label id={formHoneypotLabelId} htmlFor={formHoneypotInputId}>Don't fill this out if you're human:</label>
@@ -122,6 +125,7 @@ export default class FormSection extends React.Component {
                                         'flex-column': formLayout === 'inline',
                                         'flex-xs-row': formLayout === 'inline'
                                     })}
+                                    data-sb-field-path=".form_fields"
                                 >
                                     {_.map(formFields, (field, index) => (
                                             <div
@@ -132,6 +136,7 @@ export default class FormSection extends React.Component {
                                                     'mb-xs-0': formLayout === 'inline',
                                                     'flex-auto': formLayout === 'inline'
                                                 })}
+                                                data-sb-field-path={`.${index} .${index}.input_type .${index}.is_required`}
                                             >
                                                 <FormField field={field} />
                                             </div>
@@ -144,7 +149,7 @@ export default class FormSection extends React.Component {
                                             'ml-xs-1': formLayout === 'inline'
                                         })}
                                     >
-                                        <button type="submit" className="btn btn--primary">{submitLabel}</button>
+                                        <button type="submit" className="btn btn--primary" data-sb-field-path=".submit_label">{submitLabel}</button>
                                     </div>
                                 </div>
                             </form>

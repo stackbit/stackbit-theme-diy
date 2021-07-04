@@ -18,9 +18,11 @@ export default class BlogPostAuthor extends React.Component {
         const authorFirstName = author.first_name || '';
         const authorLastName = author.last_name || '';
 
+        const annotationPrefix = _.get(this.props, 'annotationPrefix', '');
+
         if (author.link) {
             return (
-                <div className={containerClass}>
+                <div className={containerClass} data-sb-field-path={annotationPrefix}>
                     <Link className="flex items-center" href={withPrefix(author.link)}>
                         {authorAvatar && (
                             <figure
@@ -28,10 +30,10 @@ export default class BlogPostAuthor extends React.Component {
                                     'avatar--small': avatarSize === 'small'
                                 })}
                             >
-                                <img className="avatar__img" src={withPrefix(authorAvatar)} alt={authorAvatarAlt} />
+                                <img className="avatar__img" src={withPrefix(authorAvatar)} alt={authorAvatarAlt} data-sb-field-path=".photo.url#@src"/>
                             </figure>
                         )}
-                        <span>{_.trim(`${authorFirstName} ${authorLastName}`)}</span>
+                        <span data-sb-field-path=".first_name .last_name">{_.trim(`${authorFirstName} ${authorLastName}`)}</span>
                     </Link>
                 </div>
             );
@@ -45,10 +47,10 @@ export default class BlogPostAuthor extends React.Component {
                                     'avatar--small': avatarSize === 'small'
                                 })}
                             >
-                                <img className="avatar__img" src={withPrefix(authorAvatar)} alt={authorAvatarAlt} />
+                                <img className="avatar__img" src={withPrefix(authorAvatar)} alt={authorAvatarAlt} data-sb-field-path=".photo.url#@src"/>
                             </figure>
                         )}
-                        <span>{_.trim(`${authorFirstName} ${authorLastName}`)}</span>
+                        <span data-sb-field-path=".first_name .last_name">{_.trim(`${authorFirstName} ${authorLastName}`)}</span>
                     </div>
                 </div>
             );

@@ -39,6 +39,7 @@ export default class CtaSection extends React.Component {
                     'pb-6': paddingBottom === 'medium' || paddingBottom === 'large',
                     'pb-md-7': paddingBottom === 'large'
                 })}
+                data-sb-field-path={this.props.annotationPrefix}
             >
                 {backgroundImage && <SectionBackground section={section} />}
                 <div
@@ -57,8 +58,8 @@ export default class CtaSection extends React.Component {
                                     'text-right': alignX === 'right'
                                 })}
                             >
-                                {title && <h1 className="cta__title">{title}</h1>}
-                                {content && <div className="cta__copy">{markdownify(content)}</div>}
+                                {title && <h1 className="cta__title" data-sb-field-path=".title">{title}</h1>}
+                                {content && <div className="cta__copy" data-sb-field-path=".content">{markdownify(content)}</div>}
                             </div>
                         )}
                         {!_.isEmpty(actions) && (
@@ -77,6 +78,7 @@ export default class CtaSection extends React.Component {
                                         'justify-center': alignX === 'center',
                                         'justify-end': alignX === 'right'
                                     })}
+                                    data-sb-field-path=".actions"
                                 >
                                     <SectionActions actions={actions} />
                                 </div>

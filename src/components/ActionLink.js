@@ -18,6 +18,8 @@ export default class ActionLink extends React.Component {
             attrs.rel = [(newWindow ? 'noopener' : ''), (noFollow ? 'nofollow' : '')].filter(Boolean).join(' ');
         }
 
-        return <Link href={withPrefix(url)} {...attrs}>{label}</Link>;
+        const annotationPrefix = _.get(this.props, 'annotationPrefix', '');
+
+        return <Link href={withPrefix(url)} {...attrs} data-sb-field-path={`${annotationPrefix}.label ${annotationPrefix}.url#@href`}>{label}</Link>;
     }
 }

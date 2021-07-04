@@ -5,14 +5,15 @@ import { getData, Link, withPrefix } from '../utils';
 
 export default class BlogPostTags extends React.Component {
     renderTag(tagRef, index, data) {
+        const annotationPrefix = _.get(this.props, 'annotationPrefix', '');
         const tag = getData(data, tagRef);
         if (!tag) {
             return null;
         }
         if (tag.link) {
-            return <Link key={index} className="mr-1" href={withPrefix(tag.link)}>{tag.title}</Link>;
+            return <Link key={index} className="mr-1" href={withPrefix(tag.link)} data-sb-field-path={`${annotationPrefix}.${index}.title`}>{tag.title}</Link>;
         } else {
-            return <span key={index} className="mr-1">{tag.title}</span>;
+            return <span key={index} className="mr-1" data-sb-field-path={`${annotationPrefix}.${index}.title`}>{tag.title}</span>;
         }
     }
 

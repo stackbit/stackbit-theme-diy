@@ -12,14 +12,14 @@ export default class BlogPostCategories extends React.Component {
         if (category.link) {
             return (
                 <React.Fragment key={index}>
-                    <Link href={withPrefix(category.link)}>{category.title}</Link>
+                    <Link href={withPrefix(category.link)} data-sb-field-path={`.${index}.title`}>{category.title}</Link>
                     {index < categoryLength - 1 && ', '}
                 </React.Fragment>
             );
         } else {
             return (
                 <React.Fragment key={index}>
-                    <span>{category.title}</span>
+                    <span data-sb-field-path={`.${index}.title`}>{category.title}</span>
                     {index < categoryLength - 1 && ', '}
                 </React.Fragment>
             )
@@ -32,8 +32,10 @@ export default class BlogPostCategories extends React.Component {
         const categoryLength = _.size(categories);
         const containerClass = _.get(this.props, 'containerClass', '');
 
+        const annotationPrefix = _.get(this.props, 'annotationPrefix', '');
+
         return (
-            <span className={containerClass}>
+            <span className={containerClass} data-sb-field-path={annotationPrefix}>
                 {_.map(categories, (categoryRef, index) =>this.renderCategory(categoryRef, categoryLength, index, data))}
             </span>
         );
