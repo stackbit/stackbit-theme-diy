@@ -14,7 +14,7 @@ export default class Advanced extends React.Component {
         const pageUrl = getPageUrl(page);
 
         return (
-            <Layout page={page} config={config}>
+            <Layout page={page} config={config} data-sb-field-path="sections">
                 {_.map(sections, (section, index) => {
                     const sectionType = _.get(section, 'type');
                     const component = _.upperFirst(_.camelCase(sectionType));

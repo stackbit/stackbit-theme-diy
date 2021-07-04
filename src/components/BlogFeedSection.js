@@ -118,7 +118,7 @@ export default class BlogFeedSection extends React.Component {
                             })}
                         >
                             {(showDate || (!_.isEmpty(categories) && showCategories)) && (
-                                <div className="item__meta mb-1" data-sb-field-path="show_date show_categories">
+                                <div className="item__meta mb-1">
                                     {!_.isEmpty(categories) && showCategories && (
                                         <React.Fragment>
                                             <BlogPostCategories categories={categories} data={data} containerClass={'item__cat'} annotationPrefix="categories" />
@@ -209,7 +209,7 @@ export default class BlogFeedSection extends React.Component {
                     </div>
                 )}
                 <div className="container">
-                    <div className="grid">
+                    <div className="grid" data-sb-field-path=".show_date .show_categories">
                         {_.map(posts, (post, index) => {
                             return <React.Fragment key={index}>{this.renderBlogFeedItemFilter(post, data, section, index)}</React.Fragment>;
                         })}
