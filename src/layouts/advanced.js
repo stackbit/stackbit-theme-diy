@@ -25,7 +25,7 @@ export default class Advanced extends React.Component {
                     if (!Component) {
                         throw new Error(`no component matching the page section's type: ${sectionType}`);
                     }
-                    return  <Component key={index} section={section} data={data} posts={posts} annotationPrefix={`.${index}`} />;
+                    return  <Component key={index} section={section} data={data} posts={posts} annotationPrefix={`sections.${index}`} />;
                 })}
             </Layout>
         );

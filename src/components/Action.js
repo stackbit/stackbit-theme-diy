@@ -34,12 +34,8 @@ export default class Action extends React.Component {
         const showIcon = hasIcon && icon;
         const annotations = [
             `${annotationPrefix}`,
-            `${annotationPrefix}.url#@href`,
-            `${annotationPrefix}.style#@class`,
-            `${annotationPrefix}.has_icon#@class`,
             `${annotationPrefix}.label${showIcon ? '#span[1]' : ''}`
         ];
-        if (showIcon) { annotations.push(`${annotationPrefix}.icon#svg[1]`) }
 
         return (
             <Link href={withPrefix(url)} {...attrs} className={classes} data-sb-field-path={annotations.join(' ')}>

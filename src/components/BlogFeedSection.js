@@ -209,7 +209,7 @@ export default class BlogFeedSection extends React.Component {
                     </div>
                 )}
                 <div className="container">
-                    <div className="grid" data-sb-field-path=".show_date .show_categories">
+                    <div className="grid">
                         {_.map(posts, (post, index) => {
                             return <React.Fragment key={index}>{this.renderBlogFeedItemFilter(post, data, section, index)}</React.Fragment>;
                         })}

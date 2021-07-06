@@ -60,6 +60,7 @@ export default class HeroSection extends React.Component {
                                     'cell-md-6': isHorizontal && mediaWidth === 'fifty',
                                     'cell-md-7': isHorizontal && mediaWidth === 'sixty'
                                 })}
+                                {...(videoEmbed ? {'data-sb-field-path': '.video_embed_html#.'} : {})}
                             >
                                 {videoEmbed ? htmlToReact(videoEmbed)
                                     : <img

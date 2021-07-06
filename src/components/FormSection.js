@@ -36,6 +36,7 @@ export default class FormSection extends React.Component {
         const formHoneypotName = formId + '-bot-field';
         const isHorizontal = content && (formPosition === 'left' || formPosition === 'right');
 
+        const annotationPrefix = this.props.annotationPrefix;
         return (
             <section
                 id={sectionId}
@@ -52,7 +53,7 @@ export default class FormSection extends React.Component {
                     'pb-6': paddingBottom === 'medium' || paddingBottom === 'large',
                     'pb-md-7': paddingBottom === 'large'
                 })}
-                data-sb-field-path={this.props.annotationPrefix}
+                data-sb-field-path={annotationPrefix}
             >
                 {backgroundImage && <SectionBackground section={section} />}
                 {(title || subtitle) && (
@@ -149,7 +150,7 @@ export default class FormSection extends React.Component {
                                             'ml-xs-1': formLayout === 'inline'
                                         })}
                                     >
-                                        <button type="submit" className="btn btn--primary" data-sb-field-path=".submit_label">{submitLabel}</button>
+                                        <button type="submit" className="btn btn--primary" data-sb-field-path={`${annotationPrefix}.submit_label`}>{submitLabel}</button>
                                     </div>
                                 </div>
                             </form>

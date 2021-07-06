@@ -71,7 +71,7 @@ export default class Footer extends React.Component {
                                     >
                                         {copyright && <span data-sb-field-path=".content">{htmlToReact(copyright)}</span>}
                                         {_.map(links, (action, index) => (
-                                            <ActionLink key={index} action={action} annotationPrefix={`.links.${index}`} />
+                                            <ActionLink key={index} action={action} annotationPrefix={`${config.__metadata.id}:footer.links.${index}`} />
                                         ))}
                                     </div>
                                 )}
@@ -83,7 +83,7 @@ export default class Footer extends React.Component {
                                         data-sb-field-path=".social_links .has_social"
                                     >
                                         {_.map(socialLinks, (action, index) => (
-                                            <ActionIcon key={index} action={action} annotationPrefix={`.${index}`} />
+                                            <ActionIcon key={index} action={action} annotationPrefix={`${config.__metadata.id}:footer.social_links.${index}`} />
                                         ))}
                                     </div>
                                 )}
